@@ -1,0 +1,16 @@
+{
+  "author": {
+    "name": "Thomas Radloff",
+    "email": "bostontrader@gmail.com",
+    "url": "https://github.com/bostontrader"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "description": "A package to represent immutable fragments of English as well as to serialize, deserialize, and migrate their schema.",
+  "license": "MIT",
+  "name": "engcore",
+  "scripts": {"test": "jest"},
+  "version": "0.0.1"
+}
