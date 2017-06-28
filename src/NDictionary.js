@@ -12,6 +12,7 @@ If so, treat these nouns as with irregular plural.
 const NDictOb = {
     arctic:   new NounOb({base:'arctic', proper:true}),
     bakery:   new NounOb({base:'bakery'}),
+    ball:     new NounOb({base:'ball'}),
     bathroom: new NounOb({base:'bathroom'}),
     car:      new NounOb({base:'car'}),
     cat:      new NounOb({base:'cat'}),
