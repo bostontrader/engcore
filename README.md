@@ -17,5 +17,6 @@ exactly the same way.
 
 **engcore** uses the following dependencies for the following reasons:
 
-freezer-js An immutability library
-jest       Testing
+babel-preset-es2015 Jest needs this
+freezer-js          An immutability library
+jest                Testing
