@@ -29,16 +29,7 @@ const NPGenerateText = (np) => {
 
     let article = ''
 
-    let adjString = ''
-    //let firstTime = true
-    //for( let adj of np.adjectives) {
-        //if (firstTime) {
-            //adjString = adj.base
-            //firstTime = false
-        //}
-        //else
-            //adjString += ' ' + adj.base
-    //}
+    let adjString = np.adjectives.map( (n) => n.base).join(' ')
 
     if(np.plurality === Plurality.Singular) {
         article = 'the'
