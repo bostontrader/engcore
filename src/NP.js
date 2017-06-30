@@ -8,8 +8,15 @@ function NPOb(props) {
     this.v = Schema.NP.cv
 
     this.noun = props.noun
+    this.definiteness = props.definiteness || Definiteness.NoneSelected
     this.plurality = props.plurality || Plurality.NoneSelected
     this.adjectives = props.adjectives || []
+}
+
+const Definiteness = {
+    'NoneSelected': 0,
+    'Definite':   100,
+    'Indefinite': 200,
 }
 
 // np: Object
