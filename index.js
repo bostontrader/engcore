@@ -1,10 +1,5 @@
-module.exports = {
-    catfood: function(html) {
-        console.log('catfood works')
-    },
+const catfood = function() {
+    console.log('catfood still works')
+}
 
-
-    dogfood: function(html) {
-        console.log('dogfood works')
-    }
-};
+export {catfood}
