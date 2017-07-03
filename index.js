@@ -1,5 +1,3 @@
-const catfood = function() {
-    console.log('catfood still works')
-}
+import {NounOb} from './src/Noun'
 
-export {catfood}
+export {NounOb}
