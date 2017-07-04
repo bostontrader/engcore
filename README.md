@@ -17,9 +17,8 @@ exactly the same way.
 
 **engcore** is written using ES2015.  It uses tape for testing. In order to run the test you may want to use babel-node this comes from the babel-cli package.
 
-**engcore** is meant to be a library. The only thing we execute in this package is the test.
+**engcore** is meant to be a library. The only thing we execute in this package is the test.  **npm test** does that. It uses babel-node which comes from the babel-cli dependency.
 
-Users of **engcore** will have their own particular Javascript environment and will generally have to figure out how to require/import/execute **engcore** on their own.
 
 
 
