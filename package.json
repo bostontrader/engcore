@@ -12,11 +12,11 @@
   },
   "description": "A package to represent fragments of English as well as to serialize, deserialize, and migrate their schema.",
   "license": "MIT",
+  "main": "dist/index.js",
   "name": "engcore",
   "scripts": {
     "build": "babel src --out-dir dist --presets babel-preset-es2015 --ignore test.js",
-    "prepare": "babel src --out-dir dist --presets babel-preset-es2015 --ignore test.js",
     "test":"babel-node src/test.js"
   },
-  "version": "0.0.3"
+  "version": "0.0.4"
 }
