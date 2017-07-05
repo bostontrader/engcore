@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ProGenerateText = exports.ProOb = undefined;
 
+var _Gender = require('./Gender');
+
+var _Gender2 = _interopRequireDefault(_Gender);
+
 var _SchemaConstants = require('./SchemaConstants');
 
 var _SchemaConstants2 = _interopRequireDefault(_SchemaConstants);
@@ -20,6 +24,7 @@ function ProOb(props) {
     this.subject = props.subject || false; // subject ? if not then object
     this.plurality = props.plurality || _Noun.Plurality.NoneSelected;
     this.person = props.person;
+    this.gender = props.gender;
 }
 
 var ProGenerateText = function ProGenerateText(pronoun) {
@@ -28,14 +33,23 @@ var ProGenerateText = function ProGenerateText(pronoun) {
 
     var subject = pronoun.subject,
         plurality = pronoun.plurality,
-        person = pronoun.person;
+        person = pronoun.person,
+        gender = pronoun.gender;
 
 
     if (subject) {
         if (plurality === _Noun.Plurality.Singular) {
             if (person === 1) {
                 retVal = "I";
-            } else if (person === 2) {} else if (person === 3) {} else {
+            } else if (person === 2) {
+                retVal = "you";
+            } else if (person === 3) {
+                if (gender === _Gender2.default.Male) {
+                    retVal = "he";
+                } else if (gender === _Gender2.default.Female) {
+                    retVal = "she";
+                }
+            } else {
                 // p is already set to a suitable default. do nothing.
             }
         } else if (plurality === _Noun.Plurality.Plural) {

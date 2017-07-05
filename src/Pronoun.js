@@ -1,4 +1,5 @@
-import Schema from './SchemaConstants'
+import Gender      from './Gender'
+import Schema      from './SchemaConstants'
 import {Plurality} from './Noun'
 
 // Every instance of a pronoun should be immutable and have this shape
@@ -8,22 +9,27 @@ function ProOb(props) {
     this.subject = props.subject || false // subject ? if not then object
     this.plurality = props.plurality || Plurality.NoneSelected
     this.person = props.person
+    this.gender = props.gender
 }
 
 const ProGenerateText = (pronoun) => {
 
     let retVal = 'BAD PRONOUN CONFIGURATION'
 
-    const {subject, plurality, person} = pronoun
+    const {subject, plurality, person, gender} = pronoun
 
     if(subject) {
         if(plurality === Plurality.Singular) {
             if (person === 1) {
                 retVal = "I"
             } else if (person === 2) {
-
+                retVal = "you"
             } else if (person === 3) {
-
+                if(gender === Gender.Male) {
+                    retVal = "he"
+                } else if(gender === Gender.Female) {
+                    retVal = "she"
+                }
             } else {
                 // p is already set to a suitable default. do nothing.
             }
