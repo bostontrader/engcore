@@ -48,8 +48,21 @@ var ProGenerateText = function ProGenerateText(pronoun) {
                 // p is already set to a suitable default. do nothing.
             }
     } else {
-            // must be object
-        }
+        // must be object
+        if (plurality === _Noun.Plurality.Singular) {
+            if (person === 1) {} else if (person === 2) {} else if (person === 3) {} else {
+                // p is already set to a suitable default. do nothing.
+            }
+        } else if (plurality === _Noun.Plurality.Plural) {
+            if (person === 1) {
+                retVal = "us";
+            } else if (person === 2) {} else if (person === 3) {} else {
+                // p is already set to a suitable default. do nothing.
+            }
+        } else {
+                // p is already set to a suitable default. do nothing.
+            }
+    }
 
     return retVal;
 };

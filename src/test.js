@@ -21,6 +21,7 @@ test('everything', function (t) {
     t.equal(NPGenerateText(new NPOb({noun:NDictOb.cat})),'cat')
     t.equal(ProGenerateText(new ProOb({subject:true, plurality:Plurality.Singular, person:1})),'I')
     t.equal(ProGenerateText(new ProOb({subject:true, plurality:Plurality.Plural, person:1})),'we')
+    t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Plural, person:1})),'us')
     t.equal(VGenerateText(VDictOb.play),'play')
     t.equal(VPGenerateText(new VPOb({verb:VDictOb.play, infinitive:true})),'to play')
     t.end()

@@ -42,6 +42,28 @@ const ProGenerateText = (pronoun) => {
         }
     } else {
         // must be object
+        if(plurality === Plurality.Singular) {
+            if (person === 1) {
+            } else if (person === 2) {
+
+            } else if (person === 3) {
+
+            } else {
+                // p is already set to a suitable default. do nothing.
+            }
+        } else if (plurality === Plurality.Plural) {
+            if (person === 1) {
+                retVal = "us"
+            } else if (person === 2) {
+
+            } else if (person === 3) {
+
+            } else {
+                // p is already set to a suitable default. do nothing.
+            }
+        } else {
+            // p is already set to a suitable default. do nothing.
+        }
     }
 
     return retVal
