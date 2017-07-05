@@ -104,7 +104,11 @@ var ProGenerateText = function ProGenerateText(pronoun) {
         } else if (plurality === _Noun.Plurality.Plural) {
             if (person === 1) {
                 retVal = "us";
-            } else if (person === 2) {} else if (person === 3) {}
+            } else if (person === 2) {
+                retVal = "you";
+            } else if (person === 3) {
+                retVal = "them";
+            }
         }
     }
 

@@ -86,9 +86,9 @@ const ProGenerateText = (pronoun) => {
             if (person === 1) {
                 retVal = "us"
             } else if (person === 2) {
-
+                retVal = "you"
             } else if (person === 3) {
-
+                retVal = "them"
             }
         }
     }
