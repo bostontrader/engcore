@@ -1,5 +1,6 @@
 import {AdjGenerateText} from './Adjective'
 import {AdjDictOb}       from './AdjDictionary'
+import Gender            from './Gender'
 import {NDictOb}         from './NDictionary'
 import {NGenerateText}   from './Noun'
 import {NounOb}          from './Noun'
@@ -15,6 +16,7 @@ import {VPOb}            from './VP'
 
 export {AdjGenerateText}
 export {AdjDictOb}
+export {Gender}
 export {NDictOb}
 export {NGenerateText}
 export {NounOb}
