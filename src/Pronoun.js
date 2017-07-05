@@ -39,9 +39,9 @@ const ProGenerateText = (pronoun) => {
             if (person === 1) {
                 retVal = "we"
             } else if (person === 2) {
-
+                retVal = "you"
             } else if (person === 3) {
-
+                retVal = "they"
             } else {
                 // p is already set to a suitable default. do nothing.
             }

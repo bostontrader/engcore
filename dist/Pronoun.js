@@ -57,7 +57,11 @@ var ProGenerateText = function ProGenerateText(pronoun) {
         } else if (plurality === _Noun.Plurality.Plural) {
             if (person === 1) {
                 retVal = "we";
-            } else if (person === 2) {} else if (person === 3) {} else {
+            } else if (person === 2) {
+                retVal = "you";
+            } else if (person === 3) {
+                retVal = "they";
+            } else {
                 // p is already set to a suitable default. do nothing.
             }
         } else {
