@@ -7,7 +7,6 @@ exports.AdjDictOb = undefined;
 
 var _Adjective = require('./Adjective');
 
-// The dictionary should be immutable
 var AdjDictOb = {
     big: new _Adjective.AdjOb({ base: 'big' }),
     cold: new _Adjective.AdjOb({ base: 'cold' }),
@@ -20,7 +19,6 @@ var AdjDictOb = {
     lonely: new _Adjective.AdjOb({ base: 'lonely' }),
     little: new _Adjective.AdjOb({ base: 'little' }),
     new: new _Adjective.AdjOb({ base: 'new' }),
-
     red: new _Adjective.AdjOb({ base: 'red' }),
     small: new _Adjective.AdjOb({ base: 'small' }),
     tiny: new _Adjective.AdjOb({ base: 'tiny' }),

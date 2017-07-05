@@ -15,7 +15,6 @@ The plural form of some nouns is the same as the base.  For example, fish, deer,
 If so, treat these nouns as with irregular plural.
  */
 
-// The dictionary should be immutable
 var NDictOb = {
     arctic: new _Noun.NounOb({ base: 'arctic', proper: true }),
     bakery: new _Noun.NounOb({ base: 'bakery' }),
@@ -24,7 +23,6 @@ var NDictOb = {
     bed: new _Noun.NounOb({ base: 'bed' }),
     box: new _Noun.NounOb({ base: 'box' }),
     bow: new _Noun.NounOb({ base: 'bow' }),
-
     bump: new _Noun.NounOb({ base: 'bump' }),
     book: new _Noun.NounOb({ base: 'book' }),
     car: new _Noun.NounOb({ base: 'car' }),
@@ -56,12 +54,10 @@ var NDictOb = {
     man: new _Noun.NounOb({ base: 'man' }),
     mat: new _Noun.NounOb({ base: 'mat' }),
     mess: new _Noun.NounOb({ base: 'mess' }),
-
     mother: new _Noun.NounOb({ base: 'mother' }),
     minute: new _Noun.NounOb({ base: 'minute' }),
     milk: new _Noun.NounOb({ base: 'milk' }),
     net: new _Noun.NounOb({ base: 'net' }),
-
     pat: new _Noun.NounOb({ base: 'pat' }),
     pot: new _Noun.NounOb({ base: 'pot' }),
     rake: new _Noun.NounOb({ base: 'rake' }),
@@ -76,7 +72,6 @@ var NDictOb = {
     top: new _Noun.NounOb({ base: 'top' }),
     wall: new _Noun.NounOb({ base: 'wall' }),
     way: new _Noun.NounOb({ base: 'way' })
-
 };
 
 exports.NDictOb = NDictOb;
