@@ -70,7 +70,19 @@ var ProGenerateText = function ProGenerateText(pronoun) {
     } else {
         // must be object
         if (plurality === _Noun.Plurality.Singular) {
-            if (person === 1) {} else if (person === 2) {} else if (person === 3) {} else {
+            if (person === 1) {
+                retVal = "me";
+            } else if (person === 2) {
+                retVal = "you";
+            } else if (person === 3) {
+                if (gender === _Gender2.default.Male) {
+                    retVal = "him";
+                } else if (gender === _Gender2.default.Female) {
+                    retVal = "her";
+                } else {
+                    retVal = "it";
+                }
+            } else {
                 // p is already set to a suitable default. do nothing.
             }
         } else if (plurality === _Noun.Plurality.Plural) {

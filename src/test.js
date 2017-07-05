@@ -30,9 +30,22 @@ test('everything', function (t) {
     t.equal(ProGenerateText(new ProOb({subject:true, plurality:Plurality.Plural, person:2})),'you')
     t.equal(ProGenerateText(new ProOb({subject:true, plurality:Plurality.Plural, person:3})),'they')
 
+    t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Singular, person:1})),'me')
+    t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Singular, person:2})),'you')
+    t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Singular, person:3, gender:Gender.Male})),'him')
+    //t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Singular, person:4, gender:Gender.Female})),'x')
+    //t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Singular, person:5, gender:Gender.NoneSelected})),'x')
+
+
     t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Plural, person:1})),'us')
     t.equal(VGenerateText(VDictOb.play),'play')
     t.equal(VPGenerateText(new VPOb({verb:VDictOb.play, infinitive:true})),'to play')
     t.end()
+
+    // me
+    // you
+    // him
+    // her
+    // it
 
 })

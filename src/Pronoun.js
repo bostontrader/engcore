@@ -52,10 +52,17 @@ const ProGenerateText = (pronoun) => {
         // must be object
         if(plurality === Plurality.Singular) {
             if (person === 1) {
+                retVal = "me"
             } else if (person === 2) {
-
+                retVal = "you"
             } else if (person === 3) {
-
+                if(gender === Gender.Male) {
+                    retVal = "him"
+                } else if(gender === Gender.Female) {
+                    retVal = "her"
+                } else {
+                    retVal = "it"
+                }
             } else {
                 // p is already set to a suitable default. do nothing.
             }
