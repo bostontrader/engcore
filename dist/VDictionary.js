@@ -17,6 +17,7 @@ var VDictOb = {
     know: new _Verb.VerbOb({ base: 'know', pastForm: 'knew' }),
 
     play: new _Verb.VerbOb({ base: 'play', pastForm: 'played' }),
+    shake: new _Verb.VerbOb({ base: 'shake', pastForm: 'shook' }),
     shine: new _Verb.VerbOb({ base: 'shine', pastForm: 'shined' }),
     sit: new _Verb.VerbOb({ base: 'sit', pastForm: 'sat' }),
 

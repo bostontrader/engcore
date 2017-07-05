@@ -10,6 +10,7 @@ const VDictOb = {
     know:  new VerbOb({base:'know',  pastForm:'knew'}),
 
     play:  new VerbOb({base:'play',  pastForm:'played'}),
+    shake: new VerbOb({base:'shake', pastForm:'shook'}),
     shine: new VerbOb({base:'shine', pastForm:'shined'}),
     sit:   new VerbOb({base:'sit',   pastForm:'sat'}),
 
