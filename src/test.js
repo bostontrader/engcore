@@ -36,6 +36,13 @@ test('everything', function (t) {
     t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Singular, person:3, gender:Gender.Female})),'her')
     t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Singular, person:3, gender:Gender.NoneSelected})),'it')
 
+    t.equal(ProGenerateText(new ProOb({possessive:true, plurality:Plurality.Singular, person:1})),'mine')
+    t.equal(ProGenerateText(new ProOb({possessive:true, plurality:Plurality.Singular, person:2})),'yours')
+    t.equal(ProGenerateText(new ProOb({possessive:true, plurality:Plurality.Singular, person:3, gender:Gender.Male})),'his')
+    t.equal(ProGenerateText(new ProOb({possessive:true, plurality:Plurality.Singular, person:3, gender:Gender.Female})),'hers')
+    t.equal(ProGenerateText(new ProOb({possessive:true, plurality:Plurality.Plural, person:1})),'ours')
+    t.equal(ProGenerateText(new ProOb({possessive:true, plurality:Plurality.Plural, person:2})),'yours')
+    t.equal(ProGenerateText(new ProOb({possessive:true, plurality:Plurality.Plural, person:3})),'theirs')
 
     t.equal(ProGenerateText(new ProOb({subject:false, plurality:Plurality.Plural, person:1})),'us')
     t.equal(VGenerateText(VDictOb.play),'play')

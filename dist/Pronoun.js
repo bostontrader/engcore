@@ -22,6 +22,7 @@ function ProOb(props) {
     this.t = _SchemaConstants2.default.Pro.t;
     this.v = _SchemaConstants2.default.Pro.cv;
     this.subject = props.subject || false; // subject ? if not then object
+    this.possessive = props.possessive || false;
     this.plurality = props.plurality || _Noun.Plurality.NoneSelected;
     this.person = props.person;
     this.gender = props.gender;
@@ -32,12 +33,35 @@ var ProGenerateText = function ProGenerateText(pronoun) {
     var retVal = 'BAD PRONOUN CONFIGURATION';
 
     var subject = pronoun.subject,
+        possessive = pronoun.possessive,
         plurality = pronoun.plurality,
         person = pronoun.person,
         gender = pronoun.gender;
 
 
-    if (subject) {
+    if (possessive) {
+        if (plurality === _Noun.Plurality.Singular) {
+            if (person === 1) {
+                retVal = "mine";
+            } else if (person === 2) {
+                retVal = "yours";
+            } else if (person === 3) {
+                if (gender === _Gender2.default.Male) {
+                    retVal = "his";
+                } else if (gender === _Gender2.default.Female) {
+                    retVal = "hers";
+                } else {}
+            }
+        } else if (plurality === _Noun.Plurality.Plural) {
+            if (person === 1) {
+                retVal = "ours";
+            } else if (person === 2) {
+                retVal = "yours";
+            } else if (person === 3) {
+                retVal = "theirs";
+            }
+        }
+    } else if (subject) {
         if (plurality === _Noun.Plurality.Singular) {
             if (person === 1) {
                 retVal = "I";
@@ -51,8 +75,6 @@ var ProGenerateText = function ProGenerateText(pronoun) {
                 } else {
                     retVal = "it";
                 }
-            } else {
-                // p is already set to a suitable default. do nothing.
             }
         } else if (plurality === _Noun.Plurality.Plural) {
             if (person === 1) {
@@ -61,12 +83,8 @@ var ProGenerateText = function ProGenerateText(pronoun) {
                 retVal = "you";
             } else if (person === 3) {
                 retVal = "they";
-            } else {
-                // p is already set to a suitable default. do nothing.
             }
-        } else {
-                // p is already set to a suitable default. do nothing.
-            }
+        }
     } else {
         // must be object
         if (plurality === _Noun.Plurality.Singular) {
@@ -82,18 +100,12 @@ var ProGenerateText = function ProGenerateText(pronoun) {
                 } else {
                     retVal = "it";
                 }
-            } else {
-                // p is already set to a suitable default. do nothing.
             }
         } else if (plurality === _Noun.Plurality.Plural) {
             if (person === 1) {
                 retVal = "us";
-            } else if (person === 2) {} else if (person === 3) {} else {
-                // p is already set to a suitable default. do nothing.
-            }
-        } else {
-                // p is already set to a suitable default. do nothing.
-            }
+            } else if (person === 2) {} else if (person === 3) {}
+        }
     }
 
     return retVal;

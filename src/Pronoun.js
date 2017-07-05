@@ -7,6 +7,7 @@ function ProOb(props) {
     this.t = Schema.Pro.t
     this.v = Schema.Pro.cv
     this.subject = props.subject || false // subject ? if not then object
+    this.possessive = props.possessive || false
     this.plurality = props.plurality || Plurality.NoneSelected
     this.person = props.person
     this.gender = props.gender
@@ -16,9 +17,32 @@ const ProGenerateText = (pronoun) => {
 
     let retVal = 'BAD PRONOUN CONFIGURATION'
 
-    const {subject, plurality, person, gender} = pronoun
+    const {subject, possessive, plurality, person, gender} = pronoun
 
-    if(subject) {
+    if(possessive) {
+        if(plurality === Plurality.Singular) {
+            if (person === 1) {
+                retVal = "mine"
+            } else if (person === 2) {
+                retVal = "yours"
+            } else if (person === 3) {
+                if(gender === Gender.Male) {
+                    retVal = "his"
+                } else if(gender === Gender.Female) {
+                    retVal = "hers"
+                } else {
+                }
+            }
+        } else if (plurality === Plurality.Plural) {
+            if (person === 1) {
+                retVal = "ours"
+            } else if (person === 2) {
+                retVal = "yours"
+            } else if (person === 3) {
+                retVal = "theirs"
+            }
+        }
+    } else if(subject) {
         if(plurality === Plurality.Singular) {
             if (person === 1) {
                 retVal = "I"
@@ -32,8 +56,6 @@ const ProGenerateText = (pronoun) => {
                 } else {
                     retVal = "it"
                 }
-            } else {
-                // p is already set to a suitable default. do nothing.
             }
         } else if (plurality === Plurality.Plural) {
             if (person === 1) {
@@ -42,11 +64,7 @@ const ProGenerateText = (pronoun) => {
                 retVal = "you"
             } else if (person === 3) {
                 retVal = "they"
-            } else {
-                // p is already set to a suitable default. do nothing.
             }
-        } else {
-            // p is already set to a suitable default. do nothing.
         }
     } else {
         // must be object
@@ -63,8 +81,6 @@ const ProGenerateText = (pronoun) => {
                 } else {
                     retVal = "it"
                 }
-            } else {
-                // p is already set to a suitable default. do nothing.
             }
         } else if (plurality === Plurality.Plural) {
             if (person === 1) {
@@ -73,11 +89,7 @@ const ProGenerateText = (pronoun) => {
 
             } else if (person === 3) {
 
-            } else {
-                // p is already set to a suitable default. do nothing.
             }
-        } else {
-            // p is already set to a suitable default. do nothing.
         }
     }
 
