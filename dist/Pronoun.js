@@ -48,6 +48,8 @@ var ProGenerateText = function ProGenerateText(pronoun) {
                     retVal = "he";
                 } else if (gender === _Gender2.default.Female) {
                     retVal = "she";
+                } else {
+                    retVal = "it";
                 }
             } else {
                 // p is already set to a suitable default. do nothing.

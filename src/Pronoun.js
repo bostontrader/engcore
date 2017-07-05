@@ -29,6 +29,8 @@ const ProGenerateText = (pronoun) => {
                     retVal = "he"
                 } else if(gender === Gender.Female) {
                     retVal = "she"
+                } else {
+                    retVal = "it"
                 }
             } else {
                 // p is already set to a suitable default. do nothing.
