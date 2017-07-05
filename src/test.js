@@ -41,5 +41,5 @@ test('everything', function (t) {
     t.equal(VGenerateText(VDictOb.play),'play')
     t.equal(VPGenerateText(new VPOb({verb:VDictOb.play, infinitive:true})),'to play')
     t.end()
-    
+
 })
