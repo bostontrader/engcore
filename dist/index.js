@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.VPOb = exports.VPGenerateText = exports.VGenerateText = exports.VDictOb = exports.ProOb = exports.ProGenerateText = exports.NPOb = exports.NPGenerateText = exports.Plurality = exports.NounOb = exports.NGenerateText = exports.NDictOb = exports.Gender = exports.AdjDictOb = exports.AdjGenerateText = undefined;
+exports.VPOb = exports.VPGenerateText = exports.VGenerateText = exports.VDictOb = exports.PronounType = exports.ProOb = exports.ProGenerateText = exports.NPOb = exports.NPGenerateText = exports.Plurality = exports.NounOb = exports.NGenerateText = exports.NDictOb = exports.Gender = exports.AdjDictOb = exports.AdjGenerateText = undefined;
 
 var _Adjective = require('./Adjective');
 
@@ -40,6 +40,7 @@ exports.NPGenerateText = _NP.NPGenerateText;
 exports.NPOb = _NP.NPOb;
 exports.ProGenerateText = _Pronoun.ProGenerateText;
 exports.ProOb = _Pronoun.ProOb;
+exports.PronounType = _Pronoun.PronounType;
 exports.VDictOb = _VDictionary.VDictOb;
 exports.VGenerateText = _Verb.VGenerateText;
 exports.VPGenerateText = _VP.VPGenerateText;

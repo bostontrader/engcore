@@ -9,6 +9,7 @@ import {NPGenerateText}  from './NP'
 import {NPOb}            from './NP'
 import {ProGenerateText} from './Pronoun'
 import {ProOb}           from './Pronoun'
+import {PronounType}     from './Pronoun'
 import {VDictOb}         from './VDictionary'
 import {VGenerateText}   from './Verb'
 import {VPGenerateText}  from './VP'
@@ -25,6 +26,7 @@ export {NPGenerateText}
 export {NPOb}
 export {ProGenerateText}
 export {ProOb}
+export {PronounType}
 export {VDictOb}
 export {VGenerateText}
 export {VPGenerateText}
