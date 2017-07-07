@@ -16,6 +16,7 @@ function VPOb(props) {
     this.perfect = props.perfect
     this.continuous = props.continous
     this.tense = props.tense
+    this.person = props.person
     this.passive = props.passive || false
     this.infinitive = props.infinitive || false
     
@@ -32,13 +33,15 @@ const VPGenerateText = (vp) => {
         switch(vp.tense) {
             case Tense.Past:
                 if(vp.person === 1) return 'had been ' + vp.verb.base + 'ing'
-            //if(vp.person === 2) return 'were ' + vp.verb.base + 'ed'
-            //if(vp.person === 3) return 'has been ' + vp.verb.base + 'ing'
+                //if(vp.person === 2) return 'were ' + vp.verb.base + 'ed'
+                //if(vp.person === 3) return 'has been ' + vp.verb.base + 'ing'
+                break
 
             case Tense.Present:
                 //if(vp.person === 1) return 'have ' + getPastForm(vp.verb)
                 //if(vp.person === 2) return 'were ' + vp.verb.base + 'ed'
                 if(vp.person === 3) return 'has been ' + vp.verb.base + 'ing'
+                break
 
             default:
                 if (vp.future) return 'will have been ' + vp.verb.base + 'ing'

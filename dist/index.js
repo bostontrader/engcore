@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.VPOb = exports.VPGenerateText = exports.VGenerateText = exports.VDictOb = exports.Tense = exports.PronounType = exports.ProOb = exports.ProGenerateText = exports.NPOb = exports.NPGenerateText = exports.Plurality = exports.NounOb = exports.NGenerateText = exports.NDictOb = exports.Gender = exports.AdjDictOb = exports.AdjGenerateText = undefined;
+exports.VPOb = exports.VPGenerateText = exports.VGenerateText = exports.VDictOb = exports.Tense = exports.PronounType = exports.ProOb = exports.ProGenerateText = exports.PrePOb = exports.PrePGenerateText = exports.PreDictOb = exports.PreOb = exports.NPOb = exports.NPGenerateText = exports.Plurality = exports.NounOb = exports.NGenerateText = exports.NDictOb = exports.Gender = exports.AdjDictOb = exports.AdjGenerateText = undefined;
 
 var _Adjective = require('./Adjective');
 
@@ -18,6 +18,12 @@ var _NDictionary = require('./NDictionary');
 var _Noun = require('./Noun');
 
 var _NP = require('./NP');
+
+var _Pre = require('./Pre');
+
+var _PreDictionary = require('./PreDictionary');
+
+var _PreP = require('./PreP');
 
 var _Pronoun = require('./Pronoun');
 
@@ -38,6 +44,10 @@ exports.NounOb = _Noun.NounOb;
 exports.Plurality = _Noun.Plurality;
 exports.NPGenerateText = _NP.NPGenerateText;
 exports.NPOb = _NP.NPOb;
+exports.PreOb = _Pre.PreOb;
+exports.PreDictOb = _PreDictionary.PreDictOb;
+exports.PrePGenerateText = _PreP.PrePGenerateText;
+exports.PrePOb = _PreP.PrePOb;
 exports.ProGenerateText = _Pronoun.ProGenerateText;
 exports.ProOb = _Pronoun.ProOb;
 exports.PronounType = _Pronoun.PronounType;
