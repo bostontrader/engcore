@@ -1,6 +1,7 @@
 import {PreOb} from './Pre'
 
 const PreDictOb = {
+    as:   new PreOb({base:'as'}),
     in:   new PreOb({base:'in'}),
     into: new PreOb({base:'into'}),
     of:   new PreOb({base:'of'}),
