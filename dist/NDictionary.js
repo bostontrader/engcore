@@ -59,6 +59,7 @@ var NDictOb = {
     milk: new _Noun.NounOb({ base: 'milk' }),
     net: new _Noun.NounOb({ base: 'net' }),
     pat: new _Noun.NounOb({ base: 'pat' }),
+    plaything: new _Noun.NounOb({ base: 'plaything' }),
     pot: new _Noun.NounOb({ base: 'pot' }),
     rake: new _Noun.NounOb({ base: 'rake' }),
     sun: new _Noun.NounOb({ base: 'sun' }),
