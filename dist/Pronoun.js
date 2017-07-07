@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.ProGenerateText = exports.ProOb = undefined;
+exports.PronounType = exports.ProGenerateText = exports.ProOb = undefined;
 
 var _Gender = require('./Gender');
 
@@ -17,99 +17,50 @@ var _Noun = require('./Noun');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Every instance of a pronoun should be immutable and have this shape
 function ProOb(props) {
     this.t = _SchemaConstants2.default.Pro.t;
     this.v = _SchemaConstants2.default.Pro.cv;
-    this.subject = props.subject || false; // subject ? if not then object
-    this.possessive = props.possessive || false;
+    this.type = props.type;
     this.plurality = props.plurality || _Noun.Plurality.NoneSelected;
     this.person = props.person;
     this.gender = props.gender;
 }
 
+var PronounType = {
+    'Subject': 0,
+    'Object': 1,
+    'Possessive': 2,
+    'ReflexiveIntensive': 3
+};
+
+var PronounTable = [[['I', 'we'], ['you', 'you'], [['he', 'she', 'it'], 'they']], // subject
+[['me', 'us'], ['you', 'you'], [['him', 'her', 'it'], 'them']], // object
+[['mine', 'ours'], ['yours', 'yours'], [['his', 'hers'], 'theirs']], // possessive pronoun
+[['myself', 'ourselves'], ['yourself', 'yourselves'], [['himself', 'herself', 'itself'], 'themselves']]];
+
 var ProGenerateText = function ProGenerateText(pronoun) {
 
     var retVal = 'BAD PRONOUN CONFIGURATION';
 
-    var subject = pronoun.subject,
-        possessive = pronoun.possessive,
+    var type = pronoun.type,
         plurality = pronoun.plurality,
         person = pronoun.person,
         gender = pronoun.gender;
 
+    // Convert constant values to indices for use here.
 
-    if (possessive) {
-        if (plurality === _Noun.Plurality.Singular) {
-            if (person === 1) {
-                retVal = "mine";
-            } else if (person === 2) {
-                retVal = "yours";
-            } else if (person === 3) {
-                if (gender === _Gender2.default.Male) {
-                    retVal = "his";
-                } else if (gender === _Gender2.default.Female) {
-                    retVal = "hers";
-                } else {}
-            }
-        } else if (plurality === _Noun.Plurality.Plural) {
-            if (person === 1) {
-                retVal = "ours";
-            } else if (person === 2) {
-                retVal = "yours";
-            } else if (person === 3) {
-                retVal = "theirs";
-            }
-        }
-    } else if (subject) {
-        if (plurality === _Noun.Plurality.Singular) {
-            if (person === 1) {
-                retVal = "I";
-            } else if (person === 2) {
-                retVal = "you";
-            } else if (person === 3) {
-                if (gender === _Gender2.default.Male) {
-                    retVal = "he";
-                } else if (gender === _Gender2.default.Female) {
-                    retVal = "she";
-                } else {
-                    retVal = "it";
-                }
-            }
-        } else if (plurality === _Noun.Plurality.Plural) {
-            if (person === 1) {
-                retVal = "we";
-            } else if (person === 2) {
-                retVal = "you";
-            } else if (person === 3) {
-                retVal = "they";
-            }
-        }
+    var type_idx = type;
+    var plurality_idx = plurality === _Noun.Plurality.Singular ? 0 : 1;
+    var person_idx = person - 1;
+
+    retVal = PronounTable[type_idx][person_idx][plurality_idx];
+
+    if (person === 3 && plurality === _Noun.Plurality.Singular) if (gender === _Gender2.default.Male) {
+        retVal = retVal[0];
+    } else if (gender === _Gender2.default.Female) {
+        retVal = retVal[1];
     } else {
-        // must be object
-        if (plurality === _Noun.Plurality.Singular) {
-            if (person === 1) {
-                retVal = "me";
-            } else if (person === 2) {
-                retVal = "you";
-            } else if (person === 3) {
-                if (gender === _Gender2.default.Male) {
-                    retVal = "him";
-                } else if (gender === _Gender2.default.Female) {
-                    retVal = "her";
-                } else {
-                    retVal = "it";
-                }
-            }
-        } else if (plurality === _Noun.Plurality.Plural) {
-            if (person === 1) {
-                retVal = "us";
-            } else if (person === 2) {
-                retVal = "you";
-            } else if (person === 3) {
-                retVal = "them";
-            }
-        }
+        retVal = retVal[2];
     }
 
     return retVal;
@@ -117,3 +68,4 @@ var ProGenerateText = function ProGenerateText(pronoun) {
 
 exports.ProOb = ProOb;
 exports.ProGenerateText = ProGenerateText;
+exports.PronounType = PronounType;
