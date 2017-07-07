@@ -19,6 +19,7 @@ var VDictOb = {
     inform: new _Verb.VerbOb({ base: 'inform', pastForm: 'informed' }),
     know: new _Verb.VerbOb({ base: 'know', pastForm: 'knew' }),
     leave: new _Verb.VerbOb({ base: 'leave', pastForm: 'left' }),
+    look: new _Verb.VerbOb({ base: 'look', pastForm: 'looked' }),
     play: new _Verb.VerbOb({ base: 'play', pastForm: 'played' }),
     say: new _Verb.VerbOb({ base: 'say', pastForm: 'said' }),
     shake: new _Verb.VerbOb({ base: 'shake', pastForm: 'shook' }),
