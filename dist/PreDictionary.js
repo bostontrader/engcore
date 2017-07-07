@@ -9,6 +9,7 @@ var _Pre = require('./Pre');
 
 var PreDictOb = {
     as: new _Pre.PreOb({ base: 'as' }),
+    down: new _Pre.PreOb({ base: 'down' }),
     in: new _Pre.PreOb({ base: 'in' }),
     into: new _Pre.PreOb({ base: 'into' }),
     of: new _Pre.PreOb({ base: 'of' }),
