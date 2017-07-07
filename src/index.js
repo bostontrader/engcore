@@ -11,6 +11,7 @@ import {ProGenerateText} from './Pronoun'
 import {ProOb}           from './Pronoun'
 import {PronounType}     from './Pronoun'
 import {VDictOb}         from './VDictionary'
+import {Tense}           from './Verb'
 import {VGenerateText}   from './Verb'
 import {VPGenerateText}  from './VP'
 import {VPOb}            from './VP'
@@ -27,6 +28,7 @@ export {NPOb}
 export {ProGenerateText}
 export {ProOb}
 export {PronounType}
+export {Tense}
 export {VDictOb}
 export {VGenerateText}
 export {VPGenerateText}
