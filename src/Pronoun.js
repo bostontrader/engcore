@@ -1,13 +1,14 @@
 import Gender      from './Gender'
-import Schema      from './SchemaConstants'
+import Person      from './Person'
 import {Plurality} from './Noun'
+import Schema      from './SchemaConstants'
 
 function ProOb(props) {
 	this.t = Schema.Pro.t
 	this.v = Schema.Pro.cv
 	this.type  = props.type || PronounType.Subject
 	this.plurality = props.plurality || Plurality.Singular
-	this.person = props.person || 1
+	this.person = props.person || Person.First
 	this.gender = props.gender || Gender.NoneSelected
 }
 
@@ -34,11 +35,23 @@ const ProGenerateText = (pronoun) => {
 	// Convert constant values to indices for use here.
 	const type_idx = type
 	const plurality_idx = (plurality === Plurality.Singular) ? 0 : 1
-	const person_idx = person - 1
+
+	let person_idx
+	switch(person) {
+		case Person.First:
+			person_idx = 0
+			break
+		case Person.Second:
+			person_idx = 1
+			break
+		case Person.Third:
+			person_idx = 2
+			break
+	}
 
 	retVal = PronounTable[type_idx][person_idx][plurality_idx]
 
-	if(person === 3 && plurality === Plurality.Singular)
+	if(person === Person.Third && plurality === Plurality.Singular)
 		if(gender === Gender.Male) {
 			retVal = retVal[0]
 		} else if(gender === Gender.Female) {

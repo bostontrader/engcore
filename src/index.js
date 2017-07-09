@@ -7,6 +7,7 @@ import {NounOb}           from './Noun'
 import {Plurality}        from './Noun'
 import {NPGenerateText}   from './NP'
 import {NPOb}             from './NP'
+import Person             from './Person'
 import {PreOb}            from './Pre'
 import {PreDictOb}        from './PreDictionary'
 import {PrePGenerateText} from './PreP'
@@ -29,6 +30,7 @@ export {NounOb}
 export {Plurality}
 export {NPGenerateText}
 export {NPOb}
+export {Person}
 export {PreOb}
 export {PreDictOb}
 export {PrePGenerateText}
