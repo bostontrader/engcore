@@ -26,6 +26,9 @@ test('everything', function (t) {
     t.equal(NGenerateText(NDictOb.cat),'cat')
     t.equal(NPGenerateText(new NPOb({noun:NDictOb.cat})),'cat')
 
+    const n = new ProOb({})
+	console.log(ProGenerateText(n))
+
     t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Singular, person:1})),'I')
     t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Singular, person:2})),'you')
     t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Singular, person:3, gender:Gender.Male})),'he')

@@ -20,10 +20,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function ProOb(props) {
     this.t = _SchemaConstants2.default.Pro.t;
     this.v = _SchemaConstants2.default.Pro.cv;
-    this.type = props.type;
+    this.type = props.type || PronounType.Subject;
     this.plurality = props.plurality || _Noun.Plurality.NoneSelected;
-    this.person = props.person;
-    this.gender = props.gender;
+    this.person = props.person || 1;
+    this.gender = props.gender || _Gender2.default.NoneSelected;
 }
 
 var PronounType = {
