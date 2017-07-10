@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.VPOb = exports.VPGenerateText = exports.VGenerateText = exports.VDictOb = exports.Tense = exports.PronounType = exports.ProOb = exports.ProGenerateText = exports.PrePOb = exports.PrePGenerateText = exports.PreDictOb = exports.PreOb = exports.Person = exports.NPOb = exports.NPGenerateText = exports.Plurality = exports.NounOb = exports.NGenerateText = exports.NDictOb = exports.Gender = exports.AdjDictOb = exports.AdjGenerateText = undefined;
+exports.VPOb = exports.VPGenerateText = exports.VGenerateText = exports.VDictOb = exports.Tense = exports.Schema = exports.PronounType = exports.ProOb = exports.ProGenerateText = exports.PrePOb = exports.PrePGenerateText = exports.PreDictOb = exports.PreOb = exports.Person = exports.NPOb = exports.NPGenerateText = exports.Plurality = exports.NounOb = exports.NGenerateText = exports.NDictOb = exports.Gender = exports.AdjDictOb = exports.AdjGenerateText = undefined;
 
 var _Adjective = require('./Adjective');
 
@@ -31,6 +31,10 @@ var _PreP = require('./PreP');
 
 var _Pronoun = require('./Pronoun');
 
+var _SchemaConstants = require('./SchemaConstants');
+
+var _SchemaConstants2 = _interopRequireDefault(_SchemaConstants);
+
 var _VDictionary = require('./VDictionary');
 
 var _Verb = require('./Verb');
@@ -56,6 +60,7 @@ exports.PrePOb = _PreP.PrePOb;
 exports.ProGenerateText = _Pronoun.ProGenerateText;
 exports.ProOb = _Pronoun.ProOb;
 exports.PronounType = _Pronoun.PronounType;
+exports.Schema = _SchemaConstants2.default;
 exports.Tense = _Verb.Tense;
 exports.VDictOb = _VDictionary.VDictOb;
 exports.VGenerateText = _Verb.VGenerateText;
