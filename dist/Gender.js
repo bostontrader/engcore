@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var Gender = {
-    'NoneSelected': 0,
+    'NoneSelected': 1,
     'Male': 100,
     'Female': 200
 };

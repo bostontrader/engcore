@@ -7,8 +7,8 @@ function ProOb(props) {
 	this.t = Schema.Pro.t
 	this.v = Schema.Pro.cv
 	this.type  = props.type || PronounType.Subject
-	this.plurality = props.plurality || Plurality.Singular
 	this.person = props.person || Person.First
+	this.plurality = props.plurality || Plurality.Singular
 	this.gender = props.gender || Gender.NoneSelected
 }
 
@@ -28,13 +28,28 @@ const PronounTable = [
 
 const ProGenerateText = (pronoun) => {
 
-	let retVal = 'BAD PRONOUN CONFIGURATION'
+	let retVal = null // If a good configuration cannot be found, then return null to signal bad configuration.
 
-	const {type, plurality, person, gender} = pronoun
+	const {type, person, plurality, gender} = pronoun
 
 	// Convert constant values to indices for use here.
-	const type_idx = type
-	const plurality_idx = (plurality === Plurality.Singular) ? 0 : 1
+	let type_idx
+	switch(type) {
+		case PronounType.Subject:
+			type_idx = 0
+			break
+		case PronounType.Object:
+			type_idx = 1
+			break
+		case PronounType.Possessive:
+			type_idx = 2
+			break
+		case PronounType.ReflexiveIntensive:
+			type_idx = 3
+			break
+		default:
+			return retVal // If no pronoun type then this is not a good configuration
+	}
 
 	let person_idx
 	switch(person) {
@@ -47,6 +62,20 @@ const ProGenerateText = (pronoun) => {
 		case Person.Third:
 			person_idx = 2
 			break
+		default:
+			return retVal // If no person then this is not a good configuration
+	}
+
+	let plurality_idx
+	switch(plurality) {
+		case Plurality.Singular:
+			plurality_idx = 0
+			break
+		case Plurality.Plural:
+			plurality_idx = 1
+			break
+		default:
+			return retVal // If no plurality then this is not a good configuration
 	}
 
 	retVal = PronounTable[type_idx][person_idx][plurality_idx]
@@ -58,7 +87,7 @@ const ProGenerateText = (pronoun) => {
 			retVal = retVal[1]
 		} else {
 			retVal = retVal[2]
-		}
+	}
 
 	return retVal
 

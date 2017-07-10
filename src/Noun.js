@@ -11,7 +11,7 @@ function NounOb(props) {
 }
 
 const Plurality = {
-    'NoneSelected':0,
+    'NoneSelected':1,
     'Singular':  100,
     'Plural':    200,
 }

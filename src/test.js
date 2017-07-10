@@ -28,11 +28,14 @@ test('everything', function (t) {
 	t.equal(NPGenerateText(new NPOb({noun:NDictOb.cat})),'cat')
 
 	t.equal(ProGenerateText(new ProOb({})),'I')
-	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Singular, person:Person.First})),'I')
-	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Singular, person:Person.Second})),'you')
-	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Singular, person:Person.Third, gender:Gender.Male})),'he')
+	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, person:Person.NoneSelected, plurality:Plurality.NoneSelected, gender:Gender.Male})),null)
+
+	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, person:Person.First, plurality:Plurality.Singular})),'I')
+	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, person:Person.Second, plurality:Plurality.Singular})),'you')
+	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, person:Person.Third, plurality:Plurality.Singular, gender:Gender.Male})),'he')
 	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Singular, person:Person.Third, gender:Gender.Female})),'she')
 	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Singular, person:Person.Third, gender:Gender.NoneSelected})),'it')
+
 	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Plural, person:Person.First})),'we')
 	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Plural, person:Person.Second})),'you')
 	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, plurality:Plurality.Plural, person:Person.Third})),'they')

@@ -22,7 +22,7 @@ function NounOb(props) {
 }
 
 var Plurality = {
-    'NoneSelected': 0,
+    'NoneSelected': 1,
     'Singular': 100,
     'Plural': 200
 };
