@@ -7,8 +7,8 @@ function ProOb(props) {
 	this.t = Schema.Pro.t
 	this.v = Schema.Pro.cv
 	this.type  = props.type || PronounType.Subject
-	this.person = props.person || Person.First
-	this.plurality = props.plurality || Plurality.Singular
+	this.person = props.person || Person.NoneSelected
+	this.plurality = props.plurality || Plurality.NoneSelected
 	this.gender = props.gender || Gender.NoneSelected
 }
 

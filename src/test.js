@@ -27,7 +27,7 @@ test('everything', function (t) {
 	t.equal(NGenerateText(NDictOb.cat),'cat')
 	t.equal(NPGenerateText(new NPOb({noun:NDictOb.cat})),'cat')
 
-	t.equal(ProGenerateText(new ProOb({})),'I')
+	t.equal(ProGenerateText(new ProOb({})),null)
 	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, person:Person.NoneSelected, plurality:Plurality.NoneSelected, gender:Gender.Male})),null)
 
 	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, person:Person.First, plurality:Plurality.Singular})),'I')

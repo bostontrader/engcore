@@ -25,8 +25,8 @@ function ProOb(props) {
 	this.t = _SchemaConstants2.default.Pro.t;
 	this.v = _SchemaConstants2.default.Pro.cv;
 	this.type = props.type || PronounType.Subject;
-	this.person = props.person || _Person2.default.First;
-	this.plurality = props.plurality || _Noun.Plurality.Singular;
+	this.person = props.person || _Person2.default.NoneSelected;
+	this.plurality = props.plurality || _Noun.Plurality.NoneSelected;
 	this.gender = props.gender || _Gender2.default.NoneSelected;
 }
 
