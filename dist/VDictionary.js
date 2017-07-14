@@ -34,6 +34,7 @@ var VDictOb = {
 	steal: new _Verb.VerbOb({ base: 'steal', pastForm: 'stole' }),
 	stop: new _Verb.VerbOb({ base: 'stop', pastForm: 'stopped' }),
 	take: new _Verb.VerbOb({ base: 'take', pastForm: 'took' }),
+	tell: new _Verb.VerbOb({ base: 'tell', pastForm: 'told' }),
 	turn: new _Verb.VerbOb({ base: 'turn', pastForm: 'turned' }),
 	visit: new _Verb.VerbOb({ base: 'visit', pastForm: 'visited' }),
 	walk: new _Verb.VerbOb({ base: 'walk', pastForm: 'walked' }),

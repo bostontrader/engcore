@@ -27,6 +27,7 @@ const VDictOb = {
 	steal:  new VerbOb({base:'steal',  pastForm:'stole'}),
 	stop:   new VerbOb({base:'stop',   pastForm:'stopped'}),
 	take:   new VerbOb({base:'take',   pastForm:'took'}),
+	tell:   new VerbOb({base:'tell',   pastForm:'told'}),
 	turn:   new VerbOb({base:'turn',   pastForm:'turned'}),
 	visit:  new VerbOb({base:'visit',  pastForm:'visited'}),
 	walk:   new VerbOb({base:'walk',   pastForm:'walked'}),
