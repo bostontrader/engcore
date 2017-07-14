@@ -10,6 +10,7 @@ const VDictOb = {
 	go:     new VerbOb({base:'go',     pastForm:'went'}),
 	have:   new VerbOb({base:'have',   pastForm:'had'}),
 	inform: new VerbOb({base:'inform', pastForm:'informed'}),
+	jump:   new VerbOb({base:'jump',   pastForm:'jumped'}),
 	know:   new VerbOb({base:'know',   pastForm:'knew'}),
 	leave:  new VerbOb({base:'leave',  pastForm:'left'}),
 	look:   new VerbOb({base:'look',   pastForm:'looked'}),

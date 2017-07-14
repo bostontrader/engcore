@@ -17,6 +17,7 @@ var VDictOb = {
 	go: new _Verb.VerbOb({ base: 'go', pastForm: 'went' }),
 	have: new _Verb.VerbOb({ base: 'have', pastForm: 'had' }),
 	inform: new _Verb.VerbOb({ base: 'inform', pastForm: 'informed' }),
+	jump: new _Verb.VerbOb({ base: 'jump', pastForm: 'jumped' }),
 	know: new _Verb.VerbOb({ base: 'know', pastForm: 'knew' }),
 	leave: new _Verb.VerbOb({ base: 'leave', pastForm: 'left' }),
 	look: new _Verb.VerbOb({ base: 'look', pastForm: 'looked' }),
