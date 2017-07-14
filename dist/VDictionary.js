@@ -14,6 +14,7 @@ var VDictOb = {
 	come: new _Verb.VerbOb({ base: 'come', pastForm: 'came' }),
 	do: new _Verb.VerbOb({ base: 'do', pastForm: 'did' }),
 	fall: new _Verb.VerbOb({ base: 'fall', pastForm: 'fell' }),
+	fan: new _Verb.VerbOb({ base: 'fan', pastForm: 'fanned' }),
 	find: new _Verb.VerbOb({ base: 'find', pastForm: 'found' }),
 	fly: new _Verb.VerbOb({ base: 'fly', pastForm: 'flew' }),
 	go: new _Verb.VerbOb({ base: 'go', pastForm: 'went' }),

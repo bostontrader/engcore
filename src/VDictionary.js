@@ -7,6 +7,7 @@ const VDictOb = {
 	come:   new VerbOb({base:'come',   pastForm:'came'}),
 	do:     new VerbOb({base:'do',     pastForm:'did'}),
 	fall:   new VerbOb({base:'fall',   pastForm:'fell'}),
+	fan:    new VerbOb({base:'fan',    pastForm:'fanned'}),
 	find:   new VerbOb({base:'find',   pastForm:'found'}),
 	fly:    new VerbOb({base:'fly',    pastForm:'flew'}),
 	go:     new VerbOb({base:'go',     pastForm:'went'}),
