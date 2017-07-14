@@ -31,6 +31,7 @@ const VDictOb = {
 	visit:  new VerbOb({base:'visit',  pastForm:'visited'}),
 	walk:   new VerbOb({base:'walk',   pastForm:'walked'}),
 	wash:   new VerbOb({base:'wash',   pastForm:'washed'}),
+	wish:   new VerbOb({base:'wish',   pastForm:'wished'}),
 	work:   new VerbOb({base:'work',   pastForm:'worked'}),
 }
 

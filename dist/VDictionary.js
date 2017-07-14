@@ -38,6 +38,7 @@ var VDictOb = {
 	visit: new _Verb.VerbOb({ base: 'visit', pastForm: 'visited' }),
 	walk: new _Verb.VerbOb({ base: 'walk', pastForm: 'walked' }),
 	wash: new _Verb.VerbOb({ base: 'wash', pastForm: 'washed' }),
+	wish: new _Verb.VerbOb({ base: 'wish', pastForm: 'wished' }),
 	work: new _Verb.VerbOb({ base: 'work', pastForm: 'worked' })
 };
 
