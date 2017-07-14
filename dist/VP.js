@@ -134,11 +134,9 @@ var VPGenerateText = function VPGenerateText(vp) {
 				//if (vp.future) return 'will be ' + vp.verb.base + 'ing'
 
 			}
+		} else if (vp.infinitive) {
+			return 'to ' + vp.verb.base;
 		}
-
-		//else if(vp.infinitive) {
-		//return 'to ' + vp.verb.base
-		//}
 
 		//else if(vp.passive) {
 		//switch(vp.tense) {

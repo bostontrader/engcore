@@ -120,9 +120,9 @@ const VPGenerateText = (vp) => {
 
 	}
 
-	//else if(vp.infinitive) {
-		//return 'to ' + vp.verb.base
-	//}
+	else if(vp.infinitive) {
+		return 'to ' + vp.verb.base
+	}
 
 	//else if(vp.passive) {
 		//switch(vp.tense) {
