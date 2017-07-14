@@ -23,6 +23,7 @@ var VDictOb = {
 	look: new _Verb.VerbOb({ base: 'look', pastForm: 'looked' }),
 	place: new _Verb.VerbOb({ base: 'place', pastForm: 'placed' }),
 	play: new _Verb.VerbOb({ base: 'play', pastForm: 'played' }),
+	put: new _Verb.VerbOb({ base: 'put', pastForm: 'put' }),
 	run: new _Verb.VerbOb({ base: 'run', pastForm: 'ran' }),
 	say: new _Verb.VerbOb({ base: 'say', pastForm: 'said' }),
 	see: new _Verb.VerbOb({ base: 'see', pastForm: 'saw' }),

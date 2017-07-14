@@ -16,6 +16,7 @@ const VDictOb = {
 	look:   new VerbOb({base:'look',   pastForm:'looked'}),
 	place:  new VerbOb({base:'place',  pastForm:'placed'}),
 	play:   new VerbOb({base:'play',   pastForm:'played'}),
+	put:    new VerbOb({base:'put',    pastForm:'put'}),
 	run:    new VerbOb({base:'run',    pastForm:'ran'}),
 	say:    new VerbOb({base:'say',    pastForm:'said'}),
 	see:    new VerbOb({base:'see',    pastForm:'saw'}),
