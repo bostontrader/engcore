@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.VPOb = exports.VPGenerateText = exports.VGenerateText = exports.VDictOb = exports.Tense = exports.Schema = exports.PronounType = exports.ProOb = exports.ProGenerateText = exports.PrePOb = exports.PrePGenerateText = exports.PreDictOb = exports.PreOb = exports.Person = exports.NPOb = exports.NPGenerateText = exports.Plurality = exports.NounOb = exports.NGenerateText = exports.NDictOb = exports.Gender = exports.AdjDictOb = exports.AdjGenerateText = undefined;
+exports.VPOb = exports.VPGenerateText = exports.VGenerateText = exports.VDictOb = exports.Tense = exports.Schema = exports.PronounType = exports.ProOb = exports.ProGenerateText = exports.PrePOb = exports.PrePGenerateText = exports.PreDictOb = exports.PreOb = exports.Person = exports.NPOb = exports.NPGenerateText = exports.Plurality = exports.NounOb = exports.NGenerateText = exports.NErrors = exports.NDictOb = exports.Gender = exports.AdjDictOb = exports.AdjGenerateText = undefined;
 
 var _Adjective = require('./Adjective');
 
@@ -47,6 +47,7 @@ exports.AdjGenerateText = _Adjective.AdjGenerateText;
 exports.AdjDictOb = _AdjDictionary.AdjDictOb;
 exports.Gender = _Gender2.default;
 exports.NDictOb = _NDictionary.NDictOb;
+exports.NErrors = _Noun.NErrors;
 exports.NGenerateText = _Noun.NGenerateText;
 exports.NounOb = _Noun.NounOb;
 exports.Plurality = _Noun.Plurality;

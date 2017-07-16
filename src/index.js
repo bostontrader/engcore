@@ -2,6 +2,7 @@ import {AdjGenerateText}  from './Adjective'
 import {AdjDictOb}        from './AdjDictionary'
 import Gender             from './Gender'
 import {NDictOb}          from './NDictionary'
+import {NErrors}          from './Noun'
 import {NGenerateText}    from './Noun'
 import {NounOb}           from './Noun'
 import {Plurality}        from './Noun'
@@ -26,6 +27,7 @@ export {AdjGenerateText}
 export {AdjDictOb}
 export {Gender}
 export {NDictOb}
+export {NErrors}
 export {NGenerateText}
 export {NounOb}
 export {Plurality}

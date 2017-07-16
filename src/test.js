@@ -4,6 +4,7 @@ import {AdjGenerateText}  from './Adjective'
 import {AdjDictOb}        from './AdjDictionary'
 import Gender             from './Gender'
 import {NDictOb}          from './NDictionary'
+import {NErrors}          from './Noun'
 import {NGenerateText}    from './Noun'
 import {Plurality}        from './Noun'
 import {NPGenerateText}   from './NP'
@@ -21,10 +22,15 @@ import {VGenerateText}    from './Verb'
 import {VPGenerateText}   from './VP'
 import {VPOb}             from './VP'
 
-test('everything', function (t) {
+test('nouns', function(t) {
+	t.deepEqual(NGenerateText({}),{e:NErrors.NOUN_BASE_UNDEFINED})
+	t.equal(NGenerateText(NDictOb.cat),'cat')
+	t.end()
+})
+
+test.skip('everything else', function (t) {
 
 	t.equal(AdjGenerateText(AdjDictOb.big),'big')
-	t.equal(NGenerateText(NDictOb.cat),'cat')
 	t.equal(NPGenerateText(new NPOb({noun:NDictOb.cat})),'cat')
 
 	t.equal(ProGenerateText(new ProOb({})),null)
