@@ -15,6 +15,8 @@ var _Gender2 = _interopRequireDefault(_Gender);
 
 var _NDictionary = require('./NDictionary');
 
+var _NDictionary2 = _interopRequireDefault(_NDictionary);
+
 var _Noun = require('./Noun');
 
 var _NP = require('./NP');
@@ -46,7 +48,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.AdjGenerateText = _Adjective.AdjGenerateText;
 exports.AdjDictOb = _AdjDictionary.AdjDictOb;
 exports.Gender = _Gender2.default;
-exports.NDictOb = _NDictionary.NDictOb;
+exports.NDictOb = _NDictionary2.default;
 exports.NErrors = _Noun.NErrors;
 exports.NGenerateText = _Noun.NGenerateText;
 exports.NounOb = _Noun.NounOb;
