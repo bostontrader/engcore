@@ -44,4 +44,4 @@ const VDictOb = {
 	work:   new VerbOb({base:'work',   pastForm:'worked'}),
 }
 
-export {VDictOb}
+export default VDictOb

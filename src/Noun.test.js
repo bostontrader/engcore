@@ -1,34 +1,43 @@
-import test from 'tape'
+import test from 'ava'
 
-import {AdjGenerateText}  from './Adjective'
-import {AdjDictOb}        from './AdjDictionary'
-import Gender             from './Gender'
-import NDictOb            from './NDictionary'
-import {NErrors}          from './Noun'
-import {NGenerateText}    from './Noun'
-import {Plurality}        from './Noun'
-import {NPGenerateText}   from './NP'
-import {NPOb}             from './NP'
-import Person             from './Person'
-import {PreDictOb}        from './PreDictionary'
-import {PrePGenerateText} from './PreP'
-import {PrePOb}           from './PreP'
-import {ProGenerateText}  from './Pronoun'
-import {PronounType}      from './Pronoun'
-import {ProOb}            from './Pronoun'
-import {VDictOb}          from './VDictionary'
-import {Tense}            from './Verb'
-import {VGenerateText}    from './Verb'
-import {VPGenerateText}   from './VP'
-import {VPOb}             from './VP'
+import NDictOb         from './NDictionary'
+import {NErrors}       from './Noun'
+import {NGenerateText} from './Noun'
+import {NounOb}        from './Noun'
 
-test('nouns', function(t) {
+//import {AdjGenerateText}  from './Adjective'
+//import {AdjDictOb}        from './AdjDictionary'
+//import Gender             from './Gender'
+//import {Plurality}        from './Noun'
+//import {NPOb}             from './NP'
+//import Person             from './Person'
+//import {PreDictOb}        from './PreDictionary'
+//import {PrePGenerateText} from './PreP'
+//import {PrePOb}           from './PreP'
+//import {ProGenerateText}  from './Pronoun'
+//import {PronounType}      from './Pronoun'
+//import {ProOb}            from './Pronoun'
+//import {VDictOb}          from './VDictionary'
+//import {Tense}            from './Verb'
+//import {VGenerateText}    from './Verb'
+//import {VPGenerateText}   from './VP'
+//import {VPOb}             from './VP'
+
+test(t => {
+	t.deepEqual([1, 2], [1, 2])
+	t.deepEqual(NGenerateText({}),{e:NErrors.NOUN_BASE_UNDEFINED})
+	t.is(NGenerateText(NDictOb.cat),'cat')
+	t.is(NGenerateText(new NounOb({base:'sally', proper:true})),'Sally')
+
+})
+
+/*test('nouns', function(t) {
 	t.deepEqual(NGenerateText({}),{e:NErrors.NOUN_BASE_UNDEFINED})
 	t.equal(NGenerateText(NDictOb.cat),'cat')
 	t.end()
-})
+})*/
 
-test.skip('everything else', function (t) {
+/*test.skip('everything else', function (t) {
 
 	t.equal(AdjGenerateText(AdjDictOb.big),'big')
 	t.equal(NPGenerateText(new NPOb({noun:NDictOb.cat})),'cat')
@@ -258,14 +267,14 @@ test.skip('everything else', function (t) {
 	// The simple past is used for a single event in the past, for past habitual action, or for a past state:
 
 	// He took the money and ran.
-	t.equal(VPGenerateText(new VPOb({verb:VDictOb.take, tense:Tense.Past})),'took')
-	t.equal(VPGenerateText(new VPOb({verb:VDictOb.run, tense:Tense.Past})),'ran')
+	//t.equal(VPGenerateText(new VPOb({verb:VDictOb.take, tense:Tense.Past})),'took')
+	//t.equal(VPGenerateText(new VPOb({verb:VDictOb.run, tense:Tense.Past})),'ran')
 //
 	// I visited them every day for a year.
-	t.equal(VPGenerateText(new VPOb({verb:VDictOb.visit, tense:Tense.Past})),'visited')
+	//t.equal(VPGenerateText(new VPOb({verb:VDictOb.visit, tense:Tense.Past})),'visited')
 
 	// I knew how to fight even as a child.
-	t.equal(VPGenerateText(new VPOb({verb:VDictOb.know, tense:Tense.Past})),'knew')
+	//t.equal(VPGenerateText(new VPOb({verb:VDictOb.know, tense:Tense.Past})),'knew')
 
 
 
@@ -277,10 +286,10 @@ test.skip('everything else', function (t) {
 	//The simple past is often close in meaning to the present perfect. The simple past is used when the event is conceived as occurring at a particular time in the past, or during a period that ended in the past (i.e. it does not last up until the present time). This time frame may be explicitly stated, or implicit in the context (for example the past tense is often used when describing a sequence of past events).
 
 	// I was born in 1980.
-	t.equal(VPGenerateText(new VPOb({verb:VDictOb.be, tense:Tense.Past})),'was')
+//	t.equal(VPGenerateText(new VPOb({verb:VDictOb.be, tense:Tense.Past})),'was')
 
 	// We turned the oven off two minutes ago.
-	t.equal(VPGenerateText(new VPOb({verb:VDictOb.turn, tense:Tense.Past})),'turned')
+	//t.equal(VPGenerateText(new VPOb({verb:VDictOb.turn, tense:Tense.Past})),'turned')
 
 	// She placed the letter on the table, sighed, and left the house.
 	//t.equal(VPGenerateText(new VPOb({verb:VDictOb.place, tense:Tense.Past})),'placed')
@@ -1175,6 +1184,6 @@ This construction is used for ongoing action in the past that continues right up
 
 
 
-	t.end()
+	//t.end()
 
-})
+//})
