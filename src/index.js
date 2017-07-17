@@ -45,6 +45,7 @@ export {PronounType}
 export {Schema}
 export {Tense}
 export {VDictOb}
+export {VerbOb}
 export {VGenerateText}
 export {VPGenerateText}
 export {VPOb}
