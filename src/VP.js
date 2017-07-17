@@ -18,6 +18,7 @@ function VPOb(props) {
 	this.continuous = props.continuous || false
 	this.tense = props.tense
 	this.person = props.person
+	this.plurality = props.plurality
 	this.passive = props.passive || false
 
 	// A finite verb phrase is one that can be the main verb of a sentence. A non-finite
@@ -141,19 +142,17 @@ const VPGenerateText = (vp) => {
 	else { // else simple
 
 		//const negate = vp.negate ? 'do not ' : ''
-
 		switch(vp.tense) {
 			case Tense.Past:
 				//return negate + getPastForm(vp.verb)
 				return getPastForm(vp.verb)
 
-			//case Tense.Present:
-				//if(vp.person === Person.Third && vp.plurality === Plurality.Singular)
-					//if (vp.negate)
-						//return 'does not ' + vp.verb.base
-					//else
-						//return vp.verb.base + 's'
-
+			case Tense.Present:
+				if(vp.person === Person.Third && vp.plurality === Plurality.Singular)
+					if (vp.negate)
+						return 'does not ' + vp.verb.base
+					else
+						return vp.verb.base + 's'
 				//return negate + vp.verb.base
 
 			//default:
