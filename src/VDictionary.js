@@ -11,7 +11,7 @@ const VDictOb = {
 	fan:    new VerbOb({base:'fan',    pastForm:'fanned'}),
 	find:   new VerbOb({base:'find',   pastForm:'found'}),
 	fly:    new VerbOb({base:'fly',    pastForm:'flew'}),
-	give:   new VerbOb({base:'give',   pastForm:'gave'}),
+	get:    new VerbOb({base:'get',    pastForm:'got'}),
 	go:     new VerbOb({base:'go',     pastForm:'went'}),
 	have:   new VerbOb({base:'have',   pastForm:'had'}),
 	hit:    new VerbOb({base:'hit',    pastForm:'hit'}),
