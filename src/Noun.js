@@ -24,10 +24,9 @@ const NGenerateText = (noun, pluralFormRequested=false) => {
 	if(!noun.base)
 		return {e:'Noun base undefined'}
 
-	//const base = (noun.proper) ? noun.base.charAt(0).toUpperCase() + noun.base.slice(1) : noun.base
-	const base = noun.base
+	const base = (noun.proper) ? noun.base.charAt(0).toUpperCase() + noun.base.slice(1) : noun.base
 
-	//if(pluralFormRequested) {
+	if(pluralFormRequested) {
 
 		// If an irregular form of the plural exists, then use it.
 		//const p = noun.get('plural')
@@ -47,13 +46,13 @@ const NGenerateText = (noun, pluralFormRequested=false) => {
 		//if( ('aeiouAEIOU'.indexOf(c3) < 0) && c1 === 'y')
 			//return c4 + 'ies'
 
-		//return base + 's'
-	//}
+		return base + 's'
+	}
 
 	return base
 }
 
-export {NounOb}
 export {NErrors}
 export {NGenerateText}
+export {NounOb}
 export {Plurality}

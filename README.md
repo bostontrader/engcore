@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bostontrader/engcore.svg?branch=master)](https://travis-ci.org/bostontrader/engcore)
+[![Coverage Status](https://coveralls.io/repos/github/bostontrader/engcore/badge.svg?branch=master)](https://coveralls.io/github/bostontrader/engcore?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/bostontrader/engcore/badge.svg)](https://snyk.io/test/github/bostontrader/engcore)
 
 # Welcome to engcore
@@ -18,7 +19,7 @@ exactly the same way.
 
 ## What you need to know
 
-**engcore** is written using ES2015.  It uses tape for testing. In order to run the test you may want to use babel-node. This comes from the babel-cli package.
+**engcore** is written using ES2015.  It uses tape for testing. In order to run the test you may want to use babel-node. This comes from the babel-cli package.  We use coveralls for test coverage analysis.
 
 **engcore** is meant to be a library. The only thing we execute in this package is the test.  **npm test** does that.
 
