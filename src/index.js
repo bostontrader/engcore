@@ -20,7 +20,7 @@ import {PrePOb}           from './PreP'
 import {ProErrors}        from './Pro'
 import {ProGenerateText}  from './Pro'
 import {ProOb}            from './Pro'
-import {PronounType}      from './Pro'
+import {ProType}          from './Pro'
 import Schema             from './SchemaConstants'
 import VDictOb            from './VDictionary'
 import {Tense}            from './Verb'
@@ -52,7 +52,7 @@ export {PrePOb}
 export {ProErrors}
 export {ProGenerateText}
 export {ProOb}
-export {PronounType}
+export {ProType}
 export {Schema}
 export {Tense}
 export {VDictOb}
