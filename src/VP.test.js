@@ -4,8 +4,8 @@ import {Plurality}      from './Noun'
 import Person           from './Person'
 import VDictOb          from './VDictionary'
 import {Tense}          from './Verb'
-import {UNKGenerateText} from './UNK'
-import {UNKOb}           from './UNK'
+import {UnkGenerateText} from './Unk'
+import {UnkOb}           from './Unk'
 import {VPGenerateText} from './VP'
 import {VPOb}           from './VP'
 
@@ -29,8 +29,8 @@ import {VPOb}           from './VP'
 		t.is(VPGenerateText(new VPOb({verb:VDictOb.play, infinitive:true})),'to play')
 		t.is(VPGenerateText(new VPOb({verb:VDictOb.look, person:Person.Third, tense:Tense.Present, plurality:Plurality.Singular})),'looks')
 
-		const c1 = VPGenerateText(new VPOb({verb:VDictOb.shine}))
-		const c2 = UnkGenerateText(new UnkOb({base:'did not'}))
+		const c1 = new VPOb({verb:VDictOb.shine, prepend:new UnkOb({base:'did not'})})
+		const c2 = VPGenerateText(c1)
 		console.log(32,c1,c2)
 
 		// https://en.wikipedia.org/wiki/Uses_of_English_verb_forms
