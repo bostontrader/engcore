@@ -6,9 +6,17 @@ function PreOb(props) {
 	this.base = props.base
 }
 
+const PreErrors = {
+	'PRE_BASE_UNDEFINED':'Pre base undefined'
+}
+
 const PreGenerateText = (pre) => {
+	if(!pre.base)
+		return {e:PreErrors.PRE_BASE_UNDEFINED}
+
 	return pre.base
 }
 
-export {PreOb}
+export {PreErrors}
 export {PreGenerateText}
+export {PreOb}

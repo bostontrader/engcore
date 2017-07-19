@@ -11,6 +11,7 @@ import {NPErrors}         from './NP'
 import {NPGenerateText}   from './NP'
 import {NPOb}             from './NP'
 import Person             from './Person'
+import {PreErrors}        from './Pre'
 import {PreOb}            from './Pre'
 import PreDictOb          from './PreDictionary'
 import {PrePGenerateText} from './PreP'
@@ -41,8 +42,9 @@ export {Plurality}
 export {NPGenerateText}
 export {NPOb}
 export {Person}
-export {PreOb}
 export {PreDictOb}
+export {PreErrors}
+export {PreOb}
 export {PrePGenerateText}
 export {PrePOb}
 export {ProErrors}
