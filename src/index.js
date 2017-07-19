@@ -7,6 +7,7 @@ import {NErrors}          from './Noun'
 import {NGenerateText}    from './Noun'
 import {NounOb}           from './Noun'
 import {Plurality}        from './Noun'
+import {NPErrors}         from './NP'
 import {NPGenerateText}   from './NP'
 import {NPOb}             from './NP'
 import Person             from './Person'
@@ -26,12 +27,14 @@ import {VGenerateText}    from './Verb'
 import {VPGenerateText}   from './VP'
 import {VPOb}             from './VP'
 
+export {AdjErrors}
 export {AdjGenerateText}
 export {AdjDictOb}
 export {Gender}
 export {NDictOb}
 export {NErrors}
 export {NGenerateText}
+export {NPErrors}
 export {NounOb}
 export {Plurality}
 export {NPGenerateText}
@@ -48,6 +51,7 @@ export {Schema}
 export {Tense}
 export {VDictOb}
 export {VerbOb}
+export {VErrors}
 export {VGenerateText}
 export {VPGenerateText}
 export {VPOb}

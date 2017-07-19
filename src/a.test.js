@@ -1,14 +1,11 @@
-//import test from 'tape'
 import test from 'ava'
 
-//import {AdjGenerateText}  from './Adjective'
 import {AdjDictOb}        from './AdjDictionary'
 //import Gender             from './Gender'
 //import NDictOb            from './NDictionary'
 //import {NErrors}          from './Noun'
 //import {NGenerateText}    from './Noun'
 //import {Plurality}        from './Noun'
-//import {NPGenerateText}   from './NP'
 //import {NPOb}             from './NP'
 //import Person             from './Person'
 //import {PreDictOb}        from './PreDictionary'
@@ -24,27 +21,11 @@ import {AdjDictOb}        from './AdjDictionary'
 //import {VPOb}             from './VP'
 
 test(t => {
-	t.true(true)
-	//t.true(Object.keys(AdjDictOb).length > 0)
-	//console.log(Object.keys(AdjDictOb))
-	//t.deepEqual([1, 2], [1, 2])
-	//t.deepEqual(NGenerateText({}),{e:NErrors.NOUN_BASE_UNDEFINED})
-	//t.is(NGenerateText(NDictOb.cat),'cat')
-	//t.is(NGenerateText(new NounOb({base:'sally', proper:true})),'Sallyy')
-
-	//new NounOb({base:'arctic', proper:true})
+	t.pass()
 })
-
-/*test('nouns', function(t) {
-	t.deepEqual(NGenerateText({}),{e:NErrors.NOUN_BASE_UNDEFINED})
-	t.equal(NGenerateText(NDictOb.cat),'cat')
-	t.end()
-})*/
 
 /*test.skip('everything else', function (t) {
 
-	t.equal(AdjGenerateText(AdjDictOb.big),'big')
-	t.equal(NPGenerateText(new NPOb({noun:NDictOb.cat})),'cat')
 
 	t.equal(ProGenerateText(new ProOb({})),null)
 	t.equal(ProGenerateText(new ProOb({type:PronounType.Subject, person:Person.NoneSelected, plurality:Plurality.NoneSelected, gender:Gender.Male})),null)
