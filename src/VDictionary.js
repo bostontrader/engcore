@@ -4,6 +4,7 @@ const VDictOb = {
 	arrive: new VerbOb({base:'arrive', pastForm:'arrived'}),
 	be:     new VerbOb({base:'be',     pastForm:'was'}),
 	bend:   new VerbOb({base:'bend',   pastForm:'bent'}),
+	bet:    new VerbOb({base:'bet',    pastForm:'bet'}),
 	bite:   new VerbOb({base:'bite',   pastForm:'bit'}),
 	bump:   new VerbOb({base:'bump',   pastForm:'bumped'}),
 	call:   new VerbOb({base:'call',   pastForm:'called'}),
