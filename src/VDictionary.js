@@ -2,6 +2,7 @@ import {VerbOb} from './Verb'
 
 const VDictOb = {
 	arrive: new VerbOb({base:'arrive', pastForm:'arrived'}),
+	ask:    new VerbOb({base:'ask',    pastForm:'asked'}),
 	be:     new VerbOb({base:'be',     pastForm:'was'}),
 	bend:   new VerbOb({base:'bend',   pastForm:'bent'}),
 	bet:    new VerbOb({base:'bet',    pastForm:'bet'}),
