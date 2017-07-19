@@ -50,6 +50,7 @@ const VDictOb = {
 	stop:   new VerbOb({base:'stop',   pastForm:'stopped'}),
 	take:   new VerbOb({base:'take',   pastForm:'took'}),
 	tell:   new VerbOb({base:'tell',   pastForm:'told'}),
+	think:  new VerbOb({base:'think',  pastForm:'thought'}),
 	thump:  new VerbOb({base:'thump',  pastForm:'thumped'}),
 	turn:   new VerbOb({base:'turn',   pastForm:'turned'}),
 	visit:  new VerbOb({base:'visit',  pastForm:'visited'}),
