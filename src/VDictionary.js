@@ -17,6 +17,7 @@ const VDictOb = {
 	give:   new VerbOb({base:'give',   pastForm:'gave'}),
 	go:     new VerbOb({base:'go',     pastForm:'went'}),
 	have:   new VerbOb({base:'have',   pastForm:'had'}),
+	hear:   new VerbOb({base:'hear',   pastForm:'heard'}),
 	hit:    new VerbOb({base:'hit',    pastForm:'hit'}),
 	hold:   new VerbOb({base:'hold',   pastForm:'held'}),
 	hop:    new VerbOb({base:'hop',    pastForm:'hopped'}),
