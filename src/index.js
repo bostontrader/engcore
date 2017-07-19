@@ -22,6 +22,9 @@ import {ProGenerateText}  from './Pro'
 import {ProOb}            from './Pro'
 import {ProType}          from './Pro'
 import Schema             from './SchemaConstants'
+import {UnkErrors}        from './Unk'
+import {UnkGenerateText}  from './Unk'
+import {UnkOb}            from './Unk'
 import VDictOb            from './VDictionary'
 import {Tense}            from './Verb'
 import {VerbOb}           from './Verb'
@@ -55,6 +58,9 @@ export {ProOb}
 export {ProType}
 export {Schema}
 export {Tense}
+export {UnkErrors}
+export {UnkGenerateText}
+export {UnkOb}
 export {VDictOb}
 export {VerbOb}
 export {VErrors}
