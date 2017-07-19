@@ -15,9 +15,10 @@ import {PreOb}            from './Pre'
 import PreDictOb          from './PreDictionary'
 import {PrePGenerateText} from './PreP'
 import {PrePOb}           from './PreP'
-import {ProGenerateText}  from './Pronoun'
-import {ProOb}            from './Pronoun'
-import {PronounType}      from './Pronoun'
+import {ProErrors}        from './Pro'
+import {ProGenerateText}  from './Pro'
+import {ProOb}            from './Pro'
+import {PronounType}      from './Pro'
 import Schema             from './SchemaConstants'
 import VDictOb            from './VDictionary'
 import {Tense}            from './Verb'
@@ -44,6 +45,7 @@ export {PreOb}
 export {PreDictOb}
 export {PrePGenerateText}
 export {PrePOb}
+export {ProErrors}
 export {ProGenerateText}
 export {ProOb}
 export {PronounType}
