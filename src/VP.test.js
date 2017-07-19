@@ -29,10 +29,7 @@ import {VPOb}           from './VP'
 		t.is(VPGenerateText(new VPOb({verb:VDictOb.play, infinitive:true})),'to play')
 		t.is(VPGenerateText(new VPOb({verb:VDictOb.look, person:Person.Third, tense:Tense.Present, plurality:Plurality.Singular})),'looks')
 
-		const c1 = new VPOb({verb:VDictOb.shine, prepend:new UnkOb({base:'did not'})})
-		const c2 = VPGenerateText(c1)
-		console.log(32,c1,c2)
-
+		t.is(VPGenerateText(new VPOb({verb:VDictOb.shine, prepend:new UnkOb({base:'did not'})})),'did not shine')
 		// https://en.wikipedia.org/wiki/Uses_of_English_verb_forms
 		/*
 		This article describes the uses of various verb forms in the English language. This includes:

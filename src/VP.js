@@ -1,7 +1,8 @@
-import {Plurality} from './Noun'
-import Person      from './Person'
-import Schema      from './SchemaConstants'
-import {Tense}     from './Verb'
+import {Plurality}       from './Noun'
+import Person            from './Person'
+import Schema            from './SchemaConstants'
+import {UnkGenerateText} from './Unk'
+import {Tense}           from './Verb'
 
 function VPOb(props) {
 
@@ -168,6 +169,8 @@ const VPGenerateText = (vp) => {
 
 	}
 
+	if(vp.prepend)
+		retVal = UnkGenerateText(vp.prepend) + ' ' + retVal
 	return retVal
 }
 
