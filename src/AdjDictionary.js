@@ -1,4 +1,4 @@
-import {AdjOb} from './Adjective'
+import {AdjOb} from './Adj'
 
 const AdjDictOb = {
 	big:    new AdjOb({base:'big'}),

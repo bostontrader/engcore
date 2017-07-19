@@ -22,7 +22,7 @@ const NErrors = {
 const NGenerateText = (noun, pluralFormRequested=false) => {
 
 	if(!noun.base)
-		return {e:'Noun base undefined'}
+		return {e:NErrors.NOUN_BASE_UNDEFINED}
 
 	const base = (noun.proper) ? noun.base.charAt(0).toUpperCase() + noun.base.slice(1) : noun.base
 

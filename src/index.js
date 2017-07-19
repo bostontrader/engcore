@@ -1,4 +1,4 @@
-import {AdjGenerateText}  from './Adjective'
+import {AdjGenerateText}  from './Adj'
 import AdjDictOb          from './AdjDictionary'
 import Gender             from './Gender'
 import NDictOb            from './NDictionary'
