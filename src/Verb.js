@@ -1,17 +1,20 @@
 import Schema   from './SchemaConstants'
 
 function VerbOb(props) {
-    this.t = Schema.V.t
-    this.v = Schema.V.cv
+	this.t = Schema.V.t
+	this.v = Schema.V.cv
 
-    this.base     = props.base
-    this.pastForm = props.pastForm
-    this.sForm    = props.sForm
-    this.ingForm  = props.ingForm
-    this.ppForm   = props.ppForm
+	this.base     = props.base
+	this.pastForm = props.pastForm
+	this.sForm    = props.sForm
+	this.ingForm  = props.ingForm
+	this.ppForm   = props.ppForm
 
 }
 
+const VErrors = {
+	'VERB_BASE_UNDEFINED':'Verb base undefined'
+}
 // Tense:         Past or present?
 // Modal:        Modal or not?
 //    They could find or  They found
@@ -31,16 +34,20 @@ function VerbOb(props) {
 // See: https://en.wikipedia.org/wiki/Tense%E2%80%93aspect%E2%80%93mood
 
 const Tense = {
-    'NoneSelected':0,
-    'Past':      100,
-    'Present':   200,
+	'NoneSelected':0,
+	'Past':      100,
+	'Present':   200,
 }
 
-const VGenerateText = (verb, actionTime) => {
-    if(actionTime) return verb.base + 'ed'
-    return verb.base
+const VGenerateText = (verb) => {
+
+	if(!verb.base)
+		return {e:VErrors.VERB_BASE_UNDEFINED}
+
+	return verb.base
 }
 
 export {Tense}
 export {VerbOb}
+export {VErrors}
 export {VGenerateText}
