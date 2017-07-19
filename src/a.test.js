@@ -29,7 +29,7 @@ test(t => {
 
 
 
-	//t.equal(PrePGenerateText(new PrePOb({pre:PreDictOb.in, np:new NPOb({noun:NDictOb.hat, plurality:Plurality.Singular})})),'in the hat')
+
 
 	//t.equal(VGenerateText(VDictOb.play),'play')
 	//t.equal(VPGenerateText(new VPOb({verb:VDictOb.play, infinitive:true})),'to play')

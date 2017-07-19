@@ -14,6 +14,7 @@ import Person             from './Person'
 import {PreErrors}        from './Pre'
 import {PreOb}            from './Pre'
 import PreDictOb          from './PreDictionary'
+import {PrePErrors}       from './PreP'
 import {PrePGenerateText} from './PreP'
 import {PrePOb}           from './PreP'
 import {ProErrors}        from './Pro'
@@ -45,6 +46,7 @@ export {Person}
 export {PreDictOb}
 export {PreErrors}
 export {PreOb}
+export {PrePErrors}
 export {PrePGenerateText}
 export {PrePOb}
 export {ProErrors}
