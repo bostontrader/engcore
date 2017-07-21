@@ -9,11 +9,13 @@ If so, treat these nouns as with irregular plural.
  */
 
 const NDictOb = {
+	america:   new NounOb({base:'america', proper:true}),
 	arctic:    new NounOb({base:'arctic', proper:true}),
 	bakery:    new NounOb({base:'bakery'}),
 	ball:      new NounOb({base:'ball'}),
 	bathroom:  new NounOb({base:'bathroom'}),
 	bed:       new NounOb({base:'bed'}),
+	blessing:  new NounOb({base:'blessing'}),
 	box:       new NounOb({base:'box'}),
 	bow:       new NounOb({base:'bow'}),
 	bump:      new NounOb({base:'bump'}),
@@ -22,8 +24,10 @@ const NDictOb = {
 	cat:       new NounOb({base:'cat'}),
 	cake:      new NounOb({base:'cake'}),
 	coach:     new NounOb({base:'coach'}),
+	constitution: new NounOb({base:'constitution'}),
 	cup:       new NounOb({base:'cup'}),
 	day:       new NounOb({base:'day'}),
+	defense:   new NounOb({base:'defense'}),
 	dish:      new NounOb({base:'dish'}),
 	doctor:    new NounOb({base:'doctor'}),
 	dog:       new NounOb({base:'dog'}),
@@ -42,7 +46,9 @@ const NDictOb = {
 	house:     new NounOb({base:'house'}),
 	hook:      new NounOb({base:'hook'}),
 	job:       new NounOb({base:'job'}),
+	justice:   new NounOb({base:'justice'}),
 	kite:      new NounOb({base:'kite'}),
+	liberty:   new NounOb({base:'liberty'}),
 	look:      new NounOb({base:'look'}),
 	man:       new NounOb({base:'man'}),
 	mat:       new NounOb({base:'mat'}),
@@ -52,7 +58,9 @@ const NDictOb = {
 	milk:      new NounOb({base:'milk'}),
 	net:       new NounOb({base:'net'}),
 	pat:       new NounOb({base:'pat'}),
+	person:    new NounOb({base:'person'}),
 	plaything: new NounOb({base:'plaything'}),
+	posterity: new NounOb({base:'posterity'}),
 	pot:       new NounOb({base:'pot'}),
 	rake:      new NounOb({base:'rake'}),
 	sun:       new NounOb({base:'sun'}),
@@ -62,10 +70,14 @@ const NDictOb = {
 	tip:       new NounOb({base:'tip'}),
 	thief:     new NounOb({base:'thief'}),
 	thing:     new NounOb({base:'thing'}),
+	tranquility: new NounOb({base:'tranquility'}),
 	trick:     new NounOb({base:'trick'}),
 	top:       new NounOb({base:'top'}),
+	union:     new NounOb({base:'union'}),
+	state:     new NounOb({base:'state'}),
 	wall:      new NounOb({base:'wall'}),
 	way:       new NounOb({base:'way'}),
+	welfare:   new NounOb({base:'welfare'})
 }
 
 export default NDictOb
