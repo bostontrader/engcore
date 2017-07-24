@@ -35,6 +35,10 @@ import {VPErrors}           from './VP'
 import {VPGenerateText}     from './VP'
 import {VPOb}               from './VP'
 
+import AdjDict from './AdjDict'
+import NDict   from './NDict'
+import VDict   from './VDict'
+
 import Gender      from './Gender'
 import {Plurality} from './N'
 import Person      from './Person'
@@ -78,6 +82,10 @@ export {VOb}
 export {VPErrors}
 export {VPGenerateText}
 export {VPOb}
+
+export {AdjDict}
+export {NDict}
+export {VDict}
 
 export {Gender}
 export {Plurality}
