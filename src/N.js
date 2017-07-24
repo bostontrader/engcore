@@ -14,6 +14,7 @@ function NOb(props) {
 		this.proper = props.proper || false
 	}
 
+	this.base      = props.base || undefined
 	this.plurality = props.plurality || Plurality.Singular
 	this.genative  = props.genative || false
 }
