@@ -36,6 +36,7 @@ import {VPGenerateText}     from './VP'
 import {VPOb}               from './VP'
 
 import AdjDictOb from './AdjDict'
+import DetDictOb from './DetDict'
 import NDictOb   from './NDict'
 import VDictOb   from './VDict'
 
@@ -84,6 +85,7 @@ export {VPGenerateText}
 export {VPOb}
 
 export {AdjDictOb}
+export {DetDictOb}
 export {NDictOb}
 export {VDictOb}
 
