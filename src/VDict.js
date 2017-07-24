@@ -1,0 +1,80 @@
+/*
+ Although the inflected forms for most verbs can be generated according to a set of rules, that's too complicated to implement at this time. In addition, there are many, many irregularities that must simply be stored. Instead of getting distracted by this complexity, just store the different inflections.
+
+ Unfortunately, JSON is a chatty system and in order to store all these inflections for the many, many verbs, using ordinary JSON keys and values, we would develop a monstrously bloated dictionary object.  So instead, we've compacted this into a system of nested arrays. Please see V.js for a description of the structure.
+ */
+
+// Ordinary lexical verbs
+const VDictOb = {
+	arrive:  {inf:['',['','arrive'],'',',','']},
+	ask:     {inf:['',['','ask'],'',',','']},
+	bend:    {inf:['',['','bend'],'',',','']},
+	bet:     {inf:['',['','bet'],'',',','']},
+	bite:    {inf:['',['','bite'],'',',','']},
+	bump:    {inf:['',['','bump'],'',',','']},
+	call:    {inf:['',['','call'],'',',','']},
+	come:    {inf:['',['','come'],'',',','']},
+	establish:{inf:['',['','establish'],'',',','']},
+	fall:    {inf:['',['','fall'],'',',','']},
+	fan:     {inf:['',['','fan'],'',',','']},
+	find:    {inf:['',['','find'],'',',','']},
+	fly:     {inf:['',['','fly'],'',',','']},
+	form:    {inf:['',['','form'],'',',','']},
+	get:     {inf:['',['','get'],'',',','']},
+	give:    {inf:['',['','give'],'',',','']},
+	go:      {inf:['',['','go'],'',',','']},
+	hear:    {inf:['',['','hear'],'',',','']},
+	hit:     {inf:['',['','hit'],'',',','']},
+	hold:    {inf:['',['','hold'],'',',','']},
+	hop:     {inf:['',['','hop'],'',',','']},
+	inform:  {inf:['',['','inform'],'',',','']},
+	insure:  {inf:['',['','insure'],'',',','']},
+	jump:    {inf:['',['','jump'],'',',','']},
+	know:    {inf:['',['','know'],'',',','']},
+	leave:   {inf:['',['','leave'],'',',','']},
+	let:     {inf:['',['','let'],'',',','']},
+	like:    {inf:['',['','like'],'',',','']},
+	lit:     {inf:['',['','lit'],'',',','']},
+	look:    {inf:['',['','look'],'',',','']},
+	make:    {inf:['',['','make'],'',',','']},
+	ordain:  {inf:['',['','ordain'],'',',','']},
+	place:   {inf:['',['','place'],'',',','']},
+	play:    {inf:['',['','play'],'',',','']},
+	provide: {inf:['',['','provide'],'',',','']},
+	promote: {inf:['',['','promote'],'',',','']},
+	put:     {inf:['',['','put'],'',',','']},
+	run:     {inf:['',['','run'],'',',','']},
+	say:     {inf:['',['','say'],'',',','']},
+	secure:  {inf:['',['','secure'],'',',','']},
+	see:     {inf:['',['','see'],'',',','']},
+	shake:   {inf:['',['','shake'],'',',','']},
+	shut:    {inf:['',['','shut'],'',',','']},
+	shine:   {inf:['',['','shine'],'',',','']},
+	show:    {inf:['',['','show'],'',',','']},
+	sigh:    {inf:['',['','sigh'],'',',','']},
+	sink:    {inf:['',['','sink'],'',',','']},
+	sit:     {inf:['',['','sit'],'',',','']},
+	stand:   {inf:['',['','stand'],'',',','']},
+	steal:   {inf:['',['','steal'],'',',','']},
+	step:    {inf:['',['','step'],'',',','']},
+	stop:    {inf:['',['','stop'],'',',','']},
+	take:    {inf:['took',['takes','take'],'take','taking,','taken']},
+	tell:    {inf:['',['','tell'],'',',','']},
+	think:   {inf:['',['','think'],'',',','']},
+	thump:   {inf:['',['','thump'],'',',','']},
+	turn:    {inf:['',['','turn'],'',',','']},
+	visit:   {inf:['',['','visit'],'',',','']},
+	walk:    {inf:['',['','walk'],'',',','']},
+	want:    {inf:['',['','want'],'',',','']},
+	wash:    {inf:['',['','wash'],'',',','']},
+	wish:    {inf:['',['','wish'],'',',','']},
+	work:    {inf:['',['','work'],'',',','']}
+}
+
+/*
+ be:      new VOb({base:'be',     pastForm:'was'}),
+ do:      new VOb({base:'do',     pastForm:'did'}),
+ have:    new VOb({base:'have',   pastForm:'had'}),
+ )*/
+
+export default VDictOb

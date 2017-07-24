@@ -1,15 +1,26 @@
 import test from 'ava'
 
-import NDictOb            from './NDictionary'
-import {Plurality}        from './Noun'
+import {DetOb}            from './Det'
+import {NOb}              from './N'
+import {NomOb}            from './Nom'
 import {NPOb}             from './NP'
-import PreDictOb          from './PreDictionary'
+import {PreOb}            from './Pre'
 import {PrePErrors}       from './PreP'
-import {PrePOb}           from './PreP'
 import {PrePGenerateText} from './PreP'
+import {PrePOb}           from './PreP'
 
 test(t => {
 	t.deepEqual(PrePGenerateText({}),{e:PrePErrors.NO_PRE})
-	t.deepEqual(PrePGenerateText({pre:PreDictOb.in}),{e:PrePErrors.NO_NP})
-	t.is(PrePGenerateText(new PrePOb({pre:PreDictOb.in, np:new NPOb({noun:NDictOb.hat, plurality:Plurality.Singular})})),'in the hat')
+	t.deepEqual(PrePGenerateText({head:new PreOb({base:'in'})}),{e:PrePErrors.NO_NP})
+
+	t.is(PrePGenerateText(
+		new PrePOb({
+			head:new PreOb({base:'in'}),
+			np:new NPOb({
+				head:new NomOb({head:new NOb({base:'hat'})}),
+				det:new DetOb({base:'the'})}
+			)
+		})
+	),'in the hat')
+
 })

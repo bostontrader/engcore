@@ -1,6 +1,6 @@
 import Gender      from './Gender'
 import Person      from './Person'
-import {Plurality} from './Noun'
+import {Plurality} from './N'
 import Schema      from './SchemaConstants'
 
 function ProOb(props) {

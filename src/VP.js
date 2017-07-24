@@ -1,42 +1,42 @@
-import {Plurality}       from './Noun'
-import Person            from './Person'
-import Schema            from './SchemaConstants'
-import {UnkGenerateText} from './Unk'
-import {Tense}           from './Verb'
+//import {Plurality}       from './N'
+//import Person            from './Person'
+//import Schema            from './SchemaConstants'
+//import {UnkGenerateText} from './Unk'
+//import {Tense}           from './V'
 
 function VPOb(props) {
 
 	this.t = Schema.VP.t
 	this.v = Schema.VP.cv
 
+	// p50 the head of a verb phrase, aka the predicator, is a V
 	this.verb = props.verb
- 	this.prepend = props.prepend
 
 	// Given all these settings, a determined adversary can probably combine them into non-sensensical patterns.
 	// Instead of fretting about this possibility, a VP will merely operate upon the first sensible pattern that it
 	// recognizes.  Please see VPGenerateText to understand the exact method of recognition.
 
-	this.perfect = props.perfect || false
-	this.continuous = props.continuous || false
-	this.tense = props.tense
-	this.person = props.person
-	this.plurality = props.plurality
-	this.passive = props.passive || false
+	//this.perfect = props.perfect || false
+	//this.continuous = props.continuous || false
+	//this.tense = props.tense
+	//this.person = props.person
+	//this.plurality = props.plurality
+	//this.passive = props.passive || false
 
 	// A finite verb phrase is one that can be the main verb of a sentence. A non-finite
 	// verb is an infinitive, gerund or participle.
-	this.finite = props.finite || true
-	this.infinitive = props.infinitive || false
+	//this.finite = props.finite || true
+	//this.infinitive = props.infinitive || false
 
 }
 
 const VPGenerateText = (vp) => {
 
-	const getPastForm = verbob => (verbob.pastForm) ? verbob.pastForm : verbob.base + 'ed'
+	//const getPastForm = verbob => (verbob.pastForm) ? verbob.pastForm : verbob.base + 'ed'
 
-	let retVal = vp.verb.base
+	//let retVal = vp.verb.base
 
-	if(vp.perfect && vp.continuous) {
+	//if(vp.perfect && vp.continuous) {
 		//switch(vp.tense) {
 			//case Tense.Past:
 				//if(vp.person === Person.First) return 'had been ' + vp.verb.base + 'ing'
@@ -54,7 +54,7 @@ const VPGenerateText = (vp) => {
 				//if (vp.future) return 'will have been ' + vp.verb.base + 'ing'
 
 		//}
-	}
+	//}
 
 	//else if(vp.perfect) {
 
@@ -83,7 +83,7 @@ const VPGenerateText = (vp) => {
 
 	//}
 
-	else if(vp.continuous) {
+	//else if(vp.continuous) {
 
 		//if(vp.passive) {
 			//switch (vp.tense) {
@@ -96,17 +96,17 @@ const VPGenerateText = (vp) => {
 			//}
 		//}
 
-		switch(vp.tense) {
-			case Tense.Past:
-				if(vp.person === Person.First) retVal = 'was ' + vp.verb.base + 'ing'
-				if(vp.person === Person.Second) retVal = 'were ' + vp.verb.base + 'ing'
+		//switch(vp.tense) {
+			//case Tense.Past:
+				//if(vp.person === Person.First) retVal = 'was ' + vp.verb.base + 'ing'
+				//if(vp.person === Person.Second) retVal = 'were ' + vp.verb.base + 'ing'
 				//if(vp.person === Person.Third) {
 					//if (vp.plurality === Plurality.Singular)
 						//return 'was ' + vp.verb.base + 'ing'
 					//else
 						//return 'were ' + vp.verb.base + 'ing'
 				//}
-				break
+				//break
 
 			//case Tense.Present:
 				//const negate = vp.negate ? 'not ' : ''
@@ -122,13 +122,13 @@ const VPGenerateText = (vp) => {
 			//default:
 				//if (vp.future) return 'will be ' + vp.verb.base + 'ing'
 
-		}
+		//}
 
-	}
+	//}
 
-	else if(vp.infinitive) {
-		retVal = 'to ' + vp.verb.base
-	}
+	//else if(vp.infinitive) {
+		//retVal = 'to ' + vp.verb.base
+	//}
 
 	//else if(vp.passive) {
 		//switch(vp.tense) {
@@ -144,34 +144,34 @@ const VPGenerateText = (vp) => {
 		//}
 	//}
 
-	else { // else simple
+	//else { // else simple
 
 		//const negate = vp.negate ? 'do not ' : ''
-		switch(vp.tense) {
-			case Tense.Past:
+		//switch(vp.tense) {
+			//case Tense.Past:
 				//return negate + getPastForm(vp.verb)
-				retVal = getPastForm(vp.verb)
-				break
+				//retVal = getPastForm(vp.verb)
+				//break
 
-			case Tense.Present:
-				if(vp.person === Person.Third && vp.plurality === Plurality.Singular)
-					if (vp.negate)
-						retVal = 'does not ' + vp.verb.base
-					else
-						retVal = vp.verb.base + 's'
+			//case Tense.Present:
+				//if(vp.person === Person.Third && vp.plurality === Plurality.Singular)
+					//if (vp.negate)
+						//retVal = 'does not ' + vp.verb.base
+					//else
+						//retVal = vp.verb.base + 's'
 				//return negate + vp.verb.base
-				break
+				//break
 
 			//default:
 				//if (vp.future) return 'will ' + vp.verb.base
 
-		}
+		//}
 
-	}
+	//}
 
-	if(vp.prepend)
-		retVal = UnkGenerateText(vp.prepend) + ' ' + retVal
-	return retVal
+	//if(vp.prepend)
+		//retVal = UnkGenerateText(vp.prepend) + ' ' + retVal
+	//return retVal
 }
 
 export {VPGenerateText}

@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import PreDictOb from './PreDictionary'
+import PreDictOb from './PreDict'
 
 test(t => {
 	t.true(Object.keys(PreDictOb).length > 0)

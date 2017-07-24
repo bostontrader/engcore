@@ -1,0 +1,34 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.DetOb = exports.DetGenerateText = exports.DetErrors = undefined;
+
+var _SchemaConstants = require('./SchemaConstants');
+
+var _SchemaConstants2 = _interopRequireDefault(_SchemaConstants);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function DetOb(props) {
+	this.t = _SchemaConstants2.default.Det.t;
+	this.v = _SchemaConstants2.default.Det.cv;
+	this.base = props.base;
+}
+
+var DetErrors = {
+	'MISSING_BASE': 'This determinative does not have a base.'
+};
+
+var DetGenerateText = function DetGenerateText(det) {
+
+	if (!det.base) return { e: DetErrors.MISSING_BASE };
+
+	return det.base;
+};
+
+exports.DetErrors = DetErrors;
+exports.DetGenerateText = DetGenerateText;
+exports.DetOb = DetOb;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9EZXQuanMiXSwibmFtZXMiOlsiRGV0T2IiLCJwcm9wcyIsInQiLCJEZXQiLCJ2IiwiY3YiLCJiYXNlIiwiRGV0RXJyb3JzIiwiRGV0R2VuZXJhdGVUZXh0IiwiZGV0IiwiZSIsIk1JU1NJTkdfQkFTRSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOzs7Ozs7QUFFQSxTQUFTQSxLQUFULENBQWVDLEtBQWYsRUFBc0I7QUFDckIsTUFBS0MsQ0FBTCxHQUFTLDBCQUFPQyxHQUFQLENBQVdELENBQXBCO0FBQ0EsTUFBS0UsQ0FBTCxHQUFTLDBCQUFPRCxHQUFQLENBQVdFLEVBQXBCO0FBQ0EsTUFBS0MsSUFBTCxHQUFZTCxNQUFNSyxJQUFsQjtBQUNBOztBQUVELElBQU1DLFlBQVk7QUFDakIsaUJBQWU7QUFERSxDQUFsQjs7QUFJQSxJQUFNQyxrQkFBa0IsU0FBbEJBLGVBQWtCLENBQUNDLEdBQUQsRUFBUzs7QUFFaEMsS0FBRyxDQUFDQSxJQUFJSCxJQUFSLEVBQ0MsT0FBTyxFQUFDSSxHQUFFSCxVQUFVSSxZQUFiLEVBQVA7O0FBRUQsUUFBT0YsSUFBSUgsSUFBWDtBQUNBLENBTkQ7O1FBUVFDLFMsR0FBQUEsUztRQUNBQyxlLEdBQUFBLGU7UUFDQVIsSyxHQUFBQSxLIiwiZmlsZSI6IkRldC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBTY2hlbWEgZnJvbSAnLi9TY2hlbWFDb25zdGFudHMnXG5cbmZ1bmN0aW9uIERldE9iKHByb3BzKSB7XG5cdHRoaXMudCA9IFNjaGVtYS5EZXQudFxuXHR0aGlzLnYgPSBTY2hlbWEuRGV0LmN2XG5cdHRoaXMuYmFzZSA9IHByb3BzLmJhc2Vcbn1cblxuY29uc3QgRGV0RXJyb3JzID0ge1xuXHQnTUlTU0lOR19CQVNFJzonVGhpcyBkZXRlcm1pbmF0aXZlIGRvZXMgbm90IGhhdmUgYSBiYXNlLidcbn1cblxuY29uc3QgRGV0R2VuZXJhdGVUZXh0ID0gKGRldCkgPT4ge1xuXG5cdGlmKCFkZXQuYmFzZSlcblx0XHRyZXR1cm4ge2U6RGV0RXJyb3JzLk1JU1NJTkdfQkFTRX1cblxuXHRyZXR1cm4gZGV0LmJhc2Vcbn1cblxuZXhwb3J0IHtEZXRFcnJvcnN9XG5leHBvcnQge0RldEdlbmVyYXRlVGV4dH1cbmV4cG9ydCB7RGV0T2J9XG4iXX0=

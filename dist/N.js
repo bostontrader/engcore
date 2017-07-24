@@ -1,0 +1,69 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.Plurality = exports.NOb = exports.NGenerateText = exports.NErrors = undefined;
+
+var _NDict = require('./NDict');
+
+var _NDict2 = _interopRequireDefault(_NDict);
+
+var _SchemaConstants = require('./SchemaConstants');
+
+var _SchemaConstants2 = _interopRequireDefault(_SchemaConstants);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function NOb(props) {
+	this.t = _SchemaConstants2.default.N.t;
+	this.v = _SchemaConstants2.default.N.cv;
+
+	if ('base' in props && props.base in _NDict2.default) {
+		var n = _NDict2.default[props.base];
+		this.inf = n.inf;
+		this.proper = n.proper;
+	} else {
+		this.inf = props.inf || {};
+		this.proper = props.proper || false;
+	}
+
+	this.plurality = props.plurality || Plurality.Singular;
+	this.genative = props.genative || false;
+}
+
+var Plurality = {
+	'NoneSelected': 1,
+	'Singular': 100,
+	'Plural': 200
+
+	// 326. can be the head of a NP
+};var NErrors = {
+	'REQUESTED_INFLECTION_UNDEFINED': 'The requested inflection is undefined for this noun.'
+};
+
+var NGenerateText = function NGenerateText(nob) {
+
+	var retVal = void 0;
+
+	var inf_key = 's'; // by default we will use the singular, non-genative inflection
+	switch (nob.plurality) {
+		case Plurality.Plural:
+			inf_key = nob.genative ? 'pg' : 'p';
+			break;
+		default:
+			inf_key = nob.genative ? 'sg' : 's';
+	}
+
+	if (inf_key in nob.inf) retVal = nob.inf[inf_key];else retVal = { e: NErrors.REQUESTED_INFLECTION_UNDEFINED };
+
+	if (!retVal.e) retVal = nob.proper ? retVal.charAt(0).toUpperCase() + retVal.slice(1) : retVal;
+
+	return retVal;
+};
+
+exports.NErrors = NErrors;
+exports.NGenerateText = NGenerateText;
+exports.NOb = NOb;
+exports.Plurality = Plurality;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9OLmpzIl0sIm5hbWVzIjpbIk5PYiIsInByb3BzIiwidCIsIk4iLCJ2IiwiY3YiLCJiYXNlIiwibiIsImluZiIsInByb3BlciIsInBsdXJhbGl0eSIsIlBsdXJhbGl0eSIsIlNpbmd1bGFyIiwiZ2VuYXRpdmUiLCJORXJyb3JzIiwiTkdlbmVyYXRlVGV4dCIsIm5vYiIsInJldFZhbCIsImluZl9rZXkiLCJQbHVyYWwiLCJlIiwiUkVRVUVTVEVEX0lORkxFQ1RJT05fVU5ERUZJTkVEIiwiY2hhckF0IiwidG9VcHBlckNhc2UiLCJzbGljZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7OztBQUVBLFNBQVNBLEdBQVQsQ0FBYUMsS0FBYixFQUFvQjtBQUNuQixNQUFLQyxDQUFMLEdBQVMsMEJBQU9DLENBQVAsQ0FBU0QsQ0FBbEI7QUFDQSxNQUFLRSxDQUFMLEdBQVMsMEJBQU9ELENBQVAsQ0FBU0UsRUFBbEI7O0FBRUEsS0FBSSxVQUFVSixLQUFWLElBQW1CQSxNQUFNSyxJQUFOLG1CQUF2QixFQUE4QztBQUM3QyxNQUFNQyxJQUFJLGdCQUFRTixNQUFNSyxJQUFkLENBQVY7QUFDQSxPQUFLRSxHQUFMLEdBQWNELEVBQUVDLEdBQWhCO0FBQ0EsT0FBS0MsTUFBTCxHQUFjRixFQUFFRSxNQUFoQjtBQUNBLEVBSkQsTUFJTztBQUNOLE9BQUtELEdBQUwsR0FBY1AsTUFBTU8sR0FBTixJQUFhLEVBQTNCO0FBQ0EsT0FBS0MsTUFBTCxHQUFjUixNQUFNUSxNQUFOLElBQWdCLEtBQTlCO0FBQ0E7O0FBRUQsTUFBS0MsU0FBTCxHQUFpQlQsTUFBTVMsU0FBTixJQUFtQkMsVUFBVUMsUUFBOUM7QUFDQSxNQUFLQyxRQUFMLEdBQWlCWixNQUFNWSxRQUFOLElBQWtCLEtBQW5DO0FBQ0E7O0FBRUQsSUFBTUYsWUFBWTtBQUNqQixpQkFBZSxDQURFO0FBRWpCLGFBQWEsR0FGSTtBQUdqQixXQUFhOztBQUdkO0FBTmtCLENBQWxCLENBT0EsSUFBTUcsVUFBVTtBQUNmLG1DQUFpQztBQURsQixDQUFoQjs7QUFJQSxJQUFNQyxnQkFBZ0IsU0FBaEJBLGFBQWdCLENBQUNDLEdBQUQsRUFBUzs7QUFFOUIsS0FBSUMsZUFBSjs7QUFFQSxLQUFJQyxVQUFVLEdBQWQsQ0FKOEIsQ0FJWjtBQUNsQixTQUFPRixJQUFJTixTQUFYO0FBQ0MsT0FBS0MsVUFBVVEsTUFBZjtBQUNDRCxhQUFVRixJQUFJSCxRQUFKLEdBQWUsSUFBZixHQUFzQixHQUFoQztBQUNBO0FBQ0Q7QUFDQ0ssYUFBVUYsSUFBSUgsUUFBSixHQUFlLElBQWYsR0FBc0IsR0FBaEM7QUFMRjs7QUFRQSxLQUFHSyxXQUFXRixJQUFJUixHQUFsQixFQUNDUyxTQUFTRCxJQUFJUixHQUFKLENBQVFVLE9BQVIsQ0FBVCxDQURELEtBR0NELFNBQVMsRUFBQ0csR0FBRU4sUUFBUU8sOEJBQVgsRUFBVDs7QUFHRCxLQUFHLENBQUVKLE9BQU9HLENBQVosRUFDQ0gsU0FBVUQsSUFBSVAsTUFBTCxHQUFlUSxPQUFPSyxNQUFQLENBQWMsQ0FBZCxFQUFpQkMsV0FBakIsS0FBaUNOLE9BQU9PLEtBQVAsQ0FBYSxDQUFiLENBQWhELEdBQWtFUCxNQUEzRTs7QUFFRCxRQUFPQSxNQUFQO0FBQ0EsQ0F2QkQ7O1FBeUJRSCxPLEdBQUFBLE87UUFDQUMsYSxHQUFBQSxhO1FBQ0FmLEcsR0FBQUEsRztRQUNBVyxTLEdBQUFBLFMiLCJmaWxlIjoiTi5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBORGljdE9iIGZyb20gJy4vTkRpY3QnXG5pbXBvcnQgU2NoZW1hICBmcm9tICcuL1NjaGVtYUNvbnN0YW50cydcblxuZnVuY3Rpb24gTk9iKHByb3BzKSB7XG5cdHRoaXMudCA9IFNjaGVtYS5OLnRcblx0dGhpcy52ID0gU2NoZW1hLk4uY3ZcblxuXHRpZiAoJ2Jhc2UnIGluIHByb3BzICYmIHByb3BzLmJhc2UgaW4gTkRpY3RPYikge1xuXHRcdGNvbnN0IG4gPSBORGljdE9iW3Byb3BzLmJhc2VdXG5cdFx0dGhpcy5pbmYgICAgPSBuLmluZlxuXHRcdHRoaXMucHJvcGVyID0gbi5wcm9wZXJcblx0fSBlbHNlIHtcblx0XHR0aGlzLmluZiAgICA9IHByb3BzLmluZiB8fCB7fVxuXHRcdHRoaXMucHJvcGVyID0gcHJvcHMucHJvcGVyIHx8IGZhbHNlXG5cdH1cblxuXHR0aGlzLnBsdXJhbGl0eSA9IHByb3BzLnBsdXJhbGl0eSB8fCBQbHVyYWxpdHkuU2luZ3VsYXJcblx0dGhpcy5nZW5hdGl2ZSAgPSBwcm9wcy5nZW5hdGl2ZSB8fCBmYWxzZVxufVxuXG5jb25zdCBQbHVyYWxpdHkgPSB7XG5cdCdOb25lU2VsZWN0ZWQnOjEsXG5cdCdTaW5ndWxhcic6ICAxMDAsXG5cdCdQbHVyYWwnOiAgICAyMDAsXG59XG5cbi8vIDMyNi4gY2FuIGJlIHRoZSBoZWFkIG9mIGEgTlBcbmNvbnN0IE5FcnJvcnMgPSB7XG5cdCdSRVFVRVNURURfSU5GTEVDVElPTl9VTkRFRklORUQnOidUaGUgcmVxdWVzdGVkIGluZmxlY3Rpb24gaXMgdW5kZWZpbmVkIGZvciB0aGlzIG5vdW4uJ1xufVxuXG5jb25zdCBOR2VuZXJhdGVUZXh0ID0gKG5vYikgPT4ge1xuXG5cdGxldCByZXRWYWxcblxuXHRsZXQgaW5mX2tleSA9ICdzJyAvLyBieSBkZWZhdWx0IHdlIHdpbGwgdXNlIHRoZSBzaW5ndWxhciwgbm9uLWdlbmF0aXZlIGluZmxlY3Rpb25cblx0c3dpdGNoKG5vYi5wbHVyYWxpdHkpIHtcblx0XHRjYXNlIFBsdXJhbGl0eS5QbHVyYWw6XG5cdFx0XHRpbmZfa2V5ID0gbm9iLmdlbmF0aXZlID8gJ3BnJyA6ICdwJ1xuXHRcdFx0YnJlYWtcblx0XHRkZWZhdWx0OlxuXHRcdFx0aW5mX2tleSA9IG5vYi5nZW5hdGl2ZSA/ICdzZycgOiAncydcblx0fVxuXG5cdGlmKGluZl9rZXkgaW4gbm9iLmluZilcblx0XHRyZXRWYWwgPSBub2IuaW5mW2luZl9rZXldXG5cdGVsc2Vcblx0XHRyZXRWYWwgPSB7ZTpORXJyb3JzLlJFUVVFU1RFRF9JTkZMRUNUSU9OX1VOREVGSU5FRH1cblxuXG5cdGlmKCEocmV0VmFsLmUpKVxuXHRcdHJldFZhbCA9IChub2IucHJvcGVyKSA/IHJldFZhbC5jaGFyQXQoMCkudG9VcHBlckNhc2UoKSArIHJldFZhbC5zbGljZSgxKSA6IHJldFZhbFxuXG5cdHJldHVybiByZXRWYWxcbn1cblxuZXhwb3J0IHtORXJyb3JzfVxuZXhwb3J0IHtOR2VuZXJhdGVUZXh0fVxuZXhwb3J0IHtOT2J9XG5leHBvcnQge1BsdXJhbGl0eX1cbiJdfQ==

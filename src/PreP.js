@@ -6,7 +6,7 @@ function PrePOb(props) {
 	this.t = Schema.PreP.t
 	this.v = Schema.PreP.cv
 
-	this.pre = props.pre
+	this.head = props.head
 	this.np = props.np
 }
 
@@ -17,13 +17,13 @@ const PrePErrors = {
 
 const PrePGenerateText = (prep) => {
 
-	if(!prep.pre)
+	if(!prep.head)
 		return {e:PrePErrors.NO_PRE}
 
 	if(!prep.np)
 		return {e:PrePErrors.NO_NP}
 
-	return prep.pre.base + ' ' + NPGenerateText(prep.np)
+	return prep.head.base + ' ' + NPGenerateText(prep.np)
 }
 
 export {PrePErrors}

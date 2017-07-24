@@ -7,6 +7,7 @@ function ClauseOb(props) {
 	this.t = Schema.Clause.t
 	this.v = Schema.Clause.cv
 
+	// p50 the head of a clause, aka the predicate is a VP
 	this.np = props.np
 	this.vp = props.vp
 

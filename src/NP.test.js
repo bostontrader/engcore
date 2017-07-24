@@ -1,11 +1,11 @@
 import test from 'ava'
 
-import NDictOb          from './NDictionary'
+import {NOb}            from './N'
 import {NPErrors}       from './NP'
 import {NPGenerateText} from './NP'
 import {NPOb}           from './NP'
 
 test(t => {
-	t.deepEqual(NPGenerateText({}),{e:NPErrors.NO_NOUN})
-	t.is(NPGenerateText(new NPOb({noun:NDictOb.cat})),'cat')
+	t.deepEqual(NPGenerateText({}),{e:NPErrors.NO_HEAD})
+	t.is(NPGenerateText(new NPOb({head:new NOb({base:'cat'})})),'cat')
 })

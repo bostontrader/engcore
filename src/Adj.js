@@ -1,10 +1,18 @@
-import Schema  from './SchemaConstants'
+import AdjDictOb from './AdjDict'
+import Schema    from './SchemaConstants'
 
 function AdjOb(props) {
 	this.t = Schema.Adj.t
 	this.v = Schema.Adj.cv
-	this.base    = props.base
-	this.silentH = props.silentH || false
+
+	if ('base' in props && props.base in AdjDictOb) {
+		const n = AdjDictOb[props.base]
+		this.base = n.base
+		this.silentH = n.silentH
+	} else {
+		this.base    = props.base
+		this.silentH = props.silentH || false
+	}
 }
 
 const AdjErrors = {
@@ -12,8 +20,10 @@ const AdjErrors = {
 }
 
 const AdjGenerateText = (adj) => {
-	if(!adj.base)
+
+	if(adj.base === undefined)
 		return {e:AdjErrors.ADJECTIVE_BASE_UNDEFINED}
+
 	return adj.base
 }
 

@@ -1,0 +1,98 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.VGenerateText = exports.VErrors = exports.VOb = exports.Tense = undefined;
+
+var _Person = require('./Person');
+
+var _Person2 = _interopRequireDefault(_Person);
+
+var _N = require('./N');
+
+var _SchemaConstants = require('./SchemaConstants');
+
+var _SchemaConstants2 = _interopRequireDefault(_SchemaConstants);
+
+var _VDict = require('./VDict');
+
+var _VDict2 = _interopRequireDefault(_VDict);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
+ JSON is a chatty system and in order to store all these inflections for the many, many verbs, using ordinary JSON keys and values, we would develop a monstrously bloated dictionary object.  So instead, we've compacted this into a system of nested arrays.
+ */
+
+function VOb(props) {
+	this.t = _SchemaConstants2.default.V.t;
+	this.v = _SchemaConstants2.default.V.cv;
+
+	if ('base' in props && props.base in _VDict2.default) {
+		var n = _VDict2.default[props.base];
+		this.inf = n.inf;
+	} else {
+		this.inf = props.inf || [];
+	}
+	this.continuous = props.continuous || false;
+	this.passive = props.passive || false;
+	this.perfect = props.perfect || false;
+	this.person = props.person || _Person2.default.NoneSelected;
+	this.plurality = props.plurality || _N.Plurality.NoneSelected;
+	this.tense = props.tense || Tense.Present;
+}
+
+var VErrors = {
+	'REQUESTED_INFLECTION_UNDEFINED': 'The requested inflection is undefined for this noun.'
+};
+
+var Tense = {
+	'NoneSelected': 0,
+	'Past': 100,
+	'Present': 200
+};
+
+var VGenerateText = function VGenerateText(vob) {
+
+	var retVal = void 0;
+
+	var key_1 = void 0;
+	var key_2 = void 0;
+
+	if (vob.perfect || vob.passive) {
+		// p77 past participle used if perfect or passive
+		key_1 = 4; // past participle
+	} else if (vob.tense === Tense.Present) {
+		key_1 = 1;
+		key_2 = vob.person === _Person2.default.Third && vob.plurality === _N.Plurality.Singular ? 0 : 1;
+	}
+
+	try {
+		retVal = vob.inf[key_1][key_2];
+	} catch (e) {
+		retVal = { e: VErrors.REQUESTED_INFLECTION_UNDEFINED };
+	}
+	return retVal;
+};
+
+exports.Tense = Tense;
+exports.VOb = VOb;
+exports.VErrors = VErrors;
+exports.VGenerateText = VGenerateText;
+
+/*
+
+ In order to access the value of a particular inflection, we must 
+
+ preterite = 0
+ present tense = 1
+
+ plain form = 2 imperative, subjunctal, infinitival
+ gerund participle aka present participle = 3
+ past participle = 4
+
+ 3rd sg = 0
+ plain = 1
+ */
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9WLmpzIl0sIm5hbWVzIjpbIlZPYiIsInByb3BzIiwidCIsIlYiLCJ2IiwiY3YiLCJiYXNlIiwibiIsImluZiIsImNvbnRpbnVvdXMiLCJwYXNzaXZlIiwicGVyZmVjdCIsInBlcnNvbiIsIk5vbmVTZWxlY3RlZCIsInBsdXJhbGl0eSIsInRlbnNlIiwiVGVuc2UiLCJQcmVzZW50IiwiVkVycm9ycyIsIlZHZW5lcmF0ZVRleHQiLCJ2b2IiLCJyZXRWYWwiLCJrZXlfMSIsImtleV8yIiwiVGhpcmQiLCJTaW5ndWxhciIsImUiLCJSRVFVRVNURURfSU5GTEVDVElPTl9VTkRFRklORUQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTs7OztBQUNBOztBQUNBOzs7O0FBQ0E7Ozs7OztBQUVBOzs7O0FBSUEsU0FBU0EsR0FBVCxDQUFhQyxLQUFiLEVBQW9CO0FBQ25CLE1BQUtDLENBQUwsR0FBUywwQkFBT0MsQ0FBUCxDQUFTRCxDQUFsQjtBQUNBLE1BQUtFLENBQUwsR0FBUywwQkFBT0QsQ0FBUCxDQUFTRSxFQUFsQjs7QUFFQSxLQUFJLFVBQVVKLEtBQVYsSUFBbUJBLE1BQU1LLElBQU4sbUJBQXZCLEVBQThDO0FBQzdDLE1BQU1DLElBQUksZ0JBQVFOLE1BQU1LLElBQWQsQ0FBVjtBQUNBLE9BQUtFLEdBQUwsR0FBY0QsRUFBRUMsR0FBaEI7QUFDQSxFQUhELE1BR087QUFDTixPQUFLQSxHQUFMLEdBQWNQLE1BQU1PLEdBQU4sSUFBYSxFQUEzQjtBQUNBO0FBQ0QsTUFBS0MsVUFBTCxHQUFrQlIsTUFBTVEsVUFBTixJQUFvQixLQUF0QztBQUNBLE1BQUtDLE9BQUwsR0FBa0JULE1BQU1TLE9BQU4sSUFBaUIsS0FBbkM7QUFDQSxNQUFLQyxPQUFMLEdBQWtCVixNQUFNVSxPQUFOLElBQWlCLEtBQW5DO0FBQ0EsTUFBS0MsTUFBTCxHQUFrQlgsTUFBTVcsTUFBTixJQUFpQixpQkFBT0MsWUFBMUM7QUFDQSxNQUFLQyxTQUFMLEdBQWtCYixNQUFNYSxTQUFOLElBQW9CLGFBQVVELFlBQWhEO0FBQ0EsTUFBS0UsS0FBTCxHQUFrQmQsTUFBTWMsS0FBTixJQUFpQkMsTUFBTUMsT0FBekM7QUFDQTs7QUFFRCxJQUFNQyxVQUFVO0FBQ2YsbUNBQWlDO0FBRGxCLENBQWhCOztBQUlBLElBQU1GLFFBQVE7QUFDYixpQkFBZSxDQURGO0FBRWIsU0FBYSxHQUZBO0FBR2IsWUFBYTtBQUhBLENBQWQ7O0FBTUEsSUFBTUcsZ0JBQWdCLFNBQWhCQSxhQUFnQixDQUFDQyxHQUFELEVBQVM7O0FBRTlCLEtBQUlDLGVBQUo7O0FBRUEsS0FBSUMsY0FBSjtBQUNBLEtBQUlDLGNBQUo7O0FBRUEsS0FBR0gsSUFBSVQsT0FBSixJQUFlUyxJQUFJVixPQUF0QixFQUErQjtBQUFFO0FBQ2hDWSxVQUFRLENBQVIsQ0FEOEIsQ0FDcEI7QUFDVixFQUZELE1BSUssSUFBR0YsSUFBSUwsS0FBSixLQUFjQyxNQUFNQyxPQUF2QixFQUFnQztBQUNwQ0ssVUFBUSxDQUFSO0FBQ0FDLFVBQVNILElBQUlSLE1BQUosS0FBZSxpQkFBT1ksS0FBdEIsSUFBK0JKLElBQUlOLFNBQUosS0FBa0IsYUFBVVcsUUFBNUQsR0FBd0UsQ0FBeEUsR0FBNEUsQ0FBcEY7QUFDQTs7QUFFRCxLQUFJO0FBQ0hKLFdBQVNELElBQUlaLEdBQUosQ0FBUWMsS0FBUixFQUFlQyxLQUFmLENBQVQ7QUFDQSxFQUZELENBRUUsT0FBTUcsQ0FBTixFQUFTO0FBQ1ZMLFdBQVMsRUFBQ0ssR0FBRVIsUUFBUVMsOEJBQVgsRUFBVDtBQUNBO0FBQ0QsUUFBT04sTUFBUDtBQUNBLENBdEJEOztRQXdCUUwsSyxHQUFBQSxLO1FBQ0FoQixHLEdBQUFBLEc7UUFDQWtCLE8sR0FBQUEsTztRQUNBQyxhLEdBQUFBLGE7O0FBRVIiLCJmaWxlIjoiVi5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBQZXJzb24gICAgICBmcm9tICcuL1BlcnNvbidcbmltcG9ydCB7UGx1cmFsaXR5fSBmcm9tICcuL04nXG5pbXBvcnQgU2NoZW1hICAgICAgZnJvbSAnLi9TY2hlbWFDb25zdGFudHMnXG5pbXBvcnQgVkRpY3RPYiAgICAgZnJvbSAnLi9WRGljdCdcblxuLypcbiBKU09OIGlzIGEgY2hhdHR5IHN5c3RlbSBhbmQgaW4gb3JkZXIgdG8gc3RvcmUgYWxsIHRoZXNlIGluZmxlY3Rpb25zIGZvciB0aGUgbWFueSwgbWFueSB2ZXJicywgdXNpbmcgb3JkaW5hcnkgSlNPTiBrZXlzIGFuZCB2YWx1ZXMsIHdlIHdvdWxkIGRldmVsb3AgYSBtb25zdHJvdXNseSBibG9hdGVkIGRpY3Rpb25hcnkgb2JqZWN0LiAgU28gaW5zdGVhZCwgd2UndmUgY29tcGFjdGVkIHRoaXMgaW50byBhIHN5c3RlbSBvZiBuZXN0ZWQgYXJyYXlzLlxuICovXG5cbmZ1bmN0aW9uIFZPYihwcm9wcykge1xuXHR0aGlzLnQgPSBTY2hlbWEuVi50XG5cdHRoaXMudiA9IFNjaGVtYS5WLmN2XG5cblx0aWYgKCdiYXNlJyBpbiBwcm9wcyAmJiBwcm9wcy5iYXNlIGluIFZEaWN0T2IpIHtcblx0XHRjb25zdCBuID0gVkRpY3RPYltwcm9wcy5iYXNlXVxuXHRcdHRoaXMuaW5mICAgID0gbi5pbmZcblx0fSBlbHNlIHtcblx0XHR0aGlzLmluZiAgICA9IHByb3BzLmluZiB8fCBbXVxuXHR9XG5cdHRoaXMuY29udGludW91cyA9IHByb3BzLmNvbnRpbnVvdXMgfHwgZmFsc2Vcblx0dGhpcy5wYXNzaXZlICAgID0gcHJvcHMucGFzc2l2ZSB8fCBmYWxzZVxuXHR0aGlzLnBlcmZlY3QgICAgPSBwcm9wcy5wZXJmZWN0IHx8IGZhbHNlXG5cdHRoaXMucGVyc29uICAgICA9IHByb3BzLnBlcnNvbiAgfHwgUGVyc29uLk5vbmVTZWxlY3RlZFxuXHR0aGlzLnBsdXJhbGl0eSAgPSBwcm9wcy5wbHVyYWxpdHkgIHx8IFBsdXJhbGl0eS5Ob25lU2VsZWN0ZWRcblx0dGhpcy50ZW5zZSAgICAgID0gcHJvcHMudGVuc2UgICB8fCBUZW5zZS5QcmVzZW50XG59XG5cbmNvbnN0IFZFcnJvcnMgPSB7XG5cdCdSRVFVRVNURURfSU5GTEVDVElPTl9VTkRFRklORUQnOidUaGUgcmVxdWVzdGVkIGluZmxlY3Rpb24gaXMgdW5kZWZpbmVkIGZvciB0aGlzIG5vdW4uJ1xufVxuXG5jb25zdCBUZW5zZSA9IHtcblx0J05vbmVTZWxlY3RlZCc6MCxcblx0J1Bhc3QnOiAgICAgIDEwMCxcblx0J1ByZXNlbnQnOiAgIDIwMCxcbn1cblxuY29uc3QgVkdlbmVyYXRlVGV4dCA9ICh2b2IpID0+IHtcblxuXHRsZXQgcmV0VmFsXG5cblx0bGV0IGtleV8xXG5cdGxldCBrZXlfMlxuXG5cdGlmKHZvYi5wZXJmZWN0IHx8IHZvYi5wYXNzaXZlKSB7IC8vIHA3NyBwYXN0IHBhcnRpY2lwbGUgdXNlZCBpZiBwZXJmZWN0IG9yIHBhc3NpdmVcblx0XHRrZXlfMSA9IDQgLy8gcGFzdCBwYXJ0aWNpcGxlXG5cdH1cblxuXHRlbHNlIGlmKHZvYi50ZW5zZSA9PT0gVGVuc2UuUHJlc2VudCkge1xuXHRcdGtleV8xID0gMVxuXHRcdGtleV8yID0gKHZvYi5wZXJzb24gPT09IFBlcnNvbi5UaGlyZCAmJiB2b2IucGx1cmFsaXR5ID09PSBQbHVyYWxpdHkuU2luZ3VsYXIpID8gMCA6IDFcblx0fVxuXG5cdHRyeSB7XG5cdFx0cmV0VmFsID0gdm9iLmluZltrZXlfMV1ba2V5XzJdXG5cdH0gY2F0Y2goZSkge1xuXHRcdHJldFZhbCA9IHtlOlZFcnJvcnMuUkVRVUVTVEVEX0lORkxFQ1RJT05fVU5ERUZJTkVEfVxuXHR9XG5cdHJldHVybiByZXRWYWxcbn1cblxuZXhwb3J0IHtUZW5zZX1cbmV4cG9ydCB7Vk9ifVxuZXhwb3J0IHtWRXJyb3JzfVxuZXhwb3J0IHtWR2VuZXJhdGVUZXh0fVxuXG4vKlxuXG4gSW4gb3JkZXIgdG8gYWNjZXNzIHRoZSB2YWx1ZSBvZiBhIHBhcnRpY3VsYXIgaW5mbGVjdGlvbiwgd2UgbXVzdCBcblxuIHByZXRlcml0ZSA9IDBcbiBwcmVzZW50IHRlbnNlID0gMVxuXG4gcGxhaW4gZm9ybSA9IDIgaW1wZXJhdGl2ZSwgc3VianVuY3RhbCwgaW5maW5pdGl2YWxcbiBnZXJ1bmQgcGFydGljaXBsZSBha2EgcHJlc2VudCBwYXJ0aWNpcGxlID0gM1xuIHBhc3QgcGFydGljaXBsZSA9IDRcblxuIDNyZCBzZyA9IDBcbiBwbGFpbiA9IDFcbiAqLyJdfQ==
