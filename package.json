@@ -22,7 +22,7 @@
   "name": "engcore",
   "scripts": {
     "build": "babel src --out-dir dist --presets babel-preset-es2015 --ignore test.js",
-    "test": "nyc ava **/*.test.js"
+    "test": "nyc ava '**/*.test.js'"
   },
-  "version": "0.3.5"
+  "version": "0.3.6"
 }

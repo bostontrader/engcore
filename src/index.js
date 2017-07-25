@@ -38,6 +38,7 @@ import {VPOb}               from './VP'
 import AdjDictOb from './AdjDict'
 import DetDictOb from './DetDict'
 import NDictOb   from './NDict'
+import PreDictOb from './PreDict'
 import VDictOb   from './VDict'
 
 import Gender      from './Gender'
@@ -87,6 +88,7 @@ export {VPOb}
 export {AdjDictOb}
 export {DetDictOb}
 export {NDictOb}
+export {PreDictOb}
 export {VDictOb}
 
 export {Gender}
