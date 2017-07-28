@@ -1,12 +1,12 @@
 import test from 'ava'
 
 import Gender            from './Gender'
-import {Plurality}       from './N'
 import Person            from './Person'
 import {ProErrors}       from './Pro'
 import {ProGenerateText} from './Pro'
 import {ProOb}           from './Pro'
 import {ProType}         from './Pro'
+import Plurality         from '../pos/Plurality'
 
 test(t => {
 

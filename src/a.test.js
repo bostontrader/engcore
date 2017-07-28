@@ -1,7 +1,7 @@
 import test from 'ava'
 
 //import Gender             from './Gender'
-//import NDictOb            from './NDictionary'
+//import NDict            from './NDictionary'
 //import {NErrors}          from './Noun'
 //import {NGenerateText}    from './Noun'
 //import {Plurality}        from './Noun'

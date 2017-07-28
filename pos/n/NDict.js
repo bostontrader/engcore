@@ -3,7 +3,7 @@ Although the inflected forms for most nouns can be generated according to a set 
 that's too complicated to implement at this time.  Instead, just store the different forms.
  */
 
-const NDictOb = {
+const NDict = {
 	america:   {inf:{s:'america'}, proper:true},
 	arctic:    {inf:{s:'arctic'}, proper:true},
 	bakery:    {inf:{s:'bakery'}},
@@ -76,4 +76,4 @@ const NDictOb = {
 	welfare:   {inf:{s:'welfare'}}
 }
 
-export default NDictOb
+export default NDict

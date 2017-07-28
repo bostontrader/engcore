@@ -1,10 +1,9 @@
 import {DetGenerateText} from './Det'
 import {DetOb}           from './Det'
-import {NGenerateText}   from './N'
-import {Plurality}       from './N'
 import {NomGenerateText} from './Nom'
 import {NomOb}           from './Nom'
 import Schema            from './SchemaConstants'
+import Plurality         from '../pos/Plurality'
 
 function NPOb(props) {
 
@@ -82,7 +81,8 @@ const NPGenerateText = (np) => {
 	if(np.head.t === Schema.Nom.t)
 		retVal = NomGenerateText(np.head)
 	else if(np.head.t === Schema.N.t)
-		retVal = NGenerateText(np.head)
+		//retVal = NGenerateText(np.head)
+		retVal = np.head.analyse().t
 
 	if(np.det)
 		retVal = DetGenerateText(np.det) + ' ' + retVal

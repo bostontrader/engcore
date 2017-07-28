@@ -10,9 +10,6 @@ import {DetOb}              from './Det'
 import {DetPErrors}         from './DetP'
 import {DetPGenerateText}   from './DetP'
 import {DetPOb}             from './DetP'
-import {NErrors}            from './N'
-import {NGenerateText}      from './N'
-import {NOb}                from './N'
 import {NomErrors}          from './Nom'
 import {NomGenerateText}    from './Nom'
 import {NomOb}              from './Nom'
@@ -34,19 +31,21 @@ import {VOb}                from './V'
 import {VPErrors}           from './VP'
 import {VPGenerateText}     from './VP'
 import {VPOb}               from './VP'
+import N                    from '../pos/n/N'
+import {NErrors}            from '../pos/n/N'
 
 import AdjDictOb from './AdjDict'
 import DetDictOb from './DetDict'
-import NDictOb   from './NDict'
 import PreDictOb from './PreDict'
 import VDictOb   from './VDict'
+import NDict     from '../pos/n/NDict'
 
 import Gender      from './Gender'
-import {Plurality} from './N'
 import Person      from './Person'
 import {ProType}   from './Pro'
 import Schema      from './SchemaConstants'
 import {Tense}     from './V'
+import Plurality   from '../pos/Plurality'
 
 export {AdjErrors}
 export {AdjGenerateText}
@@ -61,8 +60,7 @@ export {DetPErrors}
 export {DetPGenerateText}
 export {DetPOb}
 export {NErrors}
-export {NGenerateText}
-export {NOb}
+export {N}
 export {NomErrors}
 export {NomGenerateText}
 export {NomOb}
@@ -87,7 +85,7 @@ export {VPOb}
 
 export {AdjDictOb}
 export {DetDictOb}
-export {NDictOb}
+export {NDict}
 export {PreDictOb}
 export {VDictOb}
 

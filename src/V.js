@@ -1,11 +1,7 @@
-import Person      from './Person'
-import {Plurality} from './N'
-import Schema      from './SchemaConstants'
-import VDictOb     from './VDict'
-
-/*
- JSON is a chatty system and in order to store all these inflections for the many, many verbs, using ordinary JSON keys and values, we would develop a monstrously bloated dictionary object.  So instead, we've compacted this into a system of nested arrays.
- */
+import Person    from './Person'
+import Schema    from './SchemaConstants'
+import VDictOb   from './VDict'
+import Plurality from '../pos/Plurality'
 
 function VOb(props) {
 	this.t = Schema.V.t
