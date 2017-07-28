@@ -3,7 +3,7 @@ import test from 'ava'
 import {NPErrors}       from './NP'
 import {NPGenerateText} from './NP'
 import {NPOb}           from './NP'
-import N                from '../pos/n/N'
+import N                from './pos/n/N'
 
 test(t => {
 	t.deepEqual(NPGenerateText({}),{e:NPErrors.NO_HEAD})

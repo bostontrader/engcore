@@ -1,7 +1,7 @@
 import test from 'ava'
 
-import Plurality         from '../pos/Plurality'
-import N                 from '../pos/n/N'
+import Plurality         from '../src/pos/Plurality'
+import N                 from '../src/pos/n/N'
 import {AdjGenerateText} from '../src/Adj'
 import {AdjOb}           from '../src/Adj'
 import {DetGenerateText} from '../src/Det'

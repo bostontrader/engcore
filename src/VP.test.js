@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import {Plurality}       from '../pos/n/N'
+import {Plurality}       from './pos/n/N'
 import Person            from './Person'
 import VDictOb           from './VDict'
 import {Tense}           from './V'

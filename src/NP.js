@@ -3,7 +3,7 @@ import {DetOb}           from './Det'
 import {NomGenerateText} from './Nom'
 import {NomOb}           from './Nom'
 import Schema            from './SchemaConstants'
-import Plurality         from '../pos/Plurality'
+import Plurality         from './pos/Plurality'
 
 function NPOb(props) {
 

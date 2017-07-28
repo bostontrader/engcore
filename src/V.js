@@ -1,7 +1,7 @@
 import Person    from './Person'
 import Schema    from './SchemaConstants'
 import VDictOb   from './VDict'
-import Plurality from '../pos/Plurality'
+import Plurality from './pos/Plurality'
 
 function VOb(props) {
 	this.t = Schema.V.t

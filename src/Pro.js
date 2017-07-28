@@ -1,7 +1,7 @@
 import Gender    from './Gender'
 import Person    from './Person'
 import Schema    from './SchemaConstants'
-import Plurality from '../pos/Plurality'
+import Plurality from './pos/Plurality'
 
 function ProOb(props) {
 	this.t = Schema.Pro.t

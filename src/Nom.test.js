@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import NDict           from '../pos/n/NDict'
+import NDict           from './pos/n/NDict'
 import {NomErrors}       from './Nom'
 import {NomGenerateText} from './Nom'
 import {NomOb}           from './Nom'

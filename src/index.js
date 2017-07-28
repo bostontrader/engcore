@@ -31,21 +31,21 @@ import {VOb}                from './V'
 import {VPErrors}           from './VP'
 import {VPGenerateText}     from './VP'
 import {VPOb}               from './VP'
-import N                    from '../pos/n/N'
-import {NErrors}            from '../pos/n/N'
+import N                    from './pos/n/N'
+import {NErrors}            from './pos/n/N'
 
 import AdjDictOb from './AdjDict'
 import DetDictOb from './DetDict'
 import PreDictOb from './PreDict'
 import VDictOb   from './VDict'
-import NDict     from '../pos/n/NDict'
+import NDict     from './pos/n/NDict'
 
 import Gender      from './Gender'
 import Person      from './Person'
 import {ProType}   from './Pro'
 import Schema      from './SchemaConstants'
 import {Tense}     from './V'
-import Plurality   from '../pos/Plurality'
+import Plurality   from './pos/Plurality'
 
 export {AdjErrors}
 export {AdjGenerateText}

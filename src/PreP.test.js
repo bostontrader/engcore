@@ -7,7 +7,7 @@ import {PreOb}            from './Pre'
 import {PrePErrors}       from './PreP'
 import {PrePGenerateText} from './PreP'
 import {PrePOb}           from './PreP'
-import N                  from '../pos/n/N'
+import N                  from './pos/n/N'
 
 test(t => {
 	t.deepEqual(PrePGenerateText({}),{e:PrePErrors.NO_PRE})
