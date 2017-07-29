@@ -1,8 +1,6 @@
 import test from 'ava'
 
 import {AdjOb}            from '../src/Adj'
-import {DetGenerateText}  from '../src/Det'
-import {DetOb}            from '../src/Det'
 import {NomGenerateText}  from '../src/Nom'
 import {NomOb}            from '../src/Nom'
 import {NPGenerateText}   from '../src/NP'
@@ -14,6 +12,7 @@ import {ProGenerateText}  from '../src/Pro'
 import {ProOb}            from '../src/Pro'
 import {ProType}          from '../src/Pro'
 import Plurality          from '../src/pos/Plurality'
+import Det                from '../src/pos/det/Det'
 import N                  from '../src/pos/n/N'
 import Pre                from '../src/pos/pre/Pre'
 import V                  from '../src/pos/v/V'
@@ -23,7 +22,7 @@ test(t => {
 
 	t.is(NPGenerateText(new NPOb({
 		head:new N({base:'person', plurality:Plurality.Plural}),
-		det:new DetOb({base:'the'})
+		det:new Det({base:'the'})
 	})),'the people')
 
 	t.is(PrePGenerateText(
@@ -31,14 +30,14 @@ test(t => {
 			head:new Pre({base:'of'}),
 			np:new NPOb({
 				head:new NomOb({head:new N({base:'state', plurality:Plurality.Plural}), modifier:new AdjOb({base:'united'})}),
-				det:new DetOb({base:'the'})}
+				det:new Det({base:'the'})}
 			)
 		})
 	),'of the united states')
 
 	// in Order to
 	t.is(new V({base:'form'}).analyse().t,'form')
-	t.is(DetGenerateText(new DetOb({base:'a'})),'a')
+	t.is(new Det({base:'a'}).analyse().t,'a')
 
 	// more
 	t.is(NomGenerateText(new NomOb({head:new N({base:'union'}), modifier:new AdjOb({base:'perfect'})})),'perfect union')
@@ -54,7 +53,7 @@ test(t => {
 			head:new Pre({base:'for'}),
 			np:new NPOb({
 				head:new NomOb({head:new N({base:'defense'}), modifier:new AdjOb({base:'common'})}),
-				det:new DetOb({base:'the'})}
+				det:new Det({base:'the'})}
 			)
 		})
 	),'for the common defense')
@@ -63,7 +62,7 @@ test(t => {
 
 	t.is(NPGenerateText(new NPOb({
 		head:new NomOb({head:new N({base:'welfare'}), modifier:new AdjOb({base:'general'})}),
-		det:new DetOb({base:'the'})
+		det:new Det({base:'the'})
 	})),'the general welfare')
 
 	// and
@@ -71,7 +70,7 @@ test(t => {
 
 	t.is(NPGenerateText(new NPOb({
 		head:new N({base:'blessing', plurality:Plurality.Plural}),
-		det:new DetOb({base:'the'})
+		det:new Det({base:'the'})
 	})),'the blessings')
 
 	t.is(PrePGenerateText(
@@ -93,7 +92,7 @@ test(t => {
 
 	t.is(NPGenerateText(new NPOb({
 		head:new N({base:'constitution'}),
-		det:new DetOb({base:'this'})
+		det:new Det({base:'this'})
 	})),'this constitution')
 
 	t.is(PrePGenerateText(
@@ -101,7 +100,7 @@ test(t => {
 			head:new Pre({base:'for'}),
 			np:new NPOb({
 				head:new NomOb({head:new N({base:'state', plurality:Plurality.Plural}), modifier:new AdjOb({base:'united'})}),
-				det:new DetOb({base:'the'})}
+				det:new Det({base:'the'})}
 			)
 		})
 	),'for the united states')

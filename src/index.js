@@ -4,9 +4,6 @@ import {AdjOb}              from './Adj'
 import {ClauseErrors}       from './Clause'
 import {ClauseGenerateText} from './Clause'
 import {ClauseOb}           from './Clause'
-import {DetErrors}          from './Det'
-import {DetGenerateText}    from './Det'
-import {DetOb}              from './Det'
 import {DetPErrors}         from './DetP'
 import {DetPGenerateText}   from './DetP'
 import {DetPOb}             from './DetP'
@@ -25,6 +22,8 @@ import {ProOb}              from './Pro'
 import {VPErrors}           from './VP'
 import {VPGenerateText}     from './VP'
 import {VPOb}               from './VP'
+import Det                  from './pos/det/Det'
+import {DetErrors}          from './pos/det/Det'
 import N                    from './pos/n/N'
 import {NErrors}            from './pos/n/N'
 import Pre                  from './pos/pre/Pre'
@@ -33,7 +32,7 @@ import V                    from './pos/v/V'
 import {VErrors}            from './pos/v/V'
 
 import AdjDictOb from './AdjDict'
-import DetDictOb from './DetDict'
+import DetDict   from './pos/det/DetDict'
 import NDict     from './pos/n/NDict'
 import PreDict   from './pos/pre/PreDict'
 import VDict     from './pos/v/VDict'
@@ -51,9 +50,8 @@ export {AdjOb}
 export {ClauseErrors}
 export {ClauseGenerateText}
 export {ClauseOb}
+export {Det}
 export {DetErrors}
-export {DetGenerateText}
-export {DetOb}
 export {DetPErrors}
 export {DetPGenerateText}
 export {DetPOb}
@@ -80,7 +78,7 @@ export {VPGenerateText}
 export {VPOb}
 
 export {AdjDictOb}
-export {DetDictOb}
+export {DetDict}
 export {NDict}
 export {PreDict}
 export {VDict}

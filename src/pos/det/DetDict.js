@@ -1,4 +1,4 @@
-const DetDictOb = {
+const DetDict = {
 	a:     {base:'a'},
 	an:    {base:'an'},
 	that:  {base:'that'},
@@ -8,4 +8,4 @@ const DetDictOb = {
 	those: {base:'those'}
 }
 
-export default DetDictOb
+export default DetDict

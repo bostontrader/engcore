@@ -2,8 +2,6 @@ import test from 'ava'
 
 import {AdjGenerateText} from '../src/Adj'
 import {AdjOb}           from '../src/Adj'
-import {DetGenerateText} from '../src/Det'
-import {DetOb}           from '../src/Det'
 import Gender            from '../src/Gender'
 import {NomGenerateText} from '../src/Nom'
 import {NomOb}           from '../src/Nom'
@@ -14,6 +12,7 @@ import {ProGenerateText} from '../src/Pro'
 import {ProOb}           from '../src/Pro'
 import {ProType}         from '../src/Pro'
 
+import Det               from '../src/pos/det/Det'
 import Plurality         from '../src/pos/Plurality'
 import N                 from '../src/pos/n/N'
 
@@ -31,10 +30,7 @@ test(t => {
 	// p329
 	t.is(NPGenerateText(new NPOb({
 		head:new NomOb({head:new N({base:'man'}), modifier:new AdjOb({base:'old'})}),
-		det:new DetOb({base:'the'})}
+		det:new Det({base:'the'})}
 	)),'the old man')
-
-
-
 
 })

@@ -1,5 +1,3 @@
-import {DetGenerateText} from './Det'
-import {DetOb}           from './Det'
 import {NomGenerateText} from './Nom'
 import {NomOb}           from './Nom'
 import Schema            from './SchemaConstants'
@@ -85,7 +83,7 @@ const NPGenerateText = (np) => {
 		retVal = np.head.analyse().t
 
 	if(np.det)
-		retVal = DetGenerateText(np.det) + ' ' + retVal
+		retVal = np.det.analyse().t + ' ' + retVal
 
 	return retVal
 }
