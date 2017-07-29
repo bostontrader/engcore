@@ -17,7 +17,7 @@ function N(props) {
 	if(props) {
 		if(typeof(props) === 'object') {
 			if('base' in props) {
-				this.base = props
+				this.base = props.base
 				if(props.base in NDict) {
 					const n = NDict[props.base]
 					this.inf    = n.inf
@@ -41,11 +41,11 @@ function N(props) {
 	}
 }
 
-N.prototype = Object.create(new POS());
+N.prototype = Object.create(new POS())
 
 const NErrors = {
 	'MISSING_BASE':'This noun has no base specified.',
-	'REQUESTED_INFLECTION_UNDEFINED':'The requested inflection is undefined for this noun. Perhaps it was not found in the dictionary.'
+	'REQUESTED_INFLECTION_UNDEFINED':'The requested inflection is undefined for this noun.'
 }
 
 N.prototype.analyse = function() {

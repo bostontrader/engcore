@@ -1,7 +1,5 @@
 import test from 'ava'
 
-import Plurality          from '../src/pos/Plurality'
-import N                  from '../src/pos/n/N'
 import {AdjOb}            from '../src/Adj'
 import {DetGenerateText}  from '../src/Det'
 import {DetOb}            from '../src/Det'
@@ -16,8 +14,9 @@ import {PrePOb}           from '../src/PreP'
 import {ProGenerateText}  from '../src/Pro'
 import {ProOb}            from '../src/Pro'
 import {ProType}          from '../src/Pro'
-import {VGenerateText}    from '../src/V'
-import {VOb}              from '../src/V'
+import Plurality          from '../src/pos/Plurality'
+import N                  from '../src/pos/n/N'
+import V                  from '../src/pos/v/V'
 
 test(t => {
 	t.is(ProGenerateText(new ProOb({type:ProType.Subject, plurality:Plurality.Plural, person:Person.First})),'we')
@@ -38,17 +37,17 @@ test(t => {
 	),'of the united states')
 
 	// in Order to
-	t.is(VGenerateText(new VOb({base:'form'})),'form')
+	t.is(new V({base:'form'}).analyse().t,'form')
 	t.is(DetGenerateText(new DetOb({base:'a'})),'a')
 
 	// more
 	t.is(NomGenerateText(new NomOb({head:new N({base:'union'}), modifier:new AdjOb({base:'perfect'})})),'perfect union')
 
-	t.is(VGenerateText(new VOb({base:'establish'})),'establish')
+	t.is(new V({base:'establish'}).analyse().t,'establish')
 	t.is(new N({base:'justice'}).analyse().t,'justice')
-	t.is(VGenerateText(new VOb({base:'insure'})),'insure')
+	t.is(new V({base:'insure'}).analyse().t,'insure')
 	t.is(NomGenerateText(new NomOb({head:new N({base:'tranquility'}), modifier:new AdjOb({base:'domestic'})})),'domestic tranquility')
-	t.is(VGenerateText(new VOb({base:'provide'})),'provide')
+	t.is(new V({base:'provide'}).analyse().t,'provide')
 
 	t.is(PrePGenerateText(
 		new PrePOb({
@@ -60,7 +59,7 @@ test(t => {
 		})
 	),'for the common defense')
 
-	t.is(VGenerateText(new VOb({base:'promote'})),'promote')
+	t.is(new V({base:'promote'}).analyse().t,'promote')
 
 	t.is(NPGenerateText(new NPOb({
 		head:new NomOb({head:new N({base:'welfare'}), modifier:new AdjOb({base:'general'})}),
@@ -68,7 +67,7 @@ test(t => {
 	})),'the general welfare')
 
 	// and
-	t.is(VGenerateText(new VOb({base:'secure'})),'secure')
+	t.is(new V({base:'secure'}).analyse().t,'secure')
 
 	t.is(NPGenerateText(new NPOb({
 		head:new N({base:'blessing', plurality:Plurality.Plural}),
@@ -88,9 +87,9 @@ test(t => {
 	t.is(new N({base:'posterity'}).analyse().t,'posterity')
 
 	// do
-	t.is(VGenerateText(new VOb({base:'ordain'})),'ordain')
+	t.is(new V({base:'ordain'}).analyse().t,'ordain')
 	// and
-	t.is(VGenerateText(new VOb({base:'establish'})),'establish')
+	t.is(new V({base:'establish'}).analyse().t,'establish')
 
 	t.is(NPGenerateText(new NPOb({
 		head:new N({base:'constitution'}),

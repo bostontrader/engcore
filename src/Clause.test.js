@@ -7,7 +7,7 @@ import NDict                from './pos/n/NDict'
 import {Plurality}          from './pos/n/N'
 import {NPOb}               from './NP'
 import {UnkOb}              from './Unk'
-import VDictOb              from './VDict'
+import VDictOb              from './pos/v/VDict'
 import {VPOb}               from './VP'
 
 test(t => {

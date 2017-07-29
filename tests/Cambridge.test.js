@@ -1,7 +1,5 @@
 import test from 'ava'
 
-import Plurality         from '../src/pos/Plurality'
-import N                 from '../src/pos/n/N'
 import {AdjGenerateText} from '../src/Adj'
 import {AdjOb}           from '../src/Adj'
 import {DetGenerateText} from '../src/Det'
@@ -15,7 +13,9 @@ import Person            from '../src/Person'
 import {ProGenerateText} from '../src/Pro'
 import {ProOb}           from '../src/Pro'
 import {ProType}         from '../src/Pro'
-import {VGenerateText}   from '../src/V'
+
+import Plurality         from '../src/pos/Plurality'
+import N                 from '../src/pos/n/N'
 
 test(t => {
 

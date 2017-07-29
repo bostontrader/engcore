@@ -1,11 +1,9 @@
 /*
  Although the inflected forms for most verbs can be generated according to a set of rules, that's too complicated to implement at this time. In addition, there are many, many irregularities that must simply be stored. Instead of getting distracted by this complexity, just store the different inflections.
-
- Unfortunately, JSON is a chatty system and in order to store all these inflections for the many, many verbs, using ordinary JSON keys and values, we would develop a monstrously bloated dictionary object.  So instead, we've compacted this into a system of nested arrays. Please see V.js for a description of the structure.
  */
 
 // Ordinary lexical verbs
-const VDictOb = {
+const VDict = {
 	arrive:  {inf:['',['','arrive'],'',',','']},
 	ask:     {inf:['',['','ask'],'',',','']},
 	bend:    {inf:['',['','bend'],'',',','']},
@@ -77,4 +75,4 @@ const VDictOb = {
  have:    new VOb({base:'have',   pastForm:'had'}),
  )*/
 
-export default VDictOb
+export default VDict
