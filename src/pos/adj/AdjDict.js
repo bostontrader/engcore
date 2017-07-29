@@ -1,4 +1,4 @@
-const AdjDictOb = {
+const AdjDict = {
 	big:      {base:'big'},
 	cold:     {base:'cold'},
 	common:   {base:'common'},
@@ -24,4 +24,4 @@ const AdjDictOb = {
 	wood:     {base:'wood'}
 }
 
-export default AdjDictOb
+export default AdjDict

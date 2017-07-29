@@ -1,4 +1,3 @@
-import {AdjGenerateText} from './Adj'
 import Schema            from './SchemaConstants'
 
 // 326,327 has a N or Pro as a head and various dependents. Such as:
@@ -25,7 +24,7 @@ const NomGenerateText = (nom) => {
 
 	if(nom.modifier)
 		//return AdjGenerateText(nom.modifier) + ' ' + NGenerateText(nom.head)
-		return AdjGenerateText(nom.modifier) + ' ' + nom.head.analyse().t
+		return nom.modifier.analyse().t + ' ' + nom.head.analyse().t
 
 	else
 		//return NGenerateText(nom.head)
