@@ -7,18 +7,17 @@ import {NPOb}             from '../src/NP'
 import Person             from '../src/pos/Person'
 import {PrePGenerateText} from '../src/PreP'
 import {PrePOb}           from '../src/PreP'
-import {ProGenerateText}  from '../src/Pro'
-import {ProOb}            from '../src/Pro'
-import {ProType}          from '../src/Pro'
+import {ProType}          from '../src/pos/pro/Pro'
 import Plurality          from '../src/pos/Plurality'
 import Adj                from '../src/pos/adj/Adj'
 import Det                from '../src/pos/det/Det'
 import N                  from '../src/pos/n/N'
 import Pre                from '../src/pos/pre/Pre'
+import Pro                from '../src/pos/pro/Pro'
 import V                  from '../src/pos/v/V'
 
 test(t => {
-	t.is(ProGenerateText(new ProOb({type:ProType.Subject, plurality:Plurality.Plural, person:Person.First})),'we')
+	t.is(new Pro({type:ProType.Subject, plurality:Plurality.Plural, person:Person.First}).analyse().t,'we')
 
 	t.is(NPGenerateText(new NPOb({
 		head:new N({base:'person', plurality:Plurality.Plural}),

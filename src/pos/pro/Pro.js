@@ -1,9 +1,10 @@
-import Gender    from './pos/Gender'
-import Person    from './pos/Person'
-import Schema    from './pos/SchemaConstants'
-import Plurality from './pos/Plurality'
+import Gender    from '../Gender'
+import Person    from '../Person'
+import Schema    from '../SchemaConstants'
+import Plurality from '../Plurality'
+import POS       from '../POS'
 
-function ProOb(props) {
+function Pro(props) {
 	this.t = Schema.Pro.t
 	this.v = Schema.Pro.cv
 
@@ -12,6 +13,8 @@ function ProOb(props) {
 	this.plurality = props.plurality
 	this.gender = props.gender
 }
+
+Pro.prototype = Object.create(new POS())
 
 const ProType = {
 	'Subject':            100,
@@ -33,11 +36,11 @@ const ProErrors = {
 	'BAD_PLURALITY':'Plurality is not set correctly.'
 }
 
-const ProGenerateText = (pronoun) => {
+Pro.prototype.analyse = function() {
 
 	let retVal
 
-	const {type, person, plurality, gender} = pronoun
+	const {type, person, plurality, gender} = this
 
 	// Convert constant values to indices for use here.
 	let type_idx
@@ -55,7 +58,7 @@ const ProGenerateText = (pronoun) => {
 			type_idx = 3
 			break
 		default:
-			return {e:ProErrors.BAD_PRONOUN_TYPE}
+			return {t:undefined, e:[ProErrors.BAD_PRONOUN_TYPE]}
 	}
 
 	let person_idx
@@ -70,7 +73,7 @@ const ProGenerateText = (pronoun) => {
 			person_idx = 2
 			break
 		default:
-			return {e:ProErrors.BAD_PERSON}
+			return {t:undefined, e:[ProErrors.BAD_PERSON]}
 	}
 
 	let plurality_idx
@@ -82,7 +85,7 @@ const ProGenerateText = (pronoun) => {
 			plurality_idx = 1
 			break
 		default:
-			return {e:ProErrors.BAD_PLURALITY}
+			return {t:undefined, e:[ProErrors.BAD_PLURALITY]}
 	}
 
 	retVal = PronounTable[type_idx][person_idx][plurality_idx]
@@ -96,11 +99,10 @@ const ProGenerateText = (pronoun) => {
 			retVal = retVal[2]
 		}
 
-	return retVal
+	return {t:retVal, e:[]}
 
 }
 
+export default Pro
 export {ProErrors}
-export {ProOb}
-export {ProGenerateText}
 export {ProType}

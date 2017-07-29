@@ -13,9 +13,6 @@ import {NPOb}               from './NP'
 import {PrePErrors}         from './PreP'
 import {PrePGenerateText}   from './PreP'
 import {PrePOb}             from './PreP'
-import {ProErrors}          from './Pro'
-import {ProGenerateText}    from './Pro'
-import {ProOb}              from './Pro'
 import {VPErrors}           from './VP'
 import {VPGenerateText}     from './VP'
 import {VPOb}               from './VP'
@@ -27,6 +24,8 @@ import N                    from './pos/n/N'
 import {NErrors}            from './pos/n/N'
 import Pre                  from './pos/pre/Pre'
 import {PreErrors}          from './pos/pre/Pre'
+import Pro                  from './pos/pro/Pro'
+import {ProErrors}          from './pos/pro/Pro'
 import V                    from './pos/v/V'
 import {VErrors}            from './pos/v/V'
 
@@ -41,7 +40,7 @@ import Person      from './pos/Person'
 import Plurality   from './pos/Plurality'
 import Schema      from './pos/SchemaConstants'
 import Tense       from './pos/Tense'
-import {ProType}   from './Pro'
+import {ProType}   from './pos/pro/Pro'
 
 export {Adj}
 export {AdjErrors}
@@ -66,9 +65,8 @@ export {PreErrors}
 export {PrePErrors}
 export {PrePGenerateText}
 export {PrePOb}
+export {Pro}
 export {ProErrors}
-export {ProGenerateText}
-export {ProOb}
 export {V}
 export {VErrors}
 export {VPErrors}
