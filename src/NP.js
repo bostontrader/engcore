@@ -1,6 +1,6 @@
 import {NomGenerateText} from './Nom'
 import {NomOb}           from './Nom'
-import Schema            from './SchemaConstants'
+import Schema            from './pos/SchemaConstants'
 import Plurality         from './pos/Plurality'
 
 function NPOb(props) {

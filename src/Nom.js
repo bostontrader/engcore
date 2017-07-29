@@ -1,4 +1,4 @@
-import Schema            from './SchemaConstants'
+import Schema            from './pos/SchemaConstants'
 
 // 326,327 has a N or Pro as a head and various dependents. Such as:
 // * the determinatives: a, the, every

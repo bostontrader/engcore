@@ -1,7 +1,7 @@
 import test from 'ava'
 
-import Gender            from './Gender'
-import Person            from './Person'
+import Gender            from './pos/Gender'
+import Person            from './pos/Person'
 import {ProErrors}       from './Pro'
 import {ProGenerateText} from './Pro'
 import {ProOb}           from './Pro'

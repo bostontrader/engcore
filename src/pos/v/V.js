@@ -2,8 +2,8 @@ import VDict     from './VDict'
 import Plurality from '../Plurality'
 import POS       from '../POS'
 import Tense     from '../Tense'
-import Person    from '../../Person'
-import Schema    from '../../SchemaConstants'
+import Person    from '../Person'
+import Schema    from '../SchemaConstants'
 
 function V(props) {
 

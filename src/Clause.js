@@ -1,5 +1,5 @@
 import {NPGenerateText} from './NP'
-import Schema           from './SchemaConstants'
+import Schema           from './pos/SchemaConstants'
 import {VPGenerateText} from './VP'
 
 function ClauseOb(props) {

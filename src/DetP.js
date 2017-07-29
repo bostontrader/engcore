@@ -1,4 +1,4 @@
-import Schema          from './SchemaConstants'
+import Schema          from './pos/SchemaConstants'
 
 function DetPOb(props) {
 

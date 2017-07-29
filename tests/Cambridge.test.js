@@ -1,11 +1,11 @@
 import test from 'ava'
 
-import Gender            from '../src/Gender'
+import Gender            from '../src/pos/Gender'
 import {NomGenerateText} from '../src/Nom'
 import {NomOb}           from '../src/Nom'
 import {NPGenerateText}  from '../src/NP'
 import {NPOb}            from '../src/NP'
-import Person            from '../src/Person'
+import Person            from '../src/pos/Person'
 import {ProGenerateText} from '../src/Pro'
 import {ProOb}           from '../src/Pro'
 import {ProType}         from '../src/Pro'

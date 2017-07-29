@@ -1,5 +1,5 @@
 import POS     from '../POS'
-import Schema  from '../../SchemaConstants'
+import Schema  from '../SchemaConstants'
 
 function Pre(props) {
 	this.t = Schema.Pre.t

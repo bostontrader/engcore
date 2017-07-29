@@ -1,7 +1,7 @@
 import NDict     from './NDict'
 import Plurality from '../Plurality'
 import POS       from '../POS'
-import Schema    from '../../SchemaConstants'
+import Schema    from '../SchemaConstants'
 
 function N(props) {
 

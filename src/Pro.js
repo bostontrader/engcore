@@ -1,6 +1,6 @@
-import Gender    from './Gender'
-import Person    from './Person'
-import Schema    from './SchemaConstants'
+import Gender    from './pos/Gender'
+import Person    from './pos/Person'
+import Schema    from './pos/SchemaConstants'
 import Plurality from './pos/Plurality'
 
 function ProOb(props) {

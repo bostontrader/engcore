@@ -1,7 +1,7 @@
 import test from 'ava'
 
 import {Plurality}       from './pos/n/N'
-import Person            from './Person'
+import Person            from './pos/Person'
 import VDictOb           from './pos/v/VDict'
 import {Tense}           from './pos/v/V'
 import {UnkGenerateText} from './Unk'

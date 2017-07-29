@@ -1,5 +1,5 @@
 import POS     from '../POS'
-import Schema  from '../../SchemaConstants'
+import Schema  from '../SchemaConstants'
 
 function Det(props) {
 	this.t = Schema.Det.t

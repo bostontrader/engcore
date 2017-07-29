@@ -1,5 +1,5 @@
 import {NPGenerateText} from './NP'
-import Schema           from './SchemaConstants'
+import Schema           from './pos/SchemaConstants'
 
 function PrePOb(props) {
 

@@ -4,7 +4,7 @@ import {VErrors} from './V'
 import V         from './V'
 import Tense from '../Tense'
 import Plurality from '../Plurality'
-import Person from '../../Person'
+import Person from '../Person'
 
 test(t => {
 	t.deepEqual(new V().analyse(),{t:undefined, e:[VErrors.MISSING_BASE]})

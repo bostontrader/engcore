@@ -36,12 +36,12 @@ import NDict   from './pos/n/NDict'
 import PreDict from './pos/pre/PreDict'
 import VDict   from './pos/v/VDict'
 
-import Gender      from './Gender'
-import Person      from './Person'
-import {ProType}   from './Pro'
-import Schema      from './SchemaConstants'
+import Gender      from './pos/Gender'
+import Person      from './pos/Person'
 import Plurality   from './pos/Plurality'
+import Schema      from './pos/SchemaConstants'
 import Tense       from './pos/Tense'
+import {ProType}   from './Pro'
 
 export {Adj}
 export {AdjErrors}
