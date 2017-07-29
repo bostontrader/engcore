@@ -16,9 +16,6 @@ import {NomOb}              from './Nom'
 import {NPErrors}           from './NP'
 import {NPGenerateText}     from './NP'
 import {NPOb}               from './NP'
-import {PreErrors}          from './Pre'
-import {PreGenerateText}    from './Pre'
-import {PreOb}              from './Pre'
 import {PrePErrors}         from './PreP'
 import {PrePGenerateText}   from './PreP'
 import {PrePOb}             from './PreP'
@@ -30,13 +27,15 @@ import {VPGenerateText}     from './VP'
 import {VPOb}               from './VP'
 import N                    from './pos/n/N'
 import {NErrors}            from './pos/n/N'
+import Pre                  from './pos/pre/Pre'
+import {PreErrors}          from './pos/pre/Pre'
 import V                    from './pos/v/V'
 import {VErrors}            from './pos/v/V'
 
 import AdjDictOb from './AdjDict'
 import DetDictOb from './DetDict'
-import PreDictOb from './PreDict'
 import NDict     from './pos/n/NDict'
+import PreDict   from './pos/pre/PreDict'
 import VDict     from './pos/v/VDict'
 
 import Gender      from './Gender'
@@ -66,9 +65,8 @@ export {NomOb}
 export {NPErrors}
 export {NPGenerateText}
 export {NPOb}
+export {Pre}
 export {PreErrors}
-export {PreGenerateText}
-export {PreOb}
 export {PrePErrors}
 export {PrePGenerateText}
 export {PrePOb}
@@ -84,7 +82,7 @@ export {VPOb}
 export {AdjDictOb}
 export {DetDictOb}
 export {NDict}
-export {PreDictOb}
+export {PreDict}
 export {VDict}
 
 export {Gender}

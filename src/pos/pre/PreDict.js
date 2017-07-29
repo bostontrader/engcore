@@ -1,4 +1,4 @@
-const PreDictOb = {
+const PreDict = {
 	as:   {base:'as'},
 	down: {base:'down'},
 	in:   {base:'in'},
@@ -9,4 +9,4 @@ const PreDictOb = {
 	with: {base:'with'}
 }
 
-export default PreDictOb
+export default PreDict

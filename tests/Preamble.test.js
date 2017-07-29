@@ -8,7 +8,6 @@ import {NomOb}            from '../src/Nom'
 import {NPGenerateText}   from '../src/NP'
 import {NPOb}             from '../src/NP'
 import Person             from '../src/Person'
-import {PreOb}            from '../src/Pre'
 import {PrePGenerateText} from '../src/PreP'
 import {PrePOb}           from '../src/PreP'
 import {ProGenerateText}  from '../src/Pro'
@@ -16,6 +15,7 @@ import {ProOb}            from '../src/Pro'
 import {ProType}          from '../src/Pro'
 import Plurality          from '../src/pos/Plurality'
 import N                  from '../src/pos/n/N'
+import Pre                from '../src/pos/pre/Pre'
 import V                  from '../src/pos/v/V'
 
 test(t => {
@@ -28,7 +28,7 @@ test(t => {
 
 	t.is(PrePGenerateText(
 		new PrePOb({
-			head:new PreOb({base:'of'}),
+			head:new Pre({base:'of'}),
 			np:new NPOb({
 				head:new NomOb({head:new N({base:'state', plurality:Plurality.Plural}), modifier:new AdjOb({base:'united'})}),
 				det:new DetOb({base:'the'})}
@@ -51,7 +51,7 @@ test(t => {
 
 	t.is(PrePGenerateText(
 		new PrePOb({
-			head:new PreOb({base:'for'}),
+			head:new Pre({base:'for'}),
 			np:new NPOb({
 				head:new NomOb({head:new N({base:'defense'}), modifier:new AdjOb({base:'common'})}),
 				det:new DetOb({base:'the'})}
@@ -76,7 +76,7 @@ test(t => {
 
 	t.is(PrePGenerateText(
 		new PrePOb({
-			head:new PreOb({base:'of'}),
+			head:new Pre({base:'of'}),
 			np:new NPOb({
 				head:new N({base:'liberty'})
 			})
@@ -98,7 +98,7 @@ test(t => {
 
 	t.is(PrePGenerateText(
 		new PrePOb({
-			head:new PreOb({base:'for'}),
+			head:new Pre({base:'for'}),
 			np:new NPOb({
 				head:new NomOb({head:new N({base:'state', plurality:Plurality.Plural}), modifier:new AdjOb({base:'united'})}),
 				det:new DetOb({base:'the'})}
@@ -108,7 +108,7 @@ test(t => {
 
 	t.is(PrePGenerateText(
 		new PrePOb({
-			head:new PreOb({base:'of'}),
+			head:new Pre({base:'of'}),
 			np:new NPOb({
 				head:new N({base:'america'})
 			})
