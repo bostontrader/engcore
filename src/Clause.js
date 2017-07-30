@@ -1,4 +1,4 @@
-import {NPGenerateText} from './NP'
+import {NPGenerateText} from './pos/np/NP'
 import Schema           from './pos/SchemaConstants'
 import {VPGenerateText} from './VP'
 

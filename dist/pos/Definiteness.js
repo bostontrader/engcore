@@ -1,0 +1,13 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var Definiteness = {
+	'NoneSelected': null,
+	'Definite': 1,
+	'Indefinite': 2
+};
+
+exports.default = Definiteness;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9wb3MvRGVmaW5pdGVuZXNzLmpzIl0sIm5hbWVzIjpbIkRlZmluaXRlbmVzcyJdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBQSxJQUFNQSxlQUFlO0FBQ3BCLGlCQUFnQixJQURJO0FBRXBCLGFBQW1CLENBRkM7QUFHcEIsZUFBbUI7QUFIQyxDQUFyQjs7a0JBTWVBLFkiLCJmaWxlIjoiRGVmaW5pdGVuZXNzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgRGVmaW5pdGVuZXNzID0ge1xuXHQnTm9uZVNlbGVjdGVkJzogbnVsbCxcblx0J0RlZmluaXRlJzogICAgICAgIDEsXG5cdCdJbmRlZmluaXRlJzogICAgICAyLFxufVxuXG5leHBvcnQgZGVmYXVsdCBEZWZpbml0ZW5lc3NcbiJdfQ==

@@ -1,7 +1,5 @@
 import test from 'ava'
 
-import {NPGenerateText}  from '../src/NP'
-import {NPOb}            from '../src/NP'
 import Gender            from '../src/pos/Gender'
 import Person            from '../src/pos/Person'
 import Plurality         from '../src/pos/Plurality'
@@ -10,6 +8,7 @@ import Adj               from '../src/pos/adj/Adj'
 import Det               from '../src/pos/det/Det'
 import N                 from '../src/pos/n/N'
 import Nom               from '../src/pos/nom/Nom'
+import NP                from '../src/pos/np/NP'
 
 test(t => {
 
@@ -23,9 +22,9 @@ test(t => {
 	// what max said liz bought
 
 	// p329
-	t.is(NPGenerateText(new NPOb({
+	t.is(new NP({
 		head:new Nom({head:new N({base:'man'}), modifier:new Adj({base:'old'})}),
 		det:new Det({base:'the'})}
-	)),'the old man')
+	).analyse().t,'the old man')
 
 })

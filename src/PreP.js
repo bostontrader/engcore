@@ -1,5 +1,4 @@
-import {NPGenerateText} from './NP'
-import Schema           from './pos/SchemaConstants'
+import Schema from './pos/SchemaConstants'
 
 function PrePOb(props) {
 
@@ -23,7 +22,7 @@ const PrePGenerateText = (prep) => {
 	if(!prep.np)
 		return {e:PrePErrors.NO_NP}
 
-	return prep.head.base + ' ' + NPGenerateText(prep.np)
+	return prep.head.base + ' ' + prep.np.analyse().t
 }
 
 export {PrePErrors}
