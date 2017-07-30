@@ -1,9 +1,6 @@
 import {ClauseErrors}       from './Clause'
 import {ClauseGenerateText} from './Clause'
 import {ClauseOb}           from './Clause'
-import {DetPErrors}         from './DetP'
-import {DetPGenerateText}   from './DetP'
-import {DetPOb}             from './DetP'
 import {NPErrors}           from './NP'
 import {NPGenerateText}     from './NP'
 import {NPOb}               from './NP'
@@ -17,6 +14,8 @@ import Adj                  from './pos/adj/Adj'
 import {AdjErrors}          from './pos/adj/Adj'
 import Det                  from './pos/det/Det'
 import {DetErrors}          from './pos/det/Det'
+import DetP                 from './pos/detp/DetP'
+import {DetPErrors}         from './pos/detp/DetP'
 import N                    from './pos/n/N'
 import {NErrors}            from './pos/n/N'
 import Nom                  from './pos/nom/Nom'
@@ -34,12 +33,12 @@ import NDict   from './pos/n/NDict'
 import PreDict from './pos/pre/PreDict'
 import VDict   from './pos/v/VDict'
 
-import Gender      from './pos/Gender'
-import Person      from './pos/Person'
-import Plurality   from './pos/Plurality'
-import Schema      from './pos/SchemaConstants'
-import Tense       from './pos/Tense'
-import {ProType}   from './pos/pro/Pro'
+import Gender    from './pos/Gender'
+import Person    from './pos/Person'
+import Plurality from './pos/Plurality'
+import Schema    from './pos/SchemaConstants'
+import Tense     from './pos/Tense'
+import {ProType} from './pos/pro/Pro'
 
 export {Adj}
 export {AdjErrors}
@@ -48,9 +47,8 @@ export {ClauseGenerateText}
 export {ClauseOb}
 export {Det}
 export {DetErrors}
+export {DetP}
 export {DetPErrors}
-export {DetPGenerateText}
-export {DetPOb}
 export {N}
 export {NErrors}
 export {Nom}
