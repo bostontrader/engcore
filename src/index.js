@@ -4,9 +4,6 @@ import {ClauseOb}           from './Clause'
 import {DetPErrors}         from './DetP'
 import {DetPGenerateText}   from './DetP'
 import {DetPOb}             from './DetP'
-import {NomErrors}          from './Nom'
-import {NomGenerateText}    from './Nom'
-import {NomOb}              from './Nom'
 import {NPErrors}           from './NP'
 import {NPGenerateText}     from './NP'
 import {NPOb}               from './NP'
@@ -22,6 +19,8 @@ import Det                  from './pos/det/Det'
 import {DetErrors}          from './pos/det/Det'
 import N                    from './pos/n/N'
 import {NErrors}            from './pos/n/N'
+import Nom                  from './pos/nom/Nom'
+import {NomErrors}          from './pos/nom/Nom'
 import Pre                  from './pos/pre/Pre'
 import {PreErrors}          from './pos/pre/Pre'
 import Pro                  from './pos/pro/Pro'
@@ -54,9 +53,8 @@ export {DetPGenerateText}
 export {DetPOb}
 export {N}
 export {NErrors}
+export {Nom}
 export {NomErrors}
-export {NomGenerateText}
-export {NomOb}
 export {NPErrors}
 export {NPGenerateText}
 export {NPOb}

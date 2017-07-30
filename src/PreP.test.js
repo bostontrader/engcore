@@ -1,12 +1,12 @@
 import test from 'ava'
 
-import {NomOb}            from './Nom'
 import {NPOb}             from './NP'
 import {PrePErrors}       from './PreP'
 import {PrePGenerateText} from './PreP'
 import {PrePOb}           from './PreP'
 import Det                from './pos/det/Det'
 import N                  from './pos/n/N'
+import Nom                from './pos/nom/Nom'
 import Pre                from './pos/pre/Pre'
 
 test(t => {
@@ -17,7 +17,7 @@ test(t => {
 		new PrePOb({
 			head:new Pre({base:'in'}),
 			np:new NPOb({
-				head:new NomOb({head:new N({base:'hat'})}),
+				head:new Nom({head:new N({base:'hat'})}),
 				det:new Det({base:'the'})}
 			)
 		})

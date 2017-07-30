@@ -2,7 +2,6 @@ import test from 'ava'
 
 import N         from './N'
 import {NErrors} from './N'
-
 import Plurality from '../Plurality'
 
 test(t => {

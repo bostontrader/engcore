@@ -1,7 +1,6 @@
-import {NomGenerateText} from './Nom'
-import {NomOb}           from './Nom'
-import Schema            from './pos/SchemaConstants'
-import Plurality         from './pos/Plurality'
+import Schema    from './pos/SchemaConstants'
+import Plurality from './pos/Plurality'
+import Nom       from './pos/nom/Nom'
 
 function NPOb(props) {
 
@@ -77,9 +76,8 @@ const NPGenerateText = (np) => {
 	let retVal
 
 	if(np.head.t === Schema.Nom.t)
-		retVal = NomGenerateText(np.head)
+		retVal = np.head.analyse().t
 	else if(np.head.t === Schema.N.t)
-		//retVal = NGenerateText(np.head)
 		retVal = np.head.analyse().t
 
 	if(np.det)
