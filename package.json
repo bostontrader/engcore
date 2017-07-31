@@ -10,11 +10,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "ava": "^0.21.0",
-    "babel-cli": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "coveralls": "^2.13.1",
-    "nyc": "^11.0.3"
+    "ava": "0.21.0",
+    "babel-cli": "6.24.1",
+    "babel-preset-es2015": "6.24.1",
+    "babel-register": "6.24.1",
+    "coveralls": "2.13.1",
+    "nyc": "11.1.0"
   },
   "description": "The purpose of engcore is to provide a means to create ES2015 representations of fragments of English as well as to provide various utilities for manipulating them.",
   "license": "MIT",
@@ -24,5 +25,5 @@
     "build": "babel src --out-dir dist --presets babel-preset-es2015 --ignore test.js",
     "test": "nyc ava '**/*.test.js'"
   },
-  "version": "0.4.7"
+  "version": "0.5.0"
 }

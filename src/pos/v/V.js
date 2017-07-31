@@ -72,7 +72,9 @@ V.prototype.analyse = function() {
 	if(this.perfect || this.passive) { // p77 past participle used if perfect or passive
 		key_1 = 4 // past participle
 	}
-
+	else if(this.tense === Tense.Past) {
+		key_1 = 0 // preterite aka simple past
+	}
 	else if(this.tense === Tense.Present) {
 		key_1 = 1
 		key_2 = (this.person === Person.Third && this.plurality === Plurality.Singular) ? 0 : 1

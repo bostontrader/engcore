@@ -17,4 +17,6 @@ test(t => {
 	t.deepEqual(new V({base:'take', passive:true}).analyse(),{t:'taken', e:[]})
 	t.deepEqual(new V({base:'gnarliate'}).analyse(),{t:undefined, e:[VErrors.REQUESTED_INFLECTION_UNDEFINED]})
 	t.deepEqual(new V({base:'gnarliate', inf:{}}).analyse(),{t:undefined, e:[VErrors.REQUESTED_INFLECTION_UNDEFINED]})
+	t.deepEqual(new V({base:'buy', tense:Tense.Past}).analyse(),{t:'bought', e:[]})
+
 })

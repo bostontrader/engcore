@@ -72,6 +72,7 @@ const NDict = {
 	top:       {inf:{s:'top'}},
 	union:     {inf:{s:'union'}},
 	wall:      {inf:{s:'wall'}},
+	watch:     {inf:{s:'watch'}},
 	way:       {inf:{s:'way'}},
 	welfare:   {inf:{s:'welfare'}}
 }

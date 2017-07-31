@@ -10,6 +10,7 @@ const VDict = {
 	bet:     {inf:['',['','bet'],'',',','']},
 	bite:    {inf:['',['','bite'],'',',','']},
 	bump:    {inf:['',['','bump'],'',',','']},
+	buy:     {inf:['bought',['buys','buy'],'buy','buying,','bought']},
 	call:    {inf:['',['','call'],'',',','']},
 	come:    {inf:['',['','come'],'',',','']},
 	establish:{inf:['',['','establish'],'',',','']},

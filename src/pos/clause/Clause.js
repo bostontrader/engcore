@@ -9,8 +9,8 @@ function Clause(props) {
 	if(props) {
 		if('head' in props)
 			this.head = props.head
-		if('np' in props)
-			this.np = props.np
+		if('subject' in props)
+			this.subject = props.subject
 	}
 }
 
@@ -18,7 +18,7 @@ Clause.prototype = Object.create(new POS())
 
 const ClauseErrors = {
 	'MISSING_HEAD':'This clause must have a head, aka predicate.',
-	'MISSING_NP':'This clause must have a noun phrase.'
+	'MISSING_SUBJECT':'This clause must have a subject.'
 }
 
 Clause.prototype.analyse = function() {
@@ -26,10 +26,10 @@ Clause.prototype.analyse = function() {
 	if(!('head' in this))
 		return {t:undefined, e:[ClauseErrors.MISSING_HEAD]}
 
-	if(!('np' in this))
-		return {t:undefined, e:[ClauseErrors.MISSING_NP]}
+	if(!('subject' in this))
+		return {t:undefined, e:[ClauseErrors.MISSING_SUBJECT]}
 
-	let retVal = this.np.analyse().t + ' ' + this.head.analyse().t
+	let retVal = this.subject.analyse().t + ' ' + this.head.analyse().t
 	return {t:retVal, e:[]}
 
 }

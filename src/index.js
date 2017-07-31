@@ -1,29 +1,27 @@
-import {ClauseErrors}       from './pos/clause/Clause'
-import {ClauseGenerateText} from './pos/clause/Clause'
-import {ClauseOb}           from './pos/clause/Clause'
-import {VPErrors}           from './pos/vp/VP'
-import {VPGenerateText}     from './pos/vp/VP'
-import {VPOb}               from './pos/vp/VP'
-import Adj                  from './pos/adj/Adj'
-import {AdjErrors}          from './pos/adj/Adj'
-import Det                  from './pos/det/Det'
-import {DetErrors}          from './pos/det/Det'
-import DetP                 from './pos/detp/DetP'
-import {DetPErrors}         from './pos/detp/DetP'
-import N                    from './pos/n/N'
-import {NErrors}            from './pos/n/N'
-import Nom                  from './pos/nom/Nom'
-import {NomErrors}          from './pos/nom/Nom'
-import NP                   from './pos/np/NP'
-import {NPErrors}           from './pos/np/NP'
-import Pre                  from './pos/pre/Pre'
-import {PreErrors}          from './pos/pre/Pre'
-import PreP                 from './pos/prep/PreP'
-import {PrePErrors}         from './pos/prep/PreP'
-import Pro                  from './pos/pro/Pro'
-import {ProErrors}          from './pos/pro/Pro'
-import V                    from './pos/v/V'
-import {VErrors}            from './pos/v/V'
+import VP             from './pos/vp/VP'
+import {VPErrors}     from './pos/vp/VP'
+import Adj            from './pos/adj/Adj'
+import {AdjErrors}    from './pos/adj/Adj'
+import Clause         from './pos/clause/Clause'
+import {ClauseErrors} from './pos/clause/Clause'
+import Det            from './pos/det/Det'
+import {DetErrors}    from './pos/det/Det'
+import DetP           from './pos/detp/DetP'
+import {DetPErrors}   from './pos/detp/DetP'
+import N              from './pos/n/N'
+import {NErrors}      from './pos/n/N'
+import Nom            from './pos/nom/Nom'
+import {NomErrors}    from './pos/nom/Nom'
+import NP             from './pos/np/NP'
+import {NPErrors}     from './pos/np/NP'
+import Pre            from './pos/pre/Pre'
+import {PreErrors}    from './pos/pre/Pre'
+import PreP           from './pos/prep/PreP'
+import {PrePErrors}   from './pos/prep/PreP'
+import Pro            from './pos/pro/Pro'
+import {ProErrors}    from './pos/pro/Pro'
+import V              from './pos/v/V'
+import {VErrors}      from './pos/v/V'
 
 import AdjDict from './pos/adj/AdjDict'
 import DetDict from './pos/det/DetDict'
@@ -40,9 +38,8 @@ import {ProType} from './pos/pro/Pro'
 
 export {Adj}
 export {AdjErrors}
+export {Clause}
 export {ClauseErrors}
-export {ClauseGenerateText}
-export {ClauseOb}
 export {Det}
 export {DetErrors}
 export {DetP}
@@ -61,9 +58,8 @@ export {Pro}
 export {ProErrors}
 export {V}
 export {VErrors}
+export {VP}
 export {VPErrors}
-export {VPGenerateText}
-export {VPOb}
 
 export {AdjDict}
 export {DetDict}
