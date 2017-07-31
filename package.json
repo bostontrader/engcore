@@ -16,7 +16,7 @@
     "coveralls": "^2.13.1",
     "nyc": "^11.0.3"
   },
-  "description": "A package to represent fragments of English as well as to serialize, deserialize, and migrate their schema.",
+  "description": "The purpose of engcore is to provide a means to create ES2015 representations of fragments of English as well as to provide various utilities for manipulating them.",
   "license": "MIT",
   "main": "dist/index.js",
   "name": "engcore",
@@ -24,5 +24,5 @@
     "build": "babel src --out-dir dist --presets babel-preset-es2015 --ignore test.js",
     "test": "nyc ava '**/*.test.js'"
   },
-  "version": "0.4.5"
+  "version": "0.4.7"
 }

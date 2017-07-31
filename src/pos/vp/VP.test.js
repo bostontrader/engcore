@@ -1,18 +1,20 @@
 import test from 'ava'
 
-import {Plurality}       from './pos/n/N'
-import Person            from './pos/Person'
-import VDictOb           from './pos/v/VDict'
-import {Tense}           from './pos/v/V'
-import {UnkGenerateText} from './Unk'
-import {UnkOb}           from './Unk'
-import {VPGenerateText}  from './VP'
-import {VPOb}            from './VP'
+import VP         from './VP'
+import {VPErrors} from './VP'
+import V          from '../v/V'
+
+import {Plurality}       from '../n/N'
+import Person            from '../Person'
+import VDictOb           from '../v/VDict'
+import {Tense}           from '../v/V'
+import {UnkGenerateText} from '../../Unk'
+import {UnkOb}           from '../../Unk'
 
 //import {AdjGenerateText}  from './Adjective'
 //import {AdjDictOb}        from './AdjDictionary'
 //import Gender             from './Gender'
-//import NDict            from './NDictionary'
+//import NDict              from './NDictionary'
 //import {NErrors}          from './Noun'
 //import {NGenerateText}    from './Noun'
 //import {NPGenerateText}   from './NP'
@@ -24,8 +26,14 @@ import {VPOb}            from './VP'
 //import {PronounType}      from './Pronoun'
 //import {ProOb}            from './Pronoun'
 
-	test(t => {
-		t.pass()
+test(t => {
+	t.deepEqual(new VP().analyse(),{t:undefined, e:[VPErrors.MISSING_HEAD]})
+	t.deepEqual(new VP({}).analyse(),{t:undefined, e:[VPErrors.MISSING_HEAD]})
+	t.deepEqual(new VP({head:new V('run')}).analyse(),{t:'run', e:[]})
+	//t.deepEqual(new VP({head:new V('cat'),det:new Det({base:'the'})}).analyse(),{t:'the cat', e:[]})
+
+
+		//t.pass()
 		//t.is(VPGenerateText(new VPOb({verb:VDictOb.play, infinitive:true})),'to play')
 		//t.is(VPGenerateText(new VPOb({verb:VDictOb.look, person:Person.Third, tense:Tense.Present, plurality:Plurality.Singular})),'looks')
 
@@ -1111,4 +1119,4 @@ import {VPOb}            from './VP'
 
 
 		//const n = new VPOb({verb:VDictOb.look})
-	})
+})

@@ -1,17 +1,20 @@
+import POS    from '../POS'
+import Schema from '../SchemaConstants'
+
 //import {Plurality}       from './N'
 //import Person            from './Person'
-//import Schema            from './SchemaConstants'
 //import {UnkGenerateText} from './Unk'
 //import {Tense}           from './V'
 
-function VPOb(props) {
-
+function VP(props) {
 	this.t = Schema.VP.t
 	this.v = Schema.VP.cv
 
 	// p50 the head of a verb phrase, aka the predicator, is a V
-	this.verb = props.verb
-
+	if(props) {
+		if('head' in props)
+			this.head = props.head
+	}
 	// Given all these settings, a determined adversary can probably combine them into non-sensensical patterns.
 	// Instead of fretting about this possibility, a VP will merely operate upon the first sensible pattern that it
 	// recognizes.  Please see VPGenerateText to understand the exact method of recognition.
@@ -30,8 +33,18 @@ function VPOb(props) {
 
 }
 
-const VPGenerateText = (vp) => {
+VP.prototype = Object.create(new POS())
 
+const VPErrors = {
+	'MISSING_HEAD':'This verb phrase must have a head.'
+}
+
+VP.prototype.analyse = function() {
+
+	if(!('head' in this))
+		return {t:undefined, e:[VPErrors.MISSING_HEAD]}
+
+	return {t:this.head.analyse().t,e:[]}
 	//const getPastForm = verbob => (verbob.pastForm) ? verbob.pastForm : verbob.base + 'ed'
 
 	//let retVal = vp.verb.base
@@ -174,5 +187,5 @@ const VPGenerateText = (vp) => {
 	//return retVal
 }
 
-export {VPGenerateText}
-export {VPOb}
+export default VP
+export {VPErrors}

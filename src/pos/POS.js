@@ -32,7 +32,7 @@ function POS() {
  *
  */
 POS.prototype.analyse = function() {
-	return {t:'', e:[]}
+	return {t:undefined, e:[]}
 }
 
 export default POS
