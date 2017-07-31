@@ -1,18 +1,17 @@
 import test from 'ava'
 
-import {PrePGenerateText} from '../src/PreP'
-import {PrePOb}           from '../src/PreP'
-import Person             from '../src/pos/Person'
-import Plurality          from '../src/pos/Plurality'
-import Adj                from '../src/pos/adj/Adj'
-import Det                from '../src/pos/det/Det'
-import N                  from '../src/pos/n/N'
-import NP                 from '../src/pos/np/NP'
-import Nom                from '../src/pos/nom/Nom'
-import Pre                from '../src/pos/pre/Pre'
-import Pro                from '../src/pos/pro/Pro'
-import {ProType}          from '../src/pos/pro/Pro'
-import V                  from '../src/pos/v/V'
+import Person    from '../src/pos/Person'
+import Plurality from '../src/pos/Plurality'
+import Adj       from '../src/pos/adj/Adj'
+import Det       from '../src/pos/det/Det'
+import N         from '../src/pos/n/N'
+import NP        from '../src/pos/np/NP'
+import Nom       from '../src/pos/nom/Nom'
+import Pre       from '../src/pos/pre/Pre'
+import PreP      from '../src/pos/prep/PreP'
+import Pro       from '../src/pos/pro/Pro'
+import {ProType} from '../src/pos/pro/Pro'
+import V         from '../src/pos/v/V'
 
 test(t => {
 	t.is(new Pro({type:ProType.Subject, plurality:Plurality.Plural, person:Person.First}).analyse().t,'we')
@@ -22,15 +21,15 @@ test(t => {
 		det:new Det({base:'the'})
 	}).analyse().t,'the people')
 
-	t.is(PrePGenerateText(
-		new PrePOb({
+	t.is(
+		new PreP({
 			head:new Pre({base:'of'}),
 			np:new NP({
 				head:new Nom({head:new N({base:'state', plurality:Plurality.Plural}), modifier:new Adj({base:'united'})}),
 				det:new Det({base:'the'})}
 			)
-		})
-	),'of the united states')
+		}).analyse().t
+	,'of the united states')
 
 	// in Order to
 	t.is(new V({base:'form'}).analyse().t,'form')
@@ -45,15 +44,15 @@ test(t => {
 	t.is(new Nom({head:new N({base:'tranquility'}), modifier:new Adj({base:'domestic'})}).analyse().t,'domestic tranquility')
 	t.is(new V({base:'provide'}).analyse().t,'provide')
 
-	t.is(PrePGenerateText(
-		new PrePOb({
+	t.is(
+		new PreP({
 			head:new Pre({base:'for'}),
 			np:new NP({
 				head:new Nom({head:new N({base:'defense'}), modifier:new Adj({base:'common'})}),
 				det:new Det({base:'the'})}
 			)
-		})
-	),'for the common defense')
+		}).analyse().t
+	,'for the common defense')
 
 	t.is(new V({base:'promote'}).analyse().t,'promote')
 
@@ -70,14 +69,14 @@ test(t => {
 		det:new Det({base:'the'})
 	}).analyse().t,'the blessings')
 
-	t.is(PrePGenerateText(
-		new PrePOb({
+	t.is(
+		new PreP({
 			head:new Pre({base:'of'}),
 			np:new NP({
 				head:new N({base:'liberty'})
 			})
-		})
-	),'of liberty')
+		}).analyse().t
+	,'of liberty')
 
 	// to ourselves and our
 	t.is(new N({base:'posterity'}).analyse().t,'posterity')
@@ -92,22 +91,22 @@ test(t => {
 		det:new Det({base:'this'})
 	}).analyse().t,'this constitution')
 
-	t.is(PrePGenerateText(
-		new PrePOb({
+	t.is(
+		new PreP({
 			head:new Pre({base:'for'}),
 			np:new NP({
 				head:new Nom({head:new N({base:'state', plurality:Plurality.Plural}), modifier:new Adj({base:'united'})}),
 				det:new Det({base:'the'})}
 			)
-		})
-	),'for the united states')
+		}).analyse().t
+	,'for the united states')
 
-	t.is(PrePGenerateText(
-		new PrePOb({
+	t.is(
+		new PreP({
 			head:new Pre({base:'of'}),
 			np:new NP({
 				head:new N({base:'america'})
 			})
-		})
-	),'of America')
+		}).analyse().t
+	,'of America')
 })

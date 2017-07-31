@@ -24,19 +24,13 @@ function NP(props) {
 
 NP.prototype = Object.create(new POS())
 
-//const Definiteness = {
-	//'NoneSelected': 0,
-	//'Definite':   100,
-	//'Indefinite': 200,
-//}
-
 // 326. Can be a complement in a clause, aka subject, an object, or a predicative complement.
 // 327. Other functions: complement in PP, subject-determiner in NP, adjunct in clause, modifier in AdjP, modifier in AdvP, modifier in PP, modifier in NP, supplement, vocative
 // 327. dummy category 'there'
 // 328. bare role: ie. 'president'
 // 329. pre-head and post-head dependents.
 const NPErrors = {
-	'MISSING_HEAD':'This nominal must have a head.'
+	'MISSING_HEAD':'This noun phrase must have a head.'
 }
 
 NP.prototype.analyse = function() {

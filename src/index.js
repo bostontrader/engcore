@@ -1,9 +1,6 @@
 import {ClauseErrors}       from './Clause'
 import {ClauseGenerateText} from './Clause'
 import {ClauseOb}           from './Clause'
-import {PrePErrors}         from './PreP'
-import {PrePGenerateText}   from './PreP'
-import {PrePOb}             from './PreP'
 import {VPErrors}           from './VP'
 import {VPGenerateText}     from './VP'
 import {VPOb}               from './VP'
@@ -21,6 +18,8 @@ import NP                   from './pos/np/NP'
 import {NPErrors}           from './pos/np/NP'
 import Pre                  from './pos/pre/Pre'
 import {PreErrors}          from './pos/pre/Pre'
+import PreP                 from './pos/prep/PreP'
+import {PrePErrors}         from './pos/prep/PreP'
 import Pro                  from './pos/pro/Pro'
 import {ProErrors}          from './pos/pro/Pro'
 import V                    from './pos/v/V'
@@ -56,9 +55,8 @@ export {NP}
 export {NPErrors}
 export {Pre}
 export {PreErrors}
+export {PreP}
 export {PrePErrors}
-export {PrePGenerateText}
-export {PrePOb}
 export {Pro}
 export {ProErrors}
 export {V}
