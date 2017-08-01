@@ -3,6 +3,7 @@ import test from 'ava'
 import Person    from '../src/pos/Person'
 import Plurality from '../src/pos/Plurality'
 import Adj       from '../src/pos/adj/Adj'
+import Clause    from '../src/pos/clause/Clause'
 import Det       from '../src/pos/det/Det'
 import N         from '../src/pos/n/N'
 import NP        from '../src/pos/np/NP'
@@ -38,28 +39,43 @@ test(t => {
 	// more
 	t.is(new Nom({head:new N({base:'union'}), modifier:new Adj({base:'perfect'})}).analyse().t,'perfect union')
 
-	t.is(new V({base:'establish'}).analyse().t,'establish')
-	t.is(new N({base:'justice'}).analyse().t,'justice')
-	t.is(new V({base:'insure'}).analyse().t,'insure')
-	t.is(new Nom({head:new N({base:'tranquility'}), modifier:new Adj({base:'domestic'})}).analyse().t,'domestic tranquility')
-	t.is(new V({base:'provide'}).analyse().t,'provide')
+	// infinitival clause
+	t.is(new Clause({head:new V('establish'), object:new N('justice')})
+		.analyse().t,'establish justice'
+	)
 
+	// infinitival clause
+	t.is(new Clause({head
+		:new V('insure'), object:new Nom({head:new N({base:'tranquility'}), modifier:new Adj({base:'domestic'})})})
+		.analyse().t,'insure domestic tranquility'
+	)
+
+	// infinitival clause
+	t.is(new Clause({
+			head: new V('provide'),
+			object: new PreP({
+				head: new Pre({base: 'for'}),
+				np: new NP({
+						head: new Nom({head: new N({base: 'defense'}), modifier: new Adj({base: 'common'})}),
+						det: new Det({base: 'the'})
+					}
+				)
+			})
+		})
+		.analyse().t,'provide for the common defense'
+	)
+
+	// infinitival clause
 	t.is(
-		new PreP({
-			head:new Pre({base:'for'}),
-			np:new NP({
-				head:new Nom({head:new N({base:'defense'}), modifier:new Adj({base:'common'})}),
-				det:new Det({base:'the'})}
-			)
-		}).analyse().t
-	,'for the common defense')
-
-	t.is(new V({base:'promote'}).analyse().t,'promote')
-
-	t.is(new NP({
-		head:new Nom({head:new N({base:'welfare'}), modifier:new Adj({base:'general'})}),
-		det:new Det({base:'the'})
-	}).analyse().t,'the general welfare')
+		new Clause({
+			head:new V('promote'),
+			object:new NP({
+				head:new Nom({head:new N({base:'welfare'}), modifier:new Adj({base:'general'})}),
+				det:new Det({base:'the'})
+			})
+		})
+		.analyse().t,'promote the general welfare'
+	)
 
 	// and
 	t.is(new V({base:'secure'}).analyse().t,'secure')
