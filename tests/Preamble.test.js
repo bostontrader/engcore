@@ -36,14 +36,14 @@ test(t => {
 
 	// in Order to
 	t.is(new V({base:'form'}).analyse().t,'form')
-	t.is(new Det({base:'a'}).analyse().t,'a')
 
-	t.is(
-		new Nom({
+	t.is(new NP({
+		head:new Nom({
 			head:new N({base:'union'}),
 			modifier:new AdjP({head:new Adj('perfect'),modifier:new Adv({base:'more'})})
-		})
-		.analyse().t,'more perfect union')
+		}),
+		det:new Det({base:'a'})
+	}).analyse().t,'a more perfect union')
 
 	// infinitival clause
 	t.is(new Clause({head:new V('establish'), object:new N('justice')})
