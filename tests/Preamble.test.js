@@ -3,6 +3,8 @@ import test from 'ava'
 import Person    from '../src/pos/Person'
 import Plurality from '../src/pos/Plurality'
 import Adj       from '../src/pos/adj/Adj'
+import AdjP      from '../src/pos/adjp/AdjP'
+import Adv       from '../src/pos/adv/Adv'
 import Clause    from '../src/pos/clause/Clause'
 import Det       from '../src/pos/det/Det'
 import N         from '../src/pos/n/N'
@@ -36,9 +38,12 @@ test(t => {
 	t.is(new V({base:'form'}).analyse().t,'form')
 	t.is(new Det({base:'a'}).analyse().t,'a')
 
-	// more perfect union
-	t.is(new Adj({base:'more'}),'more')
-	t.is(new Nom({head:new N({base:'union'}), modifier:new Adj({base:'perfect'})}).analyse().t,'perfect union')
+	t.is(
+		new Nom({
+			head:new N({base:'union'}),
+			modifier:new AdjP({head:new Adj('perfect'),modifier:new Adv({base:'more'})})
+		})
+		.analyse().t,'more perfect union')
 
 	// infinitival clause
 	t.is(new Clause({head:new V('establish'), object:new N('justice')})

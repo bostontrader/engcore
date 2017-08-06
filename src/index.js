@@ -1,7 +1,7 @@
-import VP             from './pos/vp/VP'
-import {VPErrors}     from './pos/vp/VP'
 import Adj            from './pos/adj/Adj'
 import {AdjErrors}    from './pos/adj/Adj'
+import AdjP           from './pos/adjp/AdjP'
+import {AdjPErrors}   from './pos/adjp/AdjP'
 import Adv            from './pos/adv/Adv'
 import {AdvErrors}    from './pos/adv/Adv'
 import Clause         from './pos/clause/Clause'
@@ -24,6 +24,8 @@ import Pro            from './pos/pro/Pro'
 import {ProErrors}    from './pos/pro/Pro'
 import V              from './pos/v/V'
 import {VErrors}      from './pos/v/V'
+import VP             from './pos/vp/VP'
+import {VPErrors}     from './pos/vp/VP'
 
 import AdjDict from './pos/adj/AdjDict'
 import AdvDict from './pos/adv/AdvDict'
@@ -41,6 +43,8 @@ import {ProType} from './pos/pro/Pro'
 
 export {Adj}
 export {AdjErrors}
+export {AdjP}
+export {AdjPErrors}
 export {Adv}
 export {AdvErrors}
 export {Clause}
