@@ -36,7 +36,8 @@ test(t => {
 	t.is(new V({base:'form'}).analyse().t,'form')
 	t.is(new Det({base:'a'}).analyse().t,'a')
 
-	// more
+	// more perfect union
+	t.is(new Adj({base:'more'}),'more')
 	t.is(new Nom({head:new N({base:'union'}), modifier:new Adj({base:'perfect'})}).analyse().t,'perfect union')
 
 	// infinitival clause

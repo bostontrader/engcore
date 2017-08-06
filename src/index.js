@@ -2,6 +2,8 @@ import VP             from './pos/vp/VP'
 import {VPErrors}     from './pos/vp/VP'
 import Adj            from './pos/adj/Adj'
 import {AdjErrors}    from './pos/adj/Adj'
+import Adv            from './pos/adv/Adv'
+import {AdvErrors}    from './pos/adv/Adv'
 import Clause         from './pos/clause/Clause'
 import {ClauseErrors} from './pos/clause/Clause'
 import Det            from './pos/det/Det'
@@ -24,6 +26,7 @@ import V              from './pos/v/V'
 import {VErrors}      from './pos/v/V'
 
 import AdjDict from './pos/adj/AdjDict'
+import AdvDict from './pos/adv/AdvDict'
 import DetDict from './pos/det/DetDict'
 import NDict   from './pos/n/NDict'
 import PreDict from './pos/pre/PreDict'
@@ -38,6 +41,8 @@ import {ProType} from './pos/pro/Pro'
 
 export {Adj}
 export {AdjErrors}
+export {Adv}
+export {AdvErrors}
 export {Clause}
 export {ClauseErrors}
 export {Det}
@@ -62,6 +67,7 @@ export {VP}
 export {VPErrors}
 
 export {AdjDict}
+export {AdvDict}
 export {DetDict}
 export {NDict}
 export {PreDict}
